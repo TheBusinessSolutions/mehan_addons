@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="multi_certification_view_tree" model="ir.ui.view">
+            <field name="name">multi_certificate</field>
+            <field name="model">multi.certificate</field>
+            <field name="arch" type="xml">
+                <tree string="Certificates" import="false">
+                    <field name="certification_name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="multi_certificate" model="ir.ui.view">
+            <field name="name">multi_certificate</field>
+            <field name="model">multi.certificate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                             <field name="certification_name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+
+        <record id="job_position_request_category" model="ir.module.category">
+            <field name="name">Job Request</field>
+            <field name="sequence" eval="18"/>
+        </record>
+
+        <record id="job_position_request_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="job_position_request_category"/>
+        </record>
+
+        <record id="job_position_request_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="job_position_request_category"/>
+            <field name="implied_ids" eval="[(4, ref('dev_job_position_request.job_position_request_user'))]"/>
+        </record>
+
+
+    </data>
+</odoo>

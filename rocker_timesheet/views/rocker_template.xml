@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="assets_backend" inherit_id="web.assets_backend">
+    <xpath expr="script[last()]" position="after">
+      <script type="text/javascript" src="/rocker_timesheet/static/src/js/rocker_calendar_button.js"></script>
+    </xpath>
+    <xpath expr="link[last()]" position="after">
+      <link rel="stylesheet" type="text/scss" href="/rocker_timesheet/static/src/scss/rocker_calendar_button.scss"/>
+    </xpath>
+    <xpath expr="script[last()]" position="after">
+      <script type="text/javascript" src="/rocker_timesheet/static/src/js/rocker_tree_button.js"></script>
+    </xpath>
+    <xpath expr="link[last()]" position="after">
+      <link rel="stylesheet" type="text/scss" href="/rocker_timesheet/static/src/scss/rocker_tree_button.scss"/>
+    </xpath>
+    <xpath expr="script[last()]" position="after">
+      <script type="text/javascript" src="/rocker_timesheet/static/src/js/rocker_roller_button.js"></script>
+    </xpath>
+    <xpath expr="link[last()]" position="after">
+      <link rel="stylesheet" type="text/scss" href="/rocker_timesheet/static/src/scss/rocker_roller_button.scss"/>
+    </xpath>
+  </template>
+</odoo>

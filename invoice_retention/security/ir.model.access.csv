@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_retention_line_public_user,retention_line,model_retention_line,,1,1,1,1
+access_retention_wiz_line,wizard_retention_wiz_line,model_retention_wiz_line,,1,1,1,1
+access_retention.payment.inv,retention_payment_invoice,model_retention_payment_inv,,1,1,1,1

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!--Salary Rules-->
+        <record id="end_of_service_salary_rule" model="hr.salary.rule">
+            <field name="name">End Of Service</field>
+            <field name="sequence" eval="5"/>
+            <field name="code">EOS</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.eos_amount</field>
+                        <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>
+
+        </record>
+    </data>
+</odoo>

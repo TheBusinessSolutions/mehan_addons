@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//th[@name='th_description']" position="after">
+                <th class="text-right">Category</th>
+            </xpath>
+            <xpath expr="//td[@name='td_name']" position="after">
+                <td class="text-right">
+                    <span t-field="line.cate_id"/>
+                </td>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record id="sequence_bank_statement_custom" model="ir.sequence">
+            <field name="name">Bank Statement Seq</field>
+            <field name="code">bank.statement.sequence.custom</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">BNK statement/</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field eval="True" name="use_date_range"/>
+        </record>
+
+         <record id="sequence_cash_statement_custom" model="ir.sequence">
+            <field name="name">Cash Statement Seq</field>
+            <field name="code">cash.statement.sequence.custom</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">CSH statement/</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field eval="True" name="use_date_range"/>
+        </record>
+
+        <record id="view_bank_statement_inherit_seq" model="ir.ui.view">
+            <field name="name">view.bank.statement.seq</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1, 'force_save': 1}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

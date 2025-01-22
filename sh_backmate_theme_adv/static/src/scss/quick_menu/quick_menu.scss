@@ -1,0 +1,22 @@
+
+.o_menu_systray .o_menu_systray .sh_bookmark .sh_wqm_remove_quick_menu_cls i:hover{color: $primaryColor;}
+
+.o_main_navbar .o_menu_systray .sh_bookmark .o_user_bookmark_menu > a{color: #746f6f !important;}
+.o_main_navbar .o_menu_systray .sh_bookmark.show .dropdown-menu.dropdown-menu-right.sh_wqm_quick_menu_submenu_list_cls.show{min-width: 300px !important;max-width: 300px;transform: none !important;}
+.o_main_navbar .o_menu_systray .sh_bookmark .o_user_bookmark_menu{height: 30px!important;width: 30px !important;line-height: 30px!important;justify-content: center;}
+
+.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .sh_bookmark_search_div{padding: 5px 10px;}
+.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls a.dropdown-item{padding: 5px 15px;}
+.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .sh_bookmark_search_div .sh_bookmark_search.form-control:focus,.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .sh_bookmark_search_div .sh_bookmark_search.form-control:hover{border: 1px solid $primaryColor !important;box-shadow: 0 5px 10px 0 rgba(62, 57, 107, 0.20);transition: all .5s;}
+
+
+.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .dropdown-item .sh_wqm_remove_quick_menu_cls{opacity: 0;transition: all .3s;}
+.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .dropdown-item:hover .sh_wqm_remove_quick_menu_cls{opacity: 1;}
+
+@media only screen and (max-width: 992px){
+    .o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .dropdown-item .sh_wqm_remove_quick_menu_cls{opacity: 1 !important;}
+    .o_main_navbar .o_menu_systray .sh_bookmark{display: none !important;}
+}
+
+.o_rtl .o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .dropdown-item .sh_wqm_remove_quick_menu_cls{float: right !important;}
+.o_rtl .o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls .dropdown-item .sh_pin_bkmrk{margin-right: 12px !important;margin-left: 0px !important;}

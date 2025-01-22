@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_project_name,access_project_name,n2d_so_categ_inlines.model_project_name,,1,1,1,1
+access_region_name,access_region_name,n2d_so_categ_inlines.model_region_name,,1,1,1,1
+access_mr_et,access_mr_et,n2d_so_categ_inlines.model_mr_et,,1,1,1,1
+access_sub_contractors,access_sub_contractors,n2d_so_categ_inlines.model_sub_contractor,,1,1,1,1
+access_sale_rfi,access_sale_rfi,n2d_so_categ_inlines.model_sale_rfi,,1,1,1,1

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template>
+    <t t-name="sh_backmate_theme_adv.NavFooter" owl="1">
+        <div class="sh_abc">
+            <h1>22222222</h1>
+            <!-- <div class="o_menu_systray" role="menu">
+                <t t-foreach="systrayItems" t-as="item" t-key="item.key">
+                    <NotUpdatable>
+                        <ErrorHandler onError="error => handleItemError(error, item)">
+                            <t t-component="item.Component" t-props="item.props" />
+                        </ErrorHandler>
+                    </NotUpdatable>
+                </t>
+            </div>    -->
+        </div>
+    </t>
+
+    
+
+     <t t-name="sh_backmate_theme_adv.NavTab" owl="1">
+        <div class="main-content sh_main_content">
+            <div class="owl-carousel owl-theme" id="sh_owl_items">
+               
+            </div>
+            <div class="owl-theme">
+                <div class="owl-controls">
+                    <div class="custom-nav owl-nav"></div>
+                </div>
+            </div>
+        </div>
+        
+    </t>
+   <t t-name="sh_backmate_theme_adv.ActionContainer" owl="1">
+        <div class="o_action_manager">
+        <NavTab/>
+        <t t-raw="notification_template"/>
+            <t t-if="info.Component" t-component="info.Component" t-props="info.componentProps" t-key="info.id"/>
+        </div>
+    </t>
+
+    <t t-name="sh_backmate_theme_adv.ZoomWidget" owl="1">
+       <div class="sh_zoom_view_layout">
+            <t t-if="show_zoom">
+                <button class=" btn sh_zoom" data-toggle="collapse" data-target="#zoomPanel" aria-expanded="false">
+                    <span class="fa fa-search-plus"></span>
+                </button>
+                <div class="sh-zoom-panel collapse" id="zoomPanel">
+                    <div class="d-flex align-items-center">
+                        <div class="sh_full">100%</div>
+                        <div class="d-flex align-items-center mx-2">
+                            <button class="btn btn-small sh_dec" t-on-click="setDecZoom()">-</button>
+                            <button class="btn btn-small sh_inc" t-on-click="setIncZoom()">+</button>
+                        </div>
+                        <button class="fa fa fa-repeat btn btn-secondary sh_reset" t-on-click="setResetZoom()"></button>
+                    </div>
+                </div>
+            </t>
+      </div>
+    </t>
+    <t t-name="web.WebClient" t-inherit="web.WebClient" t-inherit-mode="extension" owl="1">
+		<xpath expr="//body[hasclass('o_web_client')]" position="inside">
+            <ZoomWidget/>
+        </xpath>
+    </t>
+<!-- footer part
+    <t t-name="web.WebClient" t-inherit="web.WebClient" t-inherit-mode="extension" owl="1">
+		<xpath expr="//body[hasclass('o_web_client')]" position="inside">
+            <NavFooter/>
+        </xpath>
+    </t>-->
+
+
+
+<!--
+    <t t-extend="Menu">
+        <t t-jquery=".o_menu_systray" t-operation="after">
+            <button class="o-menu-toggle d-md-none"
+                    data-toggle="collapse"
+                    data-target=".o_main_navbar .o_menu_sections">
+                <i class="fa fa-bars"/>
+            </button>
+        </t>
+    </t>
+    
+    <t t-name="Throbber">
+    <div>
+        <div class="oe_blockui_spin" style="height: 50px">
+          <img style="z-index:999999999999;" src="/web/image/sh.back.theme.config.settings/1/loading_gif" alt="Loading..."/>
+        </div>
+        <br />
+        <div class="oe_throbber_message" style="color:white;display:none;"></div>
+    </div>
+</t>   -->
+
+ <t t-extend="Throbber">
+        <t t-jquery=".oe_blockui_spin" t-operation="replace"> 
+            <div class="oe_blockui_spin"></div>
+        </t>
+        <t t-jquery=".oe_throbber_message" t-operation="replace"> 
+             <div class="oe_throbber_message" style="color:white;display:none;"></div>
+        </t>
+    </t>
+</template>

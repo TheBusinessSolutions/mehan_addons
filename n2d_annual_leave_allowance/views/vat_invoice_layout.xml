@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="vat_invoice_layout" inherit_id="web.external_layout_standard"
+                  primary="True">
+            <xpath expr="//div[hasclass('header')]" position="replace">
+                <div class="header">
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>مؤسسة متراس للحراسات الامنيه</strong>
+                                </td>
+                                <td style="text-align: right;">
+                                    <strong>مؤسسة متراس للحراسات الامنيه</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>عماره 3961 طريق الملك فيصل بن عبدالعزيز</td>
+                                <td style="text-align: right;">عماره 3961 طريق الملك فيصل بن عبدالعزيز</td>
+                            </tr>
+                            <tr>
+                                <td>حي الخالديه الشماليه الدمام</td>
+                                <td style="text-align: right;">حي الخالديه الشماليه الدمام</td>
+                            </tr>
+                            <tr>
+                                <td>المملكه العربيه السعوديه</td>
+                                <td style="text-align: right;">المملكه العربيه السعوديه</td>
+                            </tr>
+                            <tr>
+                                <td> (2050101259)  رقم السجل التجاري</td>
+                                <td style="text-align: right;">  (2050101259)  رقم السجل التجاري </td>
+                            </tr>
+                            <tr>
+                                <td>VAT No : 300519628900003</td>
+                                <td style="text-align: right;">رقم الضريبة : 300519628900003</td>
+                            </tr>
+                            <tr>
+                                <td>E-Mail: c.o@metras.sa</td>
+                                <td style="text-align: right;">c.o@metras.sa:البريد الاكتروني </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;" colspan="2">
+                                    <strong>VAT Invoice</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;" colspan="2">
+                                    <strong>فاتورة ضريبيه</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </xpath>
+
+            <xpath expr="//div[hasclass('footer')]" position="replace">
+                <div class="footer">
+                    <p style="align:center; text-align: center;border: 1px solid black;">Page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </p>
+
+                </div>
+            </xpath>
+        </template>
+
+
+        <template id="vat_invoice_external_layout">
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+
+            <t t-call="n2d_annual_leave_allowance.vat_invoice_layout">
+                <t t-raw="0"/>
+            </t>
+        </template>
+    </data>
+</odoo>

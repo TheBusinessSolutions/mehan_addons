@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_absence_form" model="ir.ui.view">
+            <field name="name">Absence</field>
+            <field name="model">hr.absence</field>
+            <field name="arch" type="xml">
+                <form string="Absence">
+                    <header>
+                        <button string="Confirm" name="action_confirm" states="draft" type="object"
+                                groups="hr.group_hr_manager"
+                                class="oe_highlight"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_id" attrs="{'readonly': [('state', '=', 'confirmed')]}"
+                                       required="1"
+                                       options="{'no_open':True,'no_create_edit':True,'no_quick_create':True,}"/>
+                                <field name="num_days"
+                                       attrs="{'readonly': [('state', '=', 'confirmed')]}" required="1"/>
+                            </group>
+                            <group>
+                                <field name="date" required="1" attrs="{'readonly': [('state', '=', 'confirmed')]}"/>
+
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_absence_form_tree" model="ir.ui.view">
+            <field name="name">Absence</field>
+            <field name="model">hr.absence</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="num_days"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_view_absence" model="ir.actions.act_window">
+            <field name="name">Absence</field>
+            <field name="res_model">hr.absence</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

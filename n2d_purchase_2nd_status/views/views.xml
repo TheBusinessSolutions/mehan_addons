@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_form_custom_2nd_status" model="ir.ui.view">
+            <field name="name">purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="state" position="replace">
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,sent,quotation,purchase"/>
+                </field>
+                <xpath expr="//button[@name='button_confirm'][1]" position="replace">
+                    <button name="button_confirm" type="object" string="Confirm Order"
+                            class="oe_highlight" id="bid_confirm" data-hotkey="v"
+                            attrs="{'invisible': [('state', 'not in', ['quotation'])]}"
+                            groups="n2d_purchase_2nd_status.n2d_purchase_confirm_group"/>
+                </xpath>
+                <xpath expr="//button[@name='button_confirm'][2]" position="replace">
+                    <button name="button_confirm" type="object" string="Confirm Order"
+                            id="draft_confirm" invisible="1"/>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button name="action_quotation" type="object" string="Confirm"
+                            attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"
+                            groups="purchase.group_purchase_user"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

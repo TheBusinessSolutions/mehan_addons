@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_vat_report,access_vat_report,n2d_vat_report.model_vat_report,,1,1,1,1
+
+

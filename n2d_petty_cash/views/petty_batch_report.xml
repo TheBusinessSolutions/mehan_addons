@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="n2d_petty_cash.petty_batch">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="ptotal" t-value="0"/>
+                    <div class="page">
+                        <style>
+                            .pims_report_content{
+                            font-size: 14px;
+                            font-family" 'Arial';
+                            padding:1px;
+                            }
+
+                            .pims_report_line_table {
+                            width:100%;
+                            padding:1px;
+                            }
+
+                            .pims_report_line_main_tr {
+                            font-weight:bold;
+                            font-size: 14px;
+                            font-family" 'Arial';
+                            border-bottom:1px solid grey;
+                            padding:1px;
+                            }
+
+                            .pims_report_line_initial_tr {
+                            font-style:italic;
+                            }
+
+                            .pims_report_line_data_tr {
+                            font-style:inherit;
+                            }
+
+                            .pims_report_line_subtotal {
+                            font-weight:bold;
+                            background-color: white;
+                            border:1px solid grey;
+                            padding:2px;
+                            }
+                        </style>
+
+                        <h3 style="margin-top:50px;">Petty Batch Report</h3>
+
+                        <div class="row mt32 pims_report_content">
+                            <div class="col-3">
+                                <strong>Petty Batch ID</strong>
+                                <p t-field="o.sequence"></p>
+                            </div>
+                            <div class="col-3">
+                                <strong>Employee</strong>
+                                <p t-field="o.employee_id"></p>
+                            </div>
+                            <div class="col-3">
+                                <strong>Date</strong>
+                                <p t-field="o.batch_date"></p>
+                            </div>
+                            <div class="col-3">
+                                <strong>Document ID</strong>
+                                <p t-field="o.document_id"></p>
+                            </div>
+                        </div>
+                        <br/>
+                        <table class="pims_report_line_table pims_report_content">
+                            <thead>
+                                <t>
+                                    <tr class="text-center" style="border: 1px solid;padding:2px;">
+                                        <th style="text-align:center; border: 1px solid;">Account</th>
+                                        <th style="text-align:center; border: 1px solid;">Label</th>
+                                        <th style="text-align:center; border: 1px solid;">Vendor</th>
+                                        <th style="text-align:center; border: 1px solid;">Description</th>
+                                        <th style="text-align:center; border: 1px solid;">Product</th>
+                                        <th style="text-align:center; border: 1px solid;">Price</th>
+                                        <th style="text-align:center; border: 1px solid;">Quantity</th>
+                                        <th style="text-align:center; border: 1px solid;">Discount</th>
+                                        <th style="text-align:center; border: 1px solid;">VAT</th>
+                                        <th style="text-align:center; border: 1px solid;">Sub Total</th>
+                                        <th style="text-align:center; border: 1px solid;">Total</th>
+                                        <th style="text-align:center; border: 1px solid;">Analytic Account</th>
+                                        <th style="text-align:center; border: 1px;">Amount</th>
+                                    </tr>
+                                </t>
+                            </thead>
+                            <t t-foreach="o.line_ids" t-as="line">
+                                <tr class="pims_report_line_initial_tr">
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.account_id"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.label"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.partner_id"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.description"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.product_id"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.price"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.quantity"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.discount"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.tax_id"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.sub_total"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.total"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.analytic_account_id"></span>
+                                    </td>
+                                    <td style="border: 1px solid;">
+                                        <span t-field="line.amount"></span>
+                                        <t t-set="ptotal" t-value="ptotal+line.amount"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+
+                        <div style="text-align:right;background-color:black;color:white;padding:15px;">
+                            <strong>
+                                Total PC:
+                            </strong>
+                            <strong t-esc="ptotal"></strong>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <record id="paperformat_pettycash" model="report.paperformat">
+        <field name="name">Petty Batch Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report id="action_print_petty_batch"
+            model="petty.batch"
+            report_type="qweb-pdf"
+            paperformat="n2d_petty_cash.paperformat_pettycash"
+            menu="True"
+            string="Petty Batch Report"
+            name="n2d_petty_cash.petty_batch"
+            file="n2d_petty_cash.petty_batch"
+    />
+
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="account_payment_report_num2words" inherit_id="account.report_payment_receipt_document">
+        <xpath expr="//div[@class='page']//div[1]//div[3]" position="replace">
+            <div class="row">
+                <div class="col-6" t-if="o.amount">
+                    <strong>Payment Amount:</strong>
+                    <span t-field="o.amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                </div>
+                <div class="col-6" t-if="o.communication">
+                    <strong>Memo:</strong>
+                    <span t-field="o.communication"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" t-if="o.amount">
+                    <strong>Total In Arabic:
+                        <t t-esc="o.get_number_in_words(o.amount,'ar')"/>
+                    </strong>
+                </div>
+                <div class="col-6" t-if="o.amount">
+                    <strong>
+                        Total In English:
+                        <t t-esc="o.get_number_in_words(o.amount,'en')"/>
+                    </strong>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

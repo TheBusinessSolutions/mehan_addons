@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+		<record id="ir_seq_checklist_document" model="ir.sequence">
+			<field name="name">Employee Checklist Document</field>
+			<field name="code">custom.employee.checklist.document</field>
+			<field name="prefix">Doc/</field>
+			<field name="padding">4</field>
+			<field name="number_increment">1</field>
+			<field name="number_next_actual">1</field>
+			<field name="implementation">standard</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,743 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/sh_backmate_theme_adv/static/src/fonts/icomoon.eot?74e8p9');
+  src:  url('/sh_backmate_theme_adv/static/src/fonts/icomoon.eot?74e8p9#iefix') format('embedded-opentype'),
+    url('/sh_backmate_theme_adv/static/src/fonts/icomoon.woff2?74e8p9') format('woff2'),
+    url('/sh_backmate_theme_adv/static/src/fonts/icomoon.ttf?74e8p9') format('truetype'),
+    url('/sh_backmate_theme_adv/static/src/fonts/icomoon.woff?74e8p9') format('woff'),
+    url('/sh_backmate_theme_adv/static/src/fonts/icomoon.svg?74e8p9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="sh-"], [class*=" sh-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sh-sh_backmate_theme_adv_sh_dynamic_action_action_menu:before {
+  content: "\e98b";
+}
+.sh-sh_backmate_theme_adv_sh_dynamic_action_action_menu-dt .path1:before {
+  content: "\e98c";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-sh_backmate_theme_adv_sh_dynamic_action_action_menu-dt .path2:before {
+  content: "\e98d";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-sign_menu_document:before {
+  content: "\e9b2";
+}
+.sh-sign_menu_document-dt .path1:before {
+  content: "\e9b3";
+  color: rgb(57, 57, 57);
+}
+.sh-sign_menu_document-dt .path2:before {
+  content: "\e9b4";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-account_consolidation_menu_consolidation:before {
+  content: "\e9b5";
+}
+.sh-account_consolidation_menu_consolidation-dt .path1:before {
+  content: "\e9b6";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-account_consolidation_menu_consolidation-dt .path2:before {
+  content: "\e9b7";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-iot_iot_menu_root:before {
+  content: "\e9ac";
+}
+.sh-iot_iot_menu_root-dt .path1:before {
+  content: "\e9ad";
+  color: rgb(57, 57, 57);
+}
+.sh-iot_iot_menu_root-dt .path2:before {
+  content: "\e9ae";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-quality_control_menu_quality_root:before {
+  content: "\e99d";
+}
+.sh-quality_control_menu_quality_root-dt .path1:before {
+  content: "\e99b";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-quality_control_menu_quality_root-dt .path2:before {
+  content: "\e9b9";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-data_cleaning_menu_data_cleaning_root:before {
+  content: "\e9af";
+}
+.sh-data_cleaning_menu_data_cleaning_root-dt .path1:before {
+  content: "\e9b0";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-data_cleaning_menu_data_cleaning_root-dt .path2:before {
+  content: "\e9b1";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-website_menu_website_configuration:before {
+  content: "\e98a";
+}
+.sh-website_menu_website_configuration-dt .path1:before {
+  content: "\e987";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-website_menu_website_configuration-dt .path2:before {
+  content: "\e988";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-utm_menu_link_tracker_root:before {
+  content: "\e99e";
+}
+.sh-utm_menu_link_tracker_root-dt .path1:before {
+  content: "\e9a0";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-utm_menu_link_tracker_root-dt .path2:before {
+  content: "\e9a1";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-helpdesk_menu_helpdesk_root:before {
+  content: "\e99c";
+}
+.sh-helpdesk_menu_helpdesk_root-dt .path1:before {
+  content: "\e99f";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-helpdesk_menu_helpdesk_root-dt .path2:before {
+  content: "\e9ba";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-survey_menu_surveys:before {
+  content: "\e9ab";
+}
+.sh-survey_menu_surveys-dt .path1:before {
+  content: "\e975";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-survey_menu_surveys-dt .path2:before {
+  content: "\e976";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-im_livechat_menu_livechat_root:before {
+  content: "\e989";
+}
+.sh-im_livechat_menu_livechat_root-dt .path1:before {
+  content: "\e985";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-im_livechat_menu_livechat_root-dt .path2:before {
+  content: "\e986";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-lunch_menu_lunch:before {
+  content: "\e906";
+}
+.sh-lunch_menu_lunch-dt .path1:before {
+  content: "\e956";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-lunch_menu_lunch-dt .path2:before {
+  content: "\e957";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_expense_menu_hr_expense_root:before {
+  content: "\e907";
+}
+.sh-hr_expense_menu_hr_expense_root-dt .path1:before {
+  content: "\e94d";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-hr_expense_menu_hr_expense_root-dt .path2:before {
+  content: "\e950";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_holidays_menu_hr_holidays_root:before {
+  content: "\e910";
+}
+.sh-hr_holidays_menu_hr_holidays_root-dt .path1:before {
+  content: "\e981";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-hr_holidays_menu_hr_holidays_root-dt .path2:before {
+  content: "\e982";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-stock_menu_stock_root:before {
+  content: "\e913";
+}
+.sh-stock_menu_stock_root-dt .path1:before {
+  content: "\e95b";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-stock_menu_stock_root-dt .path2:before {
+  content: "\e964";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-mass_mailing_sms_mass_mailing_sms_menu_root:before {
+  content: "\e915";
+}
+.sh-mass_mailing_sms_mass_mailing_sms_menu_root-dt .path1:before {
+  content: "\e977";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-mass_mailing_sms_mass_mailing_sms_menu_root-dt .path2:before {
+  content: "\e978";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-account_menu_finance:before {
+  content: "\e926";
+}
+.sh-account_menu_finance-dt .path1:before {
+  content: "\e954";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-account_menu_finance-dt .path2:before {
+  content: "\e955";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-contacts_menu_contacts:before {
+  content: "\e929";
+}
+.sh-contacts_menu_contacts-dt .path1:before {
+  content: "\e93a";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-contacts_menu_contacts-dt .path2:before {
+  content: "\e93b";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-calendar_mail_menu_calendar:before {
+  content: "\e92b";
+}
+.sh-calendar_mail_menu_calendar-dt .path1:before {
+  content: "\e971";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-calendar_mail_menu_calendar-dt .path2:before {
+  content: "\e972";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-account_accountant_menu_accounting:before {
+  content: "\e900";
+}
+.sh-account_accountant_menu_accounting-dt .path1:before {
+  content: "\e92d";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-account_accountant_menu_accounting-dt .path2:before {
+  content: "\e92e";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_appraisal_menu_hr_appraisal_root:before {
+  content: "\e901";
+}
+.sh-hr_appraisal_menu_hr_appraisal_root-dt .path1:before {
+  content: "\e92f";
+  color: rgb(57, 57, 57);
+}
+.sh-hr_appraisal_menu_hr_appraisal_root-dt .path2:before {
+  content: "\e9b8";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-approvals_approvals_menu_root:before {
+  content: "\e902";
+}
+.sh-approvals_approvals_menu_root-dt .path1:before {
+  content: "\e930";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-approvals_approvals_menu_root-dt .path2:before {
+  content: "\e931";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-base_menu_management:before {
+  content: "\e903";
+}
+.sh-base_menu_management-dt .path1:before {
+  content: "\e949";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-base_menu_management-dt .path2:before {
+  content: "\e94c";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_attendance_menu_hr_attendance_root:before {
+  content: "\e904";
+}
+.sh-hr_attendance_menu_hr_attendance_root-dt .path1:before {
+  content: "\e934";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-hr_attendance_menu_hr_attendance_root-dt .path2:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-stock_barcode_stock_barcode_menu:before {
+  content: "\e905";
+}
+.sh-stock_barcode_stock_barcode_menu-dt .path1:before {
+  content: "\e936";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-stock_barcode_stock_barcode_menu-dt .path2:before {
+  content: "\e937";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-crm_crm_menu_root:before {
+  content: "\e908";
+}
+.sh-crm_crm_menu_root-dt .path1:before {
+  content: "\e93c";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-crm_crm_menu_root-dt .path2:before {
+  content: "\e93d";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-base_menu_board_root:before {
+  content: "\e909";
+}
+.sh-base_menu_board_root-dt .path1:before {
+  content: "\e93e";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-base_menu_board_root-dt .path2:before {
+  content: "\e93f";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-mail_menu_root_discuss:before {
+  content: "\e90a";
+}
+.sh-mail_menu_root_discuss-dt .path1:before {
+  content: "\e940";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-mail_menu_root_discuss-dt .path2:before {
+  content: "\e941";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-documents_menu_root:before {
+  content: "\e90b";
+}
+.sh-documents_menu_root-dt .path1:before {
+  content: "\e942";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-documents_menu_root-dt .path2:before {
+  content: "\e943";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-website_slides_website_slides_menu_root:before {
+  content: "\e90c";
+}
+.sh-website_slides_website_slides_menu_root-dt .path1:before {
+  content: "\e944";
+  color: rgb(57, 57, 57);
+}
+.sh-website_slides_website_slides_menu_root-dt .path2:before {
+  content: "\e945";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-mass_mailing_mass_mailing_menu_root:before {
+  content: "\e90d";
+}
+.sh-mass_mailing_mass_mailing_menu_root-dt .path1:before {
+  content: "\e946";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-mass_mailing_mass_mailing_menu_root-dt .path2:before {
+  content: "\e947";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_menu_hr_root:before {
+  content: "\e90e";
+}
+.sh-hr_menu_hr_root-dt .path1:before {
+  content: "\e953";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-hr_menu_hr_root-dt .path2:before {
+  content: "\e958";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-event_event_main_menu:before {
+  content: "\e90f";
+}
+.sh-event_event_main_menu-dt .path1:before {
+  content: "\e94a";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-event_event_main_menu-dt .path2:before {
+  content: "\e94b";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-industry_fsm_fsm_menu_root:before {
+  content: "\e911";
+}
+.sh-industry_fsm_fsm_menu_root-dt .path1:before {
+  content: "\e94e";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-industry_fsm_fsm_menu_root-dt .path2:before {
+  content: "\e94f";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-fleet_menu_root:before {
+  content: "\e912";
+}
+.sh-fleet_menu_root-dt .path1:before {
+  content: "\e951";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-fleet_menu_root-dt .path2:before {
+  content: "\e952";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-maintenance_menu_maintenance_title:before {
+  content: "\e916";
+}
+.sh-maintenance_menu_maintenance_title-dt .path1:before {
+  content: "\e959";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-maintenance_menu_maintenance_title-dt .path2:before {
+  content: "\e95a";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-mrp_menu_mrp_root:before {
+  content: "\e917";
+}
+.sh-mrp_menu_mrp_root-dt .path1:before {
+  content: "\e965";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-mrp_menu_mrp_root-dt .path2:before {
+  content: "\e966";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-marketing_automation_marketing_automation_menu:before {
+  content: "\e918";
+}
+.sh-marketing_automation_marketing_automation_menu-dt .path1:before {
+  content: "\e95c";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-marketing_automation_marketing_automation_menu-dt .path2:before {
+  content: "\e95d";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-note_menu_note_notes:before {
+  content: "\e919";
+}
+.sh-note_menu_note_notes-dt .path1:before {
+  content: "\e95e";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-note_menu_note_notes-dt .path2:before {
+  content: "\e95f";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_work_entry_contract_enterprise_menu_hr_payroll_root:before {
+  content: "\e91a";
+}
+.sh-hr_work_entry_contract_enterprise_menu_hr_payroll_root-dt .path1:before {
+  content: "\e960";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-hr_work_entry_contract_enterprise_menu_hr_payroll_root-dt .path2:before {
+  content: "\e961";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-planning_planning_menu_root:before {
+  content: "\e91b";
+}
+.sh-planning_planning_menu_root-dt .path1:before {
+  content: "\e962";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-planning_planning_menu_root-dt .path2:before {
+  content: "\e963";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-mrp_plm_menu_mrp_plm_root:before {
+  content: "\e91c";
+}
+.sh-mrp_plm_menu_mrp_plm_root-dt .path1:before {
+  content: "\e914";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-mrp_plm_menu_mrp_plm_root-dt .path2:before {
+  content: "\e932";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-point_of_sale_menu_point_root:before {
+  content: "\e91d";
+}
+.sh-point_of_sale_menu_point_root-dt .path1:before {
+  content: "\e969";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-point_of_sale_menu_point_root-dt .path2:before {
+  content: "\e96a";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-project_menu_main_pm:before {
+  content: "\e91e";
+}
+.sh-project_menu_main_pm-dt .path1:before {
+  content: "\e97d";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-project_menu_main_pm-dt .path2:before {
+  content: "\e97e";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-purchase_menu_purchase_root:before {
+  content: "\e91f";
+}
+.sh-purchase_menu_purchase_root-dt .path1:before {
+  content: "\e967";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-purchase_menu_purchase_root-dt .path2:before {
+  content: "\e968";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_recruitment_menu_hr_recruitment_root:before {
+  content: "\e920";
+}
+.sh-hr_recruitment_menu_hr_recruitment_root-dt .path1:before {
+  content: "\e96b";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-hr_recruitment_menu_hr_recruitment_root-dt .path2:before {
+  content: "\e96c";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_referral_menu_hr_referral_root:before {
+  content: "\e921";
+}
+.sh-hr_referral_menu_hr_referral_root-dt .path1:before {
+  content: "\e96d";
+  color: rgb(57, 57, 57);
+}
+.sh-hr_referral_menu_hr_referral_root-dt .path2:before {
+  content: "\e96e";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-sale_renting_rental_menu_root:before {
+  content: "\e922";
+}
+.sh-sale_renting_rental_menu_root-dt .path1:before {
+  content: "\e96f";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-sale_renting_rental_menu_root-dt .path2:before {
+  content: "\e970";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-repair_menu_repair_order:before {
+  content: "\e923";
+}
+.sh-repair_menu_repair_order-dt .path1:before {
+  content: "\e933";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-repair_menu_repair_order-dt .path2:before {
+  content: "\e938";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-sale_sale_menu_root:before {
+  content: "\e924";
+}
+.sh-sale_sale_menu_root-dt .path1:before {
+  content: "\e973";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-sale_sale_menu_root-dt .path2:before {
+  content: "\e974";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-base_menu_administration:before {
+  content: "\e925";
+}
+.sh-base_menu_administration-dt .path1:before {
+  content: "\e939";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-base_menu_administration-dt .path2:before {
+  content: "\e948";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-social_menu_social_global:before {
+  content: "\e927";
+}
+.sh-social_menu_social_global-dt .path1:before {
+  content: "\e979";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-social_menu_social_global-dt .path2:before {
+  content: "\e97a";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-sale_subscription_menu_sale_subscription_root:before {
+  content: "\e928";
+}
+.sh-sale_subscription_menu_sale_subscription_root-dt .path1:before {
+  content: "\e97b";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-sale_subscription_menu_sale_subscription_root-dt .path2:before {
+  content: "\e97c";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-base_menu_tests:before {
+  content: "\e92a";
+}
+.sh-base_menu_tests-dt .path1:before {
+  content: "\e97f";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-base_menu_tests-dt .path2:before {
+  content: "\e980";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}
+.sh-hr_timesheet_timesheet_menu_root:before {
+  content: "\e92c";
+}
+.sh-hr_timesheet_timesheet_menu_root-dt .path1:before {
+  content: "\e983";
+  color: rgb(57, 57, 57);
+  opacity: 0.4;
+}
+.sh-hr_timesheet_timesheet_menu_root-dt .path2:before {
+  content: "\e984";
+  margin-left: -1em;
+  color: rgb(57, 57, 57);
+}

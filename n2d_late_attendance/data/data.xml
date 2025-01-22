@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr_rule_late_absence" model="hr.salary.rule">
+            <field name="name">Late Attendance</field>
+            <field name="sequence" eval="101"/>
+            <field name="code">LATT</field>
+            <field name="category_id" ref="hr_payroll_community.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = -payslip.late_attendace_amount</field>
+        </record>
+        <record id="hr_rule_basic" model="hr.salary.rule">
+            <field name="name">Paid Holidays</field>
+            <field name="sequence" eval="1"/>
+            <field name="code">PH</field>
+            <field name="category_id" ref="hr_payroll_community.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = (contract.wage / 30) * 4</field>
+        </record>
+    </data>
+</odoo>

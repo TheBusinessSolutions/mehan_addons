@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_employee_inherit" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@type='action']" position="after">
+                    <button name="approve" string="Approve" type="object" groups="hr.group_hr_manager"/>
+                    <field name="state" widget="statusbar"/>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="after">
+                    <field name="sector"/>
+                    <field name="administration"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

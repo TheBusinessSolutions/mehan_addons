@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="site_allowance_wizard_form_view" model="ir.ui.view">
+        <field name="name">site.allowance.wizard.form</field>
+        <field name="model">site.allowance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Site Report">
+                <group col="4">
+                    <field name="employee_id" required="1"/>
+                    <field name="site_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="get_data" type="object" string="Print" class="btn-primary"/>
+                    <button special="cancel" string="Cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_site_allowance_report_wizard" model="ir.actions.act_window">
+        <field name="name">Site Allowance Report</field>
+        <field name="res_model">site.allowance.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+
+    <menuitem id="site_allowance_report_wizard_menu" name="Employee Site Report" action="action_site_allowance_report_wizard"
+              parent="work_sites_menu_root" sequence="15"/>
+
+</odoo>

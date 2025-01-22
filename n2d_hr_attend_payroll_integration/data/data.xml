@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr_rule_attendance" model="hr.salary.rule">
+            <field name="name">Attendance</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">Attend</field>
+            <field name="category_id" ref="hr_payroll_community.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = -payslip.attend_amount</field>
+        </record>
+    </data>
+</odoo>

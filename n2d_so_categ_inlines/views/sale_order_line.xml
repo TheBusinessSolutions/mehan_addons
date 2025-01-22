@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="done_date"/>
+                    <field name="mr_id"/>
+                    <field name="subcontractor_id"/>
+                    <field name="status"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="tcr"/>
+                    <field name="database_db"/>
+                    <field name="site_id"/>
+                    <field name="request_date"/>
+                </xpath>
+                <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="before">
+                    <field name="cate_id" required="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="domain">[('categ_id', '=', cate_id)]</attribute>
+                </xpath>
+<!--                <xpath expr="//field[@name='order_line']/tree/field[@name='analytic_tag_ids']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+                    <attribute name="string">TCR</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="attributes">
+                    <attribute name="groups">sales_team.group_sale_manager</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
+                    <attribute name='groups'>sales_team.group_sale_manager</attribute>
+                </xpath>
+<!--                 <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">-->
+<!--                    <field name="strap_tag_id"/>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+
+
+        <record id="sale_order_view_tree" model="ir.ui.view">
+            <field name="name">	sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='state']" position="before">
+                    <field name="done_date"/>
+                    <field name="origin"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="quotation_order_view_tree" model="ir.ui.view">
+            <field name="name">	sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='state']" position="before">
+                    <field name="done_date"/>
+                    <field name="origin"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_tree_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+<!--                <xpath expr="//field[@name='order_date']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="mr_id"/>
+                    <field name="subcontractor_id"/>
+                    <field name="status"/>
+                    <field name="analytic_account_id" string="TCR" groups="analytic.group_analytic_accounting"/>
+                    <field name="amount_untaxed"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_date" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+<!--                <xpath expr="//field[@name='order_date']" position="attributes">-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <field name="mr_id"/>
+                    <field name="subcontractor_id"/>
+                    <field name="status"/>
+                    <field name="analytic_account_id" string="TCR" groups="analytic.group_analytic_accounting"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

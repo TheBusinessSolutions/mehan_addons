@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="asst_vat_invoice_layout" inherit_id="web.external_layout_standard"
+                  primary="True">
+            <xpath expr="//div[hasclass('header')]" position="replace">
+                <div class="header">
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>مؤسسة الخدمات النفطيه </strong>
+                                    <strong>المسانده التجاريه</strong>
+                                </td>
+                                <td style="text-align: right;">
+                                    <strong>
+                                        <strong>  مؤسسة الخدمات النفطيه </strong>
+                                    </strong>
+                                    <strong>المسانده التجاريه</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>عماره 3961 طريق الملك فيصل بن عبدالعزيز</td>
+                                <td style="text-align: right;">عماره 3961 طريق الملك فيصل بن عبدالعزيز</td>
+                            </tr>
+                            <tr>
+                                <td>(8579/32232) الخالديه الشماليه - الدمام</td>
+                                <td style="text-align: right;">(8579/32232) الخالديه الشماليه - الدمام</td>
+                            </tr>
+                            <tr>
+                                <td>المملكه العربيه السعوديه</td>
+                                <td style="text-align: right;">المملكه العربيه السعوديه</td>
+                            </tr>
+                            <tr>
+                                <td>(2050029548) رقم السجل التجاري رئيسي</td>
+                                <td style="text-align: right;">(2050029548) رقم السجل التجاري رئيسي</td>
+                            </tr>
+                            <tr>
+                                <td> رقم سجل فرعي 2050109028</td>
+                                <td style="text-align: right;">رقم سجل فرعي 2050109028 </td>
+                            </tr>
+                            <tr>
+                                <td> رقم التسجيل الضريبي : 300519628900003</td>
+                                <td style="text-align: right;">رقم التسجيل الضريبي : 300519628900003</td>
+                            </tr>
+                            <tr>
+                                <td>VAT No : 300519628900003</td>
+                                <td style="text-align: right;">رقم الضريبة : 300519628900003</td>
+                            </tr>
+                            <tr>
+                                <td>Contact: 00966138352044,00966596612577</td>
+                                <td style="text-align: right;">المسئول: 00966138352044,00966596612577</td>
+                            </tr>
+                            <tr>
+                                <td>Fax: 0096613832238</td>
+                                <td style="text-align: right;">فاكس: 0096613832238</td>
+                            </tr>
+                            <tr>
+                                <td>E-Mail:asst.accountant@oilserve.sa</td>
+                                <td style="text-align: right;">asst.accountant@oilserve.sa:البريد الاكتروني</td>
+                            </tr>
+                            <tr>
+                                <td>www.oilserver.com.sa</td>
+                                <td style="text-align: right;">www.oilserver.com.sa</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;" colspan="2">
+                                    <strong>VAT Invoice</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;" colspan="2">
+                                    <strong>فاتورة ضريبيه</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </xpath>
+
+            <xpath expr="//div[hasclass('footer')]" position="replace">
+                <div class="footer">
+                    <p style="align:center; text-align: center;border: 1px solid black;">Page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </p>
+
+                </div>
+            </xpath>
+        </template>
+
+
+        <template id="asst_vat_invoice_external_layout">
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+
+            <t t-call="n2d_annual_leave_allowance.asst_vat_invoice_layout">
+                <t t-raw="0"/>
+            </t>
+        </template>
+    </data>
+</odoo>

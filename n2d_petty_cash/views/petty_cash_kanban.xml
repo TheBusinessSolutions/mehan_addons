@@ -1,0 +1,136 @@
+<odoo>
+    <data>
+
+        <record id="employee_petty_cash_kanban_view" model="ir.ui.view">
+            <field name="name">hr.employee.petty.cash.kanban</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <kanban create="false">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div style="width: 30%;" class="o_kanban_record_has_image_fill">
+                                <field name="avatar_128" widget="image" class="o_kanban_image_fill_left"
+                                       options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
+                                <div class="oe_kanban_details">
+                                    <div class="o_kanban_record_top">
+                                        <div class="o_kanban_record_headings">
+                                            <div style="margin-bottom:2px; font-size: 23px;">
+                                                <strong>
+                                                    <field name="name"/>
+                                                </strong>
+                                            </div>
+                                            <div>
+                                                <button name="action_petty_cash_added" type="object"
+                                                        class="btn btn-link">
+                                                    <div>
+                                                        <span class="o_stat_value">Add In Cash :</span>
+                                                    </div>
+                                                </button>
+                                                <field name="petty_cash_total"/>
+                                            </div>
+                                            <div>
+                                                <button name="action_get_last_cash" type="object"
+                                                        class="btn btn-link">
+                                                    <div>
+                                                        <span class="o_stat_value">Last Add In Cash :</span>
+                                                    </div>
+                                                </button>
+                                                <field name="last_add_cash"/>
+                                            </div>
+                                            <div>
+                                                <button name="action_pay_from_petty" type="object"
+                                                        class="btn btn-link">
+                                                    <div>
+                                                        <span class="o_stat_value">Last Expense :
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                                <field name="cash_expense"/>
+                                            </div>
+                                            <div>
+                                                <button name="action_petty_reconcile" type="object"
+                                                        class="btn btn-link">
+                                                    <div>
+                                                        <span class="o_stat_value">Reconcile :
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                                <field name="reconcile_amount"/>
+                                            </div>
+                                            <div>
+                                                <button name="action_get_balance" type="object"
+                                                        class="btn btn-link">
+                                                    <div>
+                                                        <span class="o_stat_value">Balance :
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                                <field name="cash_balance"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="hr_employee_form_inherit_basic_mfz" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherit.mfz.basic</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/sheet//div[@name='button_box']" position="inside">
+
+                    <button name="get_employee_petty_cash" type="object" class="oe_stat_button" icon="fa-arrows-v"
+                            string="Petty cash"/>
+
+                </xpath>
+            </field>
+        </record>
+
+        <record id="petty_cash_employee_filter_inherit" model="ir.ui.view">
+            <field name="name">petty.cash.employee.filter.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/searchpanel" position="replace">
+
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="employee_petty_cash_kanban_action" model="ir.actions.act_window">
+            <field name="name">Dashboard</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">kanban</field>
+            <field name="domain">['|',('in_petty_ids', '!=', False),('out_petty_ids', '!=', False)]
+            </field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('employee_petty_cash_kanban_view')})]"/>
+        </record>
+
+        <record model="ir.actions.server" id="employee_petty_cash_kanban_server_action">
+            <field name="name">Hr Employee Server Action</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.check_petty_cash()
+            </field>
+        </record>
+
+
+        <menuitem
+                name="Dashboard"
+                id="employee_petty_cash_kanban_menu"
+                parent="menu_petty_cash"
+                action="employee_petty_cash_kanban_server_action"
+                sequence="1"
+        />
+
+    </data>
+</odoo>

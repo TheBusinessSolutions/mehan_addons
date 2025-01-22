@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="account_invoice_report_num2words" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[hasclass('clearfix')]" position="after">
+            <div>
+                <strong>
+                    Total In Arabic:
+                    <t t-esc="o.get_number_in_words(o.amount_total,'ar')"/>
+                    <br/>
+                    Total In English:
+                    <t t-esc="o.get_number_in_words(o.amount_total,'en')"/>
+                </strong>
+            </div>
+        </xpath>
+    </template>
+</odoo>

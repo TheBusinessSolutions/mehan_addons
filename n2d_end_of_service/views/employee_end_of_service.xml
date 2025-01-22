@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="employee_end_of_service_form" model="ir.ui.view">
+            <field name="name">employee.end.of.service.form</field>
+            <field name="model">employee.eos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object" states="draft" class="oe_highlight"/>
+                        <button name="action_done" string="Set Done" type="object" states="confirmed" class="oe_highlight"/>
+                        <button name="action_cancel" string="Cancel" type="object" states="draft" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,confirmed,done" nolabel="1"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="employee_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="employee_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="reason_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="journal_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="vacations_balance"/>
+                                <field name="remaining_loan"/>
+                                <field name="net_payment_amount"/>
+                                <field name="calculate_loan"/>
+                            </group>
+                            <group>
+                                <field name="amount"/>
+                                <field name="move_id" readonly="1"/>
+                                <field name="starting_from"/>
+                                <field name="to"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_end_of_service_tree" model="ir.ui.view">
+            <field name="name">employee.end.of.service.tree</field>
+            <field name="model">employee.eos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="reason_id"/>
+                    <field name="date"/>
+                    <field name="amount"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_employee_end_of_service">
+            <field name="name">Employee E.O.S</field>
+            <field name="res_model">employee.eos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

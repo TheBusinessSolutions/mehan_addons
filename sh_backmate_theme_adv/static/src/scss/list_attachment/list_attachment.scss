@@ -1,0 +1,29 @@
+.o_action_manager .o_content .o_list_view .sh_main_attachment_div{height: 40px;display: flex;align-items: center;}
+.o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item{background-color: $secondaryColor; padding:5px;transition: .5s all;}
+.o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item .sh_attachment_icon{width: 20px; height: 20px;}
+.o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item:hover{border-color: $primaryColor !important;}
+.o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item:not(.attachment_box_counter) .sh_attachment_name {white-space: nowrap !important;overflow: hidden;text-overflow: ellipsis;line-height: normal;width: 150px;}
+.o_web_client.modal-open .o_modal_fullscreen.show{background-color: transparent !important; overflow:  hidden !important;}
+
+
+@if $button_style=='style_1' {
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item{border-radius: 2px !important;}
+}
+@if $button_style=='style_2' {
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item{border-radius: 3px !important;}
+}
+@if $button_style=='style_3' {
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item{border-radius: 0px 15px 0px 15px !important;}
+}
+@if $button_style=='style_4' {
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item{border-radius: 50px !important;transition: all .5s;}
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item:hover{box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;transition: all .5s;}
+}
+@if $button_style=='style_5' {
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div .sh_attachment_item{border-radius: 0px !important;}
+}
+
+@include media-breakpoint-down(lg){
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div{height: 25px !important;}
+    .o_action_manager .o_content .o_list_view .sh_main_attachment_div .sh_inner_attachment_div{flex-wrap: nowrap !important;overflow: auto;width: 100%;justify-content: start !important;}
+}

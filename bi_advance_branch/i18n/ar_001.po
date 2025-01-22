@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_advance_branch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-30 12:53+0000\n"
+"PO-Revision-Date: 2022-09-30 18:25+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_advance_branch
+#: model:ir.model.fields,field_description:bi_advance_branch.field_res_branch__apply_prefix
+msgid "Apply Branch Sequence Prefix ??"
+msgstr "تطبيق بادئة تسلسل الفرع ؟؟"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_res_branch
+msgid "Branch"
+msgstr "فرع شجرةفرع"
+
+#. module: bi_advance_branch
+#: model:ir.model.fields,field_description:bi_advance_branch.field_res_branch__branch_logo
+msgid "Branch Logo"
+msgstr "شعار الفرع"
+
+#. module: bi_advance_branch
+#: model:ir.model.fields,field_description:bi_advance_branch.field_res_branch__prefix
+msgid "Branch Sequence Prefix"
+msgstr "بادئة تسلسل الفرع"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Branch:"
+msgstr "فرع:"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليوميةإفتتاحية المجلة"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Logo"
+msgstr "شعار"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.res_branch_ir_sequence_view_
+msgid "Name"
+msgstr "اسم"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "الصفحة: <span class = \"page\" /> / <span class = \"topage\" />"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_account_payment
+msgid "Payments"
+msgstr "المدفوعاتالمدفوعات"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Phone:"
+msgstr "هاتف:"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: bi_advance_branch
+#: code:addons/bi_advance_branch/models/ir_sequence_branch.py:0
+#: model:ir.model.constraint,message:bi_advance_branch.constraint_res_branch_prefix_branch_uniq
+#, python-format
+msgid "The prefix per branch must be unique !"
+msgstr "يجب أن تكون البادئة لكل فرع فريدة!"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_stock_picking
+msgid "Transfer"
+msgstr "الشحنة"

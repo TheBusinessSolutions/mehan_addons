@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_employee_form_inherit_leaves" model="ir.ui.view">
+            <field name="name">view.employee.form.inherit.leaves</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_phone']" position="after">
+                    <field name="hiring_date"/>
+                    <field name="is_muslim"/>
+                </xpath>
+                <field name="passport_id" position="after">
+                    <field name="pass_expiration_date"/>
+                </field>
+                <field name="identification_id" position="after">
+                    <field name="id_expiration_date"/>
+                </field>
+                <xpath expr="//field[@name='leave_manager_id']" position="after">
+                    <field name="last_vacation_date"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem
+                id="annual_leave_allowances_main_menu"
+                parent="hr.menu_hr_root"
+                action="n2d_annual_leave_allowance.action_annual_eave_allowances"
+                name="Annual Leave Allowances"/>
+    </data>
+</odoo>

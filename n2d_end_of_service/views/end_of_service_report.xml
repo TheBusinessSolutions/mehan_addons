@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_end_of_service_template">
+            <t t-call="web.html_container">
+                <t t-call="n2d_end_of_service.end_of_service_external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <div class="page">
+                            <table style="width: 100%;margin-top: 15px;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Name</strong>
+                                        </td>
+                                        <td>
+                                            <strong>:
+                                                <span t-field="o.employee_id"/>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <strong>Hiring Date</strong>
+                                        </td>
+                                        <td>
+                                            <strong>:
+                                                <span t-field="o.employee_id.hiring_date"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Contract Start :</strong>
+                                        </td>
+                                        <td>
+                                            <strong>:
+                                                <span t-field="o.employee_id.contract_id.date_start"/>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <strong>Contract End :</strong>
+                                        </td>
+                                        <td>
+                                            <strong>:
+                                                <span t-field="o.employee_id.contract_id.date_end"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Title</strong>
+                                        </td>
+                                        <td>
+                                            <strong>:
+                                                <span t-field="o.employee_id.job_id"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Salary</strong>
+                                        </td>
+                                        <td>
+                                            <strong>:
+                                                <span t-field="o.employee_id.contract_id.wage"/>
+
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <strong>Allowances:</strong>
+                                            <span t-esc="o.employee_id.contract_id.get_total_allowance()"/>
+                                        </td>
+                                        <td>
+                                            <strong>:
+                                                <strong>Total:</strong>
+                                                <span t-esc="o.employee_id.contract_id.get_total_allowance() + o.employee_id.contract_id.wage"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <hr style="background-color:'black'; margin:4px 0 12px 0;"/>
+                                        </td>
+                                    </tr>
+                                    <t t-set="ll" t-value="o.get_last_leave()"/>
+                                    <t t-set="al" t-value="o.compute_leave_allowances()"/>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Last Vacation Date (LVD)</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="ll">
+                                                <strong>:
+                                                    <span t-field="o.date"/>
+                                                </strong>
+                                            </t>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Vacation Balance (Days)</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <strong>:
+                                                <span t-field="o.employee_id.leaves_count"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Starting From</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <strong>
+                                                <span t-field="o.starting_from"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>To</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <strong>
+                                                <span t-field="o.to"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <hr style="background-color:'black'; margin:4px 0 12px 0;"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Vacation Pay</strong>
+                                        </td>
+                                        <td>
+                                            <strong>
+                                                <span t-esc="o.vacations_balance"/>
+                                            </strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="al">
+                                                <strong>:
+                                                    <t t-esc="al" digits="(14,3)"/>
+                                                </strong>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4">
+                                            <strong style="text-decoration: underline;">Employee Receivale &amp; Other
+                                                Deductions
+                                            </strong>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Deduction Loan Balance</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <strong>:
+                                                <span t-esc="o.remaining_loan"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Net Payable Amount</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <strong>:
+                                                <span t-esc="o.net_payment_amount"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Vacation Balance (VB) (Days)</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <strong>:
+                                                <span t-esc="o.vacations_balance"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr colspan="4">
+                                        <br/>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="padding:40px">
+                                            <div class="text-center">
+                                                --------------------------------------
+                                                <br/>
+                                                <strong style="text-align: center">Finance</strong>
+                                            </div>
+                                        </td>
+                                        <td colspan="2" class="text-center">
+                                            --------------------------------------
+                                            <br/>
+                                            <strong style="text-align: center">
+                                                <span t-field="o.employee_id"/>
+                                            </strong>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr style="padding:20px">
+                                        <td colspan="2" class="text-center">
+                                            --------------------------------------
+                                            <br/>
+                                            <strong style="text-align: center">HR Department</strong>
+
+
+                                        </td>
+                                        <td colspan="2" class="text-center">
+                                            --------------------------------------
+                                            <br/>
+                                            <strong style="text-align: center">Department Manager</strong>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report
+                id="end_of_service_report"
+                model="employee.eos"
+                string="End Of Service"
+                report_type="qweb-pdf"
+                name="n2d_end_of_service.report_end_of_service_template"
+                file="n2d_end_of_service.report_end_of_service_template"
+                menu="True"/>
+    </data>
+</odoo>

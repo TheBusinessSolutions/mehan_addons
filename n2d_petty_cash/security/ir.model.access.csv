@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cash_in_petty,access_cash_in_petty,n2d_petty_cash.model_cash_in_petty,,1,1,1,0
+access_cash_from_petty,access_cash_from_petty,n2d_petty_cash.model_cash_from_petty,,1,1,1,1
+access_cash_to_petty,access_cash_to_petty,n2d_petty_cash.model_cash_to_petty,,1,1,1,0
+access_cash_to_petty,access_cash_to_petty,n2d_petty_cash.model_cash_to_petty,,1,1,1,0
+access_petty_batch,access_petty_batch,n2d_petty_cash.model_petty_batch,,1,1,1,0
+access_petty_batch_line,access_petty_batch_line,n2d_petty_cash.model_petty_batch_line,,1,1,1,0

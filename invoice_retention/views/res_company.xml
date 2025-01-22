@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+	
+    <record id="view_res_company_retention_product_configuration" model="ir.ui.view">
+        <field name="name">res.company.retention.product.configuration</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//notebook" position="inside">
+        		<page name = "retention_config" string="Retention Configuration">
+        			 <group string="Retention Product">
+        			 	<field name="retention_product_id"/> 
+        			 	<field name="retention_percentage"/> 
+        			 </group>
+        		</page> 
+        	</xpath>
+        </field>
+    </record>
+    	
+</odoo>

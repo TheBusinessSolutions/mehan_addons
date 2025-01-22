@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="cash_from_petty_form" model="ir.ui.view">
+            <field name="name">Purchase from petty cash</field>
+            <field name="model">cash.from.petty</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Approve" name="action_approve" states="draft" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_approval"/>
+
+                        <button string="Reject" name="action_reject" states="draft,approved,confirmed" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_confirmation"/>
+
+                        <button string="Confirm" name="action_confirm" states="approved" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_confirmation"/>
+
+                        <button string="Set to Draft" name="set_to_draft" states="rejected" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_confirmation"/>
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approved,confirmed"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_id" required="1"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="amount" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="lab" required="1"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="batch_date" required="1"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <!--                                <field name="product_id" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>-->
+                                <!--                                <field name="price" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>-->
+                                <!--                                <field name="quantity" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>-->
+                                <!--                                <field name="discount" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>-->
+                            </group>
+                            <group>
+                                <field name="partner_id" required="1"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="move_id" readonly="1"/>
+                                <field name="entry_state" invisible="1"/>
+                                <field name="account_id" groups="n2d_petty_cash.group_petty_cash_confirmation"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="analytic_account_id" required="1"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <!--                                <field name="tax_id" widget="many2many_tags"-->
+                                <!--                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>-->
+                                <!--                                <field name="total" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>-->
+                                <!--                                <field name="description" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>-->
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="cash_from_petty_tree" model="ir.ui.view">
+            <field name="name">Purchase from petty cash</field>
+            <field name="model">cash.from.petty</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="amount"/>
+                    <field name="partner_id"/>
+                    <field name="state"/>
+                    <!--                    <field name="product_id"/>-->
+                    <!--                    <field name="price"/>-->
+                    <!--                    <field name="quantity"/>-->
+                    <!--                    <field name="discount"/>-->
+                    <!--                    <field name="tax_id"/>-->
+                    <!--                    <field name="total"/>-->
+                    <!--                    <field name="description"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cash_from_petty" model="ir.actions.act_window">
+            <field name="name">Purchase from petty cash</field>
+            <field name="res_model">cash.from.petty</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Purchase from petty cash" id="menu_cash_from_petty"
+                  parent="menu_petty_cash"/>
+        <menuitem name="Single Line" id="menu_single_line" action="action_cash_from_petty"
+                  parent="menu_cash_from_petty"/>
+    </data>
+</odoo>

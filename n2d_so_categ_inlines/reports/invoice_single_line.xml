@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id="multi_order_single_line"
+                model="account.invoice"
+                string="Invoice Single Line"
+                report_type="qweb-pdf"
+                name="n2d_so_categ_inlines.invoice_single_line_template"
+                file="n2d_so_categ_inlines.invoice_single_line_template"
+                attachment_use="False"
+                menu="True"/>
+
+        <template id="multi_order_single_line_template">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <div class="page">
+                    <div class="col-xs-5 col-xs-offset-7">
+                        <strong class="text-right">
+                            Frame Agreement:
+                            <t t-if="o.invoice_line_ids and o.invoice_line_ids[0].analytic_tag_ids">
+                                <t t-esc="o.invoice_line_ids[0].analytic_tag_ids[0].frame_agreement"/>
+                            </t>
+                            <br/>
+                            <strong class="text-right">
+                                Tax No:
+                                <t class="text-right" t-esc="o.company_id.tax_no"/>
+                                <br/>
+                            </strong>
+                            <strong class="text-right">
+                                Tax File No:
+                                <t t-esc="o.company_id.tax_file_no"/>
+                            </strong>
+                        </strong>
+                    </div>
+                    <h2>
+                        <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                        <span t-if="o.type == 'out_refund'">Credit Note</span>
+                        <span t-if="o.type == 'in_refund'">Vendor Credit Note</span>
+                        <span t-if="o.type == 'in_invoice'">Vendor Bill</span>
+                        <span t-field="o.number"/>
+                    </h2>
+
+                    <div class="row mt32 mb32">
+                        <div class="col-xs-2" t-if="o.name">
+                            <strong>Description:</strong>
+                            <p t-field="o.name"/>
+                        </div>
+                        <div class="col-xs-2" t-if="o.date_invoice">
+                            <strong>Invoice Date:</strong>
+                            <p t-field="o.date_invoice"/>
+                        </div>
+                        <div class="col-xs-2"
+                             t-if="o.date_due and o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">
+                            <strong>Due Date:</strong>
+                            <p t-field="o.date_due"/>
+                        </div>
+                        <div class="col-xs-2" t-if="o.partner_id.ref">
+                            <strong>Customer Code:</strong>
+                            <p t-field="o.partner_id.ref"/>
+                        </div>
+                        <div name="reference" class="col-xs-2" t-if="o.reference">
+                            <strong>Reference:</strong>
+                            <p t-field="o.reference"/>
+                        </div>
+                        <div name="reference" class="col-xs-2"
+                             t-if="o.invoice_line_ids and o.invoice_line_ids[0].analytic_tag_ids">
+                            <strong>PO:</strong>
+                            <p t-field="o.invoice_line_ids[0].analytic_tag_ids[0].name"/>
+                        </div>
+                    </div>
+
+                    <!-- Is there a discount on at least one line? -->
+                    <t t-set="display_discount" t-value="any([l.discount for l in o.invoice_line_ids])"/>
+
+                    <table class="table table-condensed" name="invoice_line_table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th class="text-right">Quantity</th>
+                                <th class="text-right">Amount Before Tax</th>
+                                <th class="text-right">Taxes</th>
+                                <th class="text-right">Amount After Tax</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <tr>
+                                <td>
+                                    <span t-if="o.invoice_line_ids[0].analytic_tag_ids and o.invoice_line_ids[0].analytic_tag_ids[0] and o.invoice_line_ids[0].analytic_tag_ids[0].description" t-esc="o.invoice_line_ids[0].analytic_tag_ids[0].description"/>
+                                </td>
+                                <td class="text-right">
+                                    <span>1</span>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_untaxed"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_tax"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_total"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&amp;nbsp;</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="clearfix">
+                        <div id="total" class="row pull-right">
+                            <div>
+                                <table class="table-condensed" style="min-width: 250px;max-width: 400px;">
+                                    <tr class="border-black" style="border-bottom:1px solid #dddddd;">
+                                        <td>
+                                            <strong>Subtotal</strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_untaxed"
+                                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                    <t t-set="tax_groups_length" t-value="len(o._get_tax_amount_by_group())"/>
+                                    <t t-foreach="o._get_tax_amount_by_group()" t-as="amount_by_group">
+                                        <tr style="border-bottom:1px solid #dddddd;">
+                                            <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                                <td>
+                                                    <span t-esc="amount_by_group[0]"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-esc="amount_by_group[1]"
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td>
+                                                    <span t-esc="amount_by_group[0]"/>
+                                                    <span>&amp;nbsp;
+                                                        <span>on</span>
+                                                        <t t-esc="amount_by_group[2]"
+                                                           t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-esc="amount_by_group[1]"
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                    </t>
+                                    <tr class="border-black">
+                                        <td>
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_total"
+                                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>
+                            Total In English:
+                            <t t-esc="o.get_number_in_words(o.amount_total,'en')"/>
+                        </strong>
+                    </div>
+                    <p t-if="o.comment">
+                        <span t-field="o.comment"/>
+                    </p>
+                    <p t-if="o.payment_term_id">
+                        <span t-field="o.payment_term_id.note"/>
+                    </p>
+                    <p t-if="o.fiscal_position_id.note">
+                        <span t-field="o.fiscal_position_id.note"/>
+                    </p>
+                </div>
+            </t>
+        </template>
+
+        <template id="multi_order_single_line_with_payments"
+                  inherit_id="n2d_so_categ_inlines.multi_order_single_line_template" primary="True">
+            <xpath expr="//div[@id='total']/div/table" position="inside">
+                <t t-set="payments_vals" t-value="o._get_payments_vals()"/>
+                <t t-foreach="payments_vals" t-as="payment_vals">
+                    <tr>
+                        <td>
+                            <i class="oe_form_field text-right oe_payment_label">Paid on
+                                <t t-esc="payment_vals['date']"/>
+                            </i>
+                        </td>
+                        <td class="text-right">
+                            <span t-esc="payment_vals['amount']"
+                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>
+                    </tr>
+                </t>
+                <t t-if="len(payments_vals) > 0">
+                    <tr class="border-black">
+                        <td>
+                            <strong>Amount Due</strong>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.residual"
+                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>
+                    </tr>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="invoice_single_line_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="n2d_so_categ_inlines.multi_order_single_line_with_payments" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

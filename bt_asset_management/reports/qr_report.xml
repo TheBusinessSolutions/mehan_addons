@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_qr_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-foreach="assets" t-as="asset">
+                            <t t-if="asset['qr']">
+                                <div class="col-6">
+                                    <img t-attf-src="data:image/png;base64, #{asset['qr']}" style="height:150px; width:150px;"/>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report
+                id="action_report_asset_qr"
+                model="bt.asset"
+                string="QR Code Report"
+                report_type="qweb-pdf"
+                name="bt_asset_management.report_qr_template"
+                file="bt_asset_management.report_qr_template"
+                menu="False"/>
+    </data>
+</odoo>

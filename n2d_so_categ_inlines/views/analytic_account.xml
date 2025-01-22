@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_analytic_account_form_inherit" model="ir.ui.view">
+            <field name="name">analytic.account.form</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='tag_ids']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required':False}</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//label[@for='name']" position="attributes">
+                    <attribute name="string">TCR</attribute>
+                </xpath>
+
+                 <xpath expr="//field[@name='code']" position="before">
+                     <field name="sequence" readonly="1"/>
+                 </xpath>
+                 <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="database_db_account"/>
+                    <field name="region"/>
+                    <field name="request_date"/>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="site_id"/>
+                    <field name="project_name"/>
+                </xpath>
+<!--                 <xpath expr="//field[@name='project_name']" position="after">-->
+<!--                    <field name="strap_tag_id"/>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+
+        <record id="account_analytic_tag_form_view_inherit" model="ir.ui.view">
+            <field name="name">account.analytic.tag.form.view.inherit</field>
+            <field name="model">account.analytic.tag</field>
+            <field name="inherit_id" ref="analytic.account_analytic_tag_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="frame_agreement"/>
+                    <field name="amount"/>
+                    <field name="description"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+

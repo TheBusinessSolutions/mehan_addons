@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_hr_payslip_inherit_form">
+            <field name="name">hr.payslip.inherit.form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll_community.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="late_rule_ids" widget="many2many_tags" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

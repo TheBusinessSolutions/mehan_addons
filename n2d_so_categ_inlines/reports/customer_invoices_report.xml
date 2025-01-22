@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <template id="customer_invoice_report_inherit" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@name='reference']" position="after">
+                <div name="reference" class="col-xs-2"
+                     t-if="o.invoice_line_ids and o.invoice_line_ids[0].analytic_tag_ids">
+                    <strong>PO:</strong>
+                    <p t-field="o.invoice_line_ids[0].analytic_tag_ids[0].name"/>
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='invoice_address']" position="after">
+                <div class="col-xs-5 col-xs-offset-7">
+                    <strong class="text-right">
+                        Frame Agreement:
+                        <t t-if="o.invoice_line_ids and o.invoice_line_ids[0].analytic_tag_ids">
+                            <t t-esc="o.invoice_line_ids[0].analytic_tag_ids[0].frame_agreement"/>
+                        </t>
+                        <br/>
+                        <strong class="text-right">
+                            Tax No:
+                            <t class="text-right" t-esc="o.company_id.tax_no"/>
+                            <br/>
+                        </strong>
+                        <strong class="text-right">
+                            Tax File No:
+                            <t t-esc="o.company_id.tax_file_no"/>
+                        </strong>
+                    </strong>
+                </div>
+            </xpath>
+
+            <xpath expr="//span[@t-field='l.name']" position="replace">
+                <span t-esc="', '.join(map(lambda x: (x.description), l.analytic_tag_ids))"/>
+            </xpath>
+            <xpath expr="//span[@t-field='l.quantity']" position="replace">
+                <span>1</span>
+            </xpath>
+        </template>
+    </data>
+</odoo>

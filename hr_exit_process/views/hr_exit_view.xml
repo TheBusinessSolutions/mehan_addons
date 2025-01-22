@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_exit_tree_view" model="ir.ui.view">
+            <field name="name">hr.exit.tree.view</field>
+            <field name="model">hr.exit</field>
+            <field name="arch" type="xml">
+                <tree string="Hr Exit">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="employee_id"/>
+                    <field name="request_date"/>
+                    <field name="user_id"/>
+                    <field name='state'/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_exit_form_view" model="ir.ui.view">
+            <field name="name">hr.exit.form.view</field>
+            <field name="model">hr.exit</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!-- <header>
+                        <button string="Confirm" name="get_confirm" states="draft" type="object" class="oe_highlight"/>
+                        <button string="Approve by Department Manager" name="get_apprv_dept_manager" states="confirm" type="object" groups="hr_exit_process.group_department_manager_for_exit,base.group_hr_manager" class="oe_highlight"/>
+                        <button string="Approve by HR Manager" name="get_apprv_hr_manager" states="approved_dept_manager" type="object" groups="hr.group_hr_user" class="oe_highlight"/>
+                        <button string="Approve by General Manager" name="get_apprv_general_manager" states="approved_hr_manager" type="object" groups="base.group_hr_manager,hr_exit_process.group_genaral_manager_for_exit" class="oe_highlight"/>
+                        <button string="Done" name="get_done" states="approved_general_manager" type="object" groups="base.group_hr_manager"/>
+                        <button string="Reject" name="get_reject" states="confirm,approved_dept_manager,approved_hr_manager" type="object" groups="hr.group_hr_user,base.group_hr_manager,hr_exit_process.group_department_manager_for_exit,hr_exit_process.group_genaral_manager_for_exit"/>
+                        <button string="Cancel" name="exit_cancel" states="draft" type="object" groups="hr_exit_process.group_department_manager_for_exit, base.group_hr_manager"/>
+                        <button string="Set To Draft" name="request_set" states="reject" type="object" groups="base.group_hr_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approved_dept_manager,approved_hr_manager,approved_general_manager,done" statusbar_colors='{"confirm":"blue",validate":"green","cancel":"red"}' colspan="2"/>
+                    </header> -->
+                    <header>
+                        <button string="Confirm" name="get_confirm" states="a_draft" type="object"
+                                class="oe_highlight"/>
+                        <button string="Approve by Department Manager" name="get_apprv_dept_manager"
+                                type="object"
+                                attrs="{'invisible': ['|',('is_department_manager', '=', False), ('state', '!=', 'b_confirm')]}"
+                                class="oe_highlight"/>
+                        <button string="Approve by HR Manager" name="get_apprv_hr_manager"
+                                states="c_approved_dept_manager" type="object" groups="hr.group_hr_user"
+                                class="oe_highlight"/>
+                        <button string="Approve by General Manager" name="get_apprv_general_manager"
+                                states="d_approved_hr_manager" type="object"
+                                groups="hr.group_hr_manager,actions_management.actions_group_administration_manager"
+                                class="oe_highlight"/>
+                        <button string="Done" name="get_done" states="e_approved_general_manager" type="object"
+                                groups="hr.group_hr_manager"/>
+                        <button string="Reject" name="get_reject"
+                                states="b_confirm,c_approved_dept_manager,d_approved_hr_manager" type="object"
+                                groups="hr.group_hr_user,hr.group_hr_manager,actions_management.actions_group_department_manager,actions_management.actions_group_administration_manager"/>
+                        <button string="Cancel" name="exit_cancel" states="a_draft" type="object"
+                                groups="actions_management.actions_group_department_manager, hr.group_hr_manager"/>
+                        <button string="Set To Draft" name="request_set" states="reject" type="object"
+                                groups="hr.group_hr_manager"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="a_draft,b_confirm,c_approved_dept_manager,d_approved_hr_manager,e_approved_general_manager,f_done"
+                               statusbar_colors='{"b_confirm":"blue","validate":"green","cancel":"red"}' colspan="2"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_makeMeeting" class="oe_stat_button" icon="fa-calendar" type="object"
+                                    help="Schedule interview with this applicant">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Meetings</span>
+                                </div>
+                            </button>
+                            <button name="action_start_survey"
+                                    class="oe_stat_button"
+                                    icon="fa-user"
+                                    type="object"
+                                    help="Answer related job question"
+                                    context="{'survey_id': survey}"
+                                    attrs="{'invisible':[('survey','=',False)]}">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Start</span>
+                                    <span class="o_stat_text">Interview</span>
+                                </div>
+                            </button>
+                            <button name="action_print_survey"
+                                    class="oe_stat_button"
+                                    icon="fa-print"
+                                    type="object"
+                                    help="Print interview report"
+                                    attrs="{'invisible':[('survey','=',False)]}">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Print</span>
+                                    <span class="o_stat_text">Interview</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="employee_id" class="oe_edit_only" nolabel="1"/>
+                            <h2>
+                                <group>
+                                    <group>
+                                        <field name="employee_id" nolabel="1"
+                                               attrs="{'readonly': [('state', '!=', 'a_draft')]}"/>
+                                    </group>
+                                    <group/>
+                                </group>
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="is_department_manager" invisible="1"/>
+                                <field name="request_date" attrs="{'readonly': [('state', '!=', 'a_draft')]}"/>
+                                <field name="last_work_date"
+                                       attrs="{'readonly': ['|',('state', '=', 'e_approved_general_manager'),('state', '=', 'f_done')]}"/>
+                                <field name="contract_id"
+                                       attrs="{'readonly': ['|',('state', '=', 'e_approved_general_manager'),('state', '=', 'f_done')]}"/>
+                            </group>
+                            <group>
+                                <field name="manager_id"/>
+                                <field name="department_id"/>
+                                <field name="job_id"/>
+                                <field name="user_id"/>
+                                <field name="partner_id"/>
+                                <field name="survey"
+                                       attrs="{'readonly': ['|',('state', '=', 'e_approved_general_manager'),('state', '=', 'f_done')]}"/>
+                                <field name="response_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="confirm_date"/>
+                                <field name="dept_approved_date"/>
+                                <field name="validate_date"/>
+                                <field name="general_validate_date"/>
+                            </group>
+                            <group>
+                                <field name="confirm_by_id"/>
+                                <field name="dept_manager_by_id"/>
+                                <field name="hr_manager_by_id"/>
+                                <field name="gen_man_by_id"/>
+                            </group>
+                        </group>
+                        <notebook name='notes'>
+                            <page string="Information">
+                                <group string="Checklist">
+                                    <field name="checklist_ids" nolabel="1"
+                                           readonly="1" force_save="1">
+                                        <tree editable='bottom'>
+                                            <field name="checklist_id"/>
+                                            <field name="responsible_user_id" widget="many2many_tags"/>
+                                            <field name="notes"/>
+                                            <field name="state"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <group>
+                                                    <field name="checklist_id"/>
+                                                    <field name="responsible_user_id" widget="many2many_tags"/>
+                                                </group>
+                                                <group>
+                                                    <field name="notes"/>
+                                                    <field name="state"/>
+                                                </group>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                                <group string="Reason for Exit">
+                                    <field name="reason_for_leaving"
+                                           attrs="{'readonly': [('state', '!=', 'a_draft')]}"/>
+                                    <field name="notes"
+                                           attrs="{'readonly': ['|',('state', '=', 'e_approved_general_manager'),('state', '=', 'f_done')]}"/>
+                                </group>
+                            </page>
+                            <page string="Contract" invisible="1">
+                                <tree editable='top'>
+                                    <field name="contract_ids" state=''/>
+                                </tree>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="hr_exit_search_view" model="ir.ui.view">
+            <field name="name">hr.exit.search.view</field>
+            <field name="model">hr.exit</field>
+            <field name="arch" type="xml">
+                <search string="Hr exit">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="employee_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="Exit date" domain="[]" context="{'group_by':'request_date'}"/>
+                        <filter name="Employee" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <filter name="State" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="hr_exit_pivot_view" model="ir.ui.view">
+            <field name="name">hr.exit.pivot.view</field>
+            <field name="model">hr.exit</field>
+            <field name="arch" type="xml">
+                <pivot string="Hr exit">
+                    <field name="employee_id" type="row"/>
+                    <field name="state" type="col"/>
+                </pivot>
+            </field>
+        </record>
+        <record id="hr_exit_graph_view" model="ir.ui.view">
+            <field name="name">hr.exit.graph.view</field>
+            <field name="model">hr.exit</field>
+            <field name="arch" type="xml">
+                <graph string="Hr exit">
+                    <field name="employee_id"/>
+                    <field name="state"/>
+                </graph>
+            </field>
+        </record>
+        <record id="hr_exit_calendar_view" model="ir.ui.view">
+            <field name="name">hr.exit.calendar.view</field>
+            <field name="model">hr.exit</field>
+            <field name="arch" type="xml">
+                <calendar string="Hr exit" date_start="request_date">
+                    <field name="employee_id"/>
+                    <field name="state"/>
+                </calendar>
+            </field>
+        </record>
+        <record id='hr_exit_kanban_view' model='ir.ui.view'>
+            <field name="name">hr.exit.kanban.view</field>
+            <field name="model">hr.exit</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state" class="o_kanban_small_column">
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="employee_id"/>
+                    <field name="request_date"/>
+                    <field name="user_id"/>
+                    <field name='state'/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown"
+                                       data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable">
+                                            <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                        </t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <img t-att-src="kanban_image('hr.employee', 'image_128', record.employee_id.raw_value)"
+                                             t-att-title="record.employee_id.value" t-att-alt="record.employee_id.value"
+                                             class="oe_kanban_avatar o_image_24_cover mr4"
+                                             options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"
+                                             style="float: right;"/>
+                                    </div>
+                                    <div>
+                                        <field name="employee_id"/>
+                                    </div>
+                                    <div>
+                                        <field name="request_date"/>
+                                    </div>
+                                    <div>
+                                        <field name="department_id"/>
+                                    </div>
+                                    <div>
+                                        <field name="job_id"/>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_hr_exit">
+            <field name="name">Exit Requests</field>
+            <field name="res_model">hr.exit</field>
+            <field name="view_mode">kanban,tree,calendar,form,pivot,graph</field>
+            <!-- <field name="view_type">form</field> --> <!-- odoo13 -->
+        </record>
+
+
+        <record id="hr_exit_employee_checklist_form_view" model="ir.ui.view">
+            <field name="name">hr.exit.employee.checklist.form.view</field>
+            <field name="model">hr.exit.employee.checklist</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Checklist">
+                            <field name="checklist_ids">
+                                <tree editable="bottom">
+                                    <field name="checklist_id"/>
+                                    <field name="responsible_user_id" widget="many2many_tags"/>
+                                    <field name="state"/>
+                                    <field name="notes"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <record id="hr_exit_employee_checklist_tree_view" model="ir.ui.view">
+            <field name="name">hr.exit.employee.checklist.tree.view</field>
+            <field name="model">hr.exit.employee.checklist</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_hr_employee_exit">
+            <field name="name">Employee Exit Checklists</field>
+            <field name="res_model">hr.exit.employee.checklist</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="hr_exit_checklist_form_view" model="ir.ui.view">
+            <field name="name">hr.exit.checklist.form.view</field>
+            <field name="model">hr.exit.checklist</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="Checklist">
+                        <group>
+                            <field name="name"/>
+                            <field name="responsible_user_id" widget="many2many_tags"/>
+                            <field name="notes"/>
+                        </group>
+                        <group/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="hr_exit_checklist_tree_view" model="ir.ui.view">
+            <field name="name">hr.exit.checklist.tree.view</field>
+            <field name="model">hr.exit.checklist</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="responsible_user_id" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_hr_exit_checklist">
+            <field name="name">Exit Checklists</field>
+            <field name="res_model">hr.exit.checklist</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="hr_exit_checklist_lines_form_view" model="ir.ui.view">
+            <field name="name">hr.exit.line.form.view</field>
+            <field name="model">hr.exit.line</field>
+            <field name="arch" type="xml">
+                <form create="0">
+                    <header>
+                        <button string="Confirm" class="oe_highlight" name="checklist_confirm" states="draft"
+                                type="object"/>
+                        <button string="Approve" class="oe_highlight" name="checklist_approved" states="confirm"
+                                type="object"/>
+                        <button string="Reject" name="checklist_reject" states="confirm" type="object"/>
+                        <button string="Cancel" name="checklist_cancel" states="draft" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approved,confirm"
+                               statusbar_colors='{"confirm":"blue",validate":"green","cancel":"red"}' colspan="2"/>
+                    </header>
+                    <sheet>
+                        <group string="Checklist">
+                            <group>
+                                <field name="checklist_id" readonly="1" force_save="1"/>
+                                <field name="responsible_user_id" readonly="1" force_save="1" widget="many2many_tags"/>
+                                <field name="employee_id" readonly="1" force_save="1"/>
+                                <field name="notes"/>
+                            </group>
+                            <group/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="hr_exit_checklist_lines_tree_view" model="ir.ui.view">
+            <field name="name">hr.exit.line.tree.view</field>
+            <field name="model">hr.exit.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="checklist_id"/>
+                    <field name="responsible_user_id" widget="many2many_tags"/>
+                    <field name="employee_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_hr_exit_line">
+            <field name="name">Checklist Responsible</field>
+            <field name="res_model">hr.exit.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('employee_id','!=',False), ('exit_id','!=',False)]</field>
+        </record>
+
+
+        <menuitem name="Employee Exit" id="menu_open_exit"/>
+        <menuitem id="menu_exit" action="action_hr_exit" parent="menu_open_exit"/>
+        <menuitem name="Employee Exit Checklists" id="menu_checklist_line" action="action_hr_employee_exit"
+                  parent="menu_open_exit" groups="actions_management.actions_group_administration_manager"/>
+        <menuitem name="Responsible Exit Checklists" id="menu_checklist_lines_responsible" action="action_hr_exit_line"
+                  parent="menu_open_exit" groups="actions_management.actions_group_responsible"/>
+        <menuitem name="Configure Checklists" id="menu_checklist" action="action_hr_exit_checklist"
+                  parent="menu_open_exit" groups="actions_management.actions_group_administration_manager"/>
+
+    </data>
+</openerp>

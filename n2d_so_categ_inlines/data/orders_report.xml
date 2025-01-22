@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <report
+                id="order_report_xlsx_id"
+                model="wizard.orders_report_wizard"
+                string="Order Report"
+                report_type="xlsx"
+                name="n2d_so_categ_inlines.order_report_doc_xlsx"
+                file="n2d_so_categ_inlines.order_report_doc_xlsx"
+                attachment_use="True"
+                menu="True"/>
+    </data>
+</odoo>

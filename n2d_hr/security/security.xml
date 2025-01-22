@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_absence_department_manager" model="ir.rule">
+            <field name="name">Absence - Department Manager</field>
+            <field name="model_id" ref="model_hr_absence"/>
+            <field name="domain_force">[('employee_id.parent_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_department_manager'))]"/>
+        </record>
+
+        <record id="hr_absence_general_manager" model="ir.rule">
+            <field name="name">Absence - Manager</field>
+            <field name="model_id" ref="model_hr_absence"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_administration_manager'))]"/>
+        </record>
+
+         <record id="hr_bonus_department_manager" model="ir.rule">
+            <field name="name">Bonus - Department Manager</field>
+            <field name="model_id" ref="model_hr_bonus"/>
+            <field name="domain_force">[('employee_id.parent_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_department_manager'))]"/>
+        </record>
+
+        <record id="hr_bonus_general_manager" model="ir.rule">
+            <field name="name">Bonus - Manager</field>
+            <field name="model_id" ref="model_hr_bonus"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_administration_manager'))]"/>
+        </record>
+
+          <record id="hr_overtime_department_manager" model="ir.rule">
+            <field name="name">overtime - Department Manager</field>
+            <field name="model_id" ref="model_hr_overtime"/>
+            <field name="domain_force">[('employee_id.parent_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_department_manager'))]"/>
+        </record>
+
+        <record id="hr_overtime_general_manager" model="ir.rule">
+            <field name="name">overtime - Manager</field>
+            <field name="model_id" ref="model_hr_overtime"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_administration_manager'))]"/>
+        </record>
+
+          <record id="hr_penalty_department_manager" model="ir.rule">
+            <field name="name">Penalty - Department Manager</field>
+            <field name="model_id" ref="model_hr_penalty"/>
+            <field name="domain_force">[('employee_id.parent_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_department_manager'))]"/>
+        </record>
+
+        <record id="hr_penalty_general_manager" model="ir.rule">
+            <field name="name">Penalty - Manager</field>
+            <field name="model_id" ref="model_hr_penalty"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('actions_management.actions_group_administration_manager'))]"/>
+        </record>
+
+    </data>
+</openerp>

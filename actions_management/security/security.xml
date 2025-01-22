@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+
+        <record id="actions_management_category" model="ir.module.category">
+            <field name="name">Actions Management</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <record id="actions_group_responsible" model="res.groups">
+            <field name="name">Responsible</field>
+            <field name="category_id" ref="actions_management_category"/>
+        </record>
+
+        <record id="actions_group_department_manager" model="res.groups">
+            <field name="name">Department Manager</field>
+            <field name="category_id" ref="actions_management_category"/>
+        </record>
+
+        <record id="actions_group_administration_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="actions_management_category"/>
+            <field name="implied_ids" eval="[(4, ref('actions_management.actions_group_responsible'))]"/>
+        </record>
+
+
+    </data>
+</odoo>

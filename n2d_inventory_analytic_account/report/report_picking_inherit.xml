@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_picking_inherit" inherit_id="stock.report_picking">
+        <xpath expr="//th[@name='th_product']" position="after">
+            <th>Description</th>
+            <th>Expected date</th>
+            <th>Done quantity</th>
+            <th>Unit of measure</th>
+        </xpath>
+        <xpath expr="//td[span[@t-field='ml.product_id.description_picking']]" position="after">
+            <td>
+                <span t-field="move.description_picking"/>
+            </td>
+            <td>
+                <span t-field="move.date_expected"/>
+            </td>
+            <td>
+                <span t-field="move.quantity_done"/>
+            </td>
+            <td>
+                <span t-field="move.product_uom"/>
+            </td>
+        </xpath>
+        <xpath expr="//div[@name='div_sched_date']" position="after">
+            <div class="col-auto">
+                <strong>Engineering Name :</strong>
+                <p t-field="o.employee_id"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

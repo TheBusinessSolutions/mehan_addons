@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_migarator_models,migarator_models,model_migarator_models,,1,1,1,1
+access_migarator_models_lines,migarator_models_lines,model_migarator_models_lines,,1,1,1,1

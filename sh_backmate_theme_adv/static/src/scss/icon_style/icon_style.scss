@@ -1,0 +1,453 @@
+@if $icon_style == 'standard' {
+
+    @if $theme_style == 'style_1' and $sidebar_collapse_style == 'expanded'{
+
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: $sidebar_font_hover_color !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $sidebar_font_hover_color !important;}
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span{color: $primaryColor !important;}
+    }
+    @if $theme_style == 'style_1' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span{color: $primaryColor !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: $sidebar_font_hover_color !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $primaryColor !important;}
+
+        // night mode // 
+
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: #556ee6 !important;}
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: #556ee6 !important;}        
+   
+
+    }
+    @if $theme_style == 'style_2' and $sidebar_collapse_style == 'expanded'{
+    }
+    @if $theme_style == 'style_2' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+
+    }
+    @if $theme_style == 'style_3' and $sidebar_collapse_style == 'expanded'{
+    }
+    @if $theme_style == 'style_3' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+
+    }
+}
+@if $icon_style == 'line_icon' {
+
+        @if $theme_style == 'style_1' and $sidebar_collapse_style == 'expanded'{
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 28px !important;}
+    
+    
+            nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: $sidebar_font_hover_color !important;}
+            nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+            nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $sidebar_font_hover_color !important;}
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span{color: $primaryColor !important;}
+        }
+        @if $theme_style == 'style_1' and $sidebar_collapse_style == 'collapsed'{
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+    
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 30px !important;}
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{margin-right: 20px !important;}
+    
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span{color: $primaryColor !important;}
+            nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: $sidebar_font_hover_color !important;}
+            nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+            nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $primaryColor !important;}
+    
+            // night mode // 
+    
+            .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: #556ee6 !important;}
+            .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+            .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: #556ee6 !important;}        
+       
+    
+        }
+        @if $theme_style == 'style_2' and $sidebar_collapse_style == 'expanded'{
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 28px !important;}
+    
+        }
+        @if $theme_style == 'style_2' and $sidebar_collapse_style == 'collapsed'{
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+    
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 30px !important;}
+            .o_main_navbar .o_navbar_apps_menu.sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon,
+            .o_main_navbar .o_navbar_apps_menu.sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon,
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{margin-right: 20px !important;}
+    
+        }
+        @if $theme_style == 'style_3' and $sidebar_collapse_style == 'expanded'{
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 28px !important;}
+    
+        }
+        @if $theme_style == 'style_3' and $sidebar_collapse_style == 'collapsed'{
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+    
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 30px !important;}
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+            .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{margin-right: 20px !important;}
+    
+        }
+    }
+
+@if $icon_style == 'three_d' {
+
+    @if $theme_style == 'style_1' and $sidebar_collapse_style == 'expanded'{
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app img,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2 img{width: 45px !important;}
+
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: $sidebar_font_hover_color !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $sidebar_font_hover_color !important;}
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span{color: $primaryColor !important;}
+    }
+    @if $theme_style == 'style_1' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 13px !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app img,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 img{width: 45px !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span{color: $primaryColor !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: $sidebar_font_hover_color !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $primaryColor !important;}
+
+        // night mode // 
+
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: #556ee6 !important;}
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: #556ee6 !important;}        
+   
+
+    }
+    @if $theme_style == 'style_2' and $sidebar_collapse_style == 'expanded'{
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app img,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2 img{width: 45px !important;}
+    }
+    @if $theme_style == 'style_2' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 13px !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app img,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 img{width: 45px !important;}
+
+    }
+    @if $theme_style == 'style_3' and $sidebar_collapse_style == 'expanded'{
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app img,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2 img{width: 45px !important;}
+    }
+    @if $theme_style == 'style_3' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 13px !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app img,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 img{width: 45px !important;}
+    }
+}
+
+@if $icon_style == "dual_tone" {
+    .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon span, 
+    .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon span{font-family: 'icomoon' !important;}
+    @if $theme_style == 'style_1' and $sidebar_collapse_style == 'expanded'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 28px !important;}
+            
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: $dual_tone_icon_color_1 !important; opacity: 1;}   
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: $dual_tone_icon_color_2 !important; opacity: 1;}
+
+        body.o_web_client .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path2::before{color: $sidebar_font_hover_color !important;}
+
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span{color: $primaryColor !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $sidebar_font_hover_color !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path1::before,    
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before,
+        body.o_web_client .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path2::before{color: $sidebar_font_hover_color !important;}
+        .o_rtl .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{display: inline-flex;}
+    
+        // night mode // 
+
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: #556ee6 !important;}
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: #556ee6 !important;}        
+ 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: #94A2C7 !important; opacity: 1;}   
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: #556ee6 !important; opacity: 1;}
+  
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: #556ee6 !important;}
+    }
+    @if $theme_style == 'style_1' and $sidebar_collapse_style == 'collapsed'{
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 30px !important;}
+
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: $dual_tone_icon_color_1 !important; opacity: 1;}   
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: $dual_tone_icon_color_2 !important; opacity: 1;}
+
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: $sidebar_font_hover_color !important;}
+     
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{margin-right: 20px !important;}
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: $sidebar_font_hover_color !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $sidebar_font_color !important;}        
+        .o_rtl .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{display: inline-flex;}
+
+      
+        // nigh mode // 
+
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span{color: #556ee6 !important;}
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        .sh_night_mode nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: #556ee6 !important;}        
+
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: #94A2C7 !important; opacity: 1;}   
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: #556ee6 !important; opacity: 1;}
+  
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: #556ee6 !important;}
+    }
+    @if $theme_style == 'style_2' and $sidebar_collapse_style == 'expanded'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 28px !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: $dual_tone_icon_color_1 !important; opacity: 1;}   
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: $dual_tone_icon_color_2 !important; opacity: 1;}
+
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu ul.dropdown-menu .dropdown-header .dropdown-item.action_menu:hover a span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span{color: $sidebar_font_hover_color !important;}
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > .dropdown-item.dropdown-toggle:hover::after,
+        nav.o_main_navbar .dropdown.sh_backmate_theme_appmenu_div.o_navbar_apps_menu .cssmenu .dropdown-menu.dropdown-menu-right .dropdown-header.o_menu_header_lvl_2 > a.dropdown-item.dropdown-toggle:hover span{color: $sidebar_font_hover_color !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path1::before,    
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before,
+        body.o_web_client .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path2::before{color: $sidebar_font_hover_color !important;}
+        
+
+        .o_rtl .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{display: inline-flex;}
+    
+        // night mode  // 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: #94A2C7 !important; opacity: 1;}   
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: #556ee6 !important; opacity: 1;}
+  
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path1::before,    
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,  
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path2::before{color: #556ee6 !important;}
+
+    }
+    @if $theme_style == 'style_2' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 30px !important;}
+
+        .o_main_navbar .o_navbar_apps_menu.sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .o_main_navbar .o_navbar_apps_menu.sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{margin-right: 20px !important;}
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: $dual_tone_icon_color_1 !important; opacity: 1;}   
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: $dual_tone_icon_color_2 !important; opacity: 1;}
+
+
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: $sidebar_font_hover_color !important;}
+    
+        .o_rtl .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{display: inline-flex;}
+
+        // night mode // 
+
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: #94A2C7 !important; opacity: 1;}   
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: #556ee6 !important; opacity: 1;}
+
+
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: #556ee6 !important;}
+
+
+    }
+    @if $theme_style == 'style_3' and $sidebar_collapse_style == 'expanded'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 28px !important;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: $dual_tone_icon_color_1 !important; opacity: 1;}   
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: $dual_tone_icon_color_2 !important; opacity: 1;}
+
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active .sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path1::before,    
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.active span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:hover span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before,
+        body.o_web_client .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2.active span.sh_fa_icon .path2::before{color: $sidebar_font_hover_color !important;}
+
+        .o_rtl .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{display: inline-flex;}
+    
+        // night mode  // 
+
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: #94A2C7 !important; opacity: 1;}   
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: #556ee6 !important; opacity: 1;}
+
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: #94A2C7 !important;}
+    }
+    @if $theme_style == 'style_3' and $sidebar_collapse_style == 'collapsed'{
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{font-size: 30px !important;}
+
+        .o_main_navbar .o_navbar_apps_menu.sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, 
+        .o_main_navbar .o_navbar_apps_menu.sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{margin-right: 20px !important;}
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2,
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app{padding-left: 20px !important;}
+    
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: $dual_tone_icon_color_1 !important; opacity: 1;}   
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: $dual_tone_icon_color_2 !important; opacity: 1;}
+
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: $sidebar_font_hover_color !important;}
+
+        .o_rtl .sh_backmate_theme_appmenu_div span.dropdown-item.o_app span.sh_fa_icon, .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2 span.sh_fa_icon{display: inline-flex;}
+
+        // night mode  // 
+
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path1::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path1::before{color: #94A2C7 !important; opacity: 1;}   
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app:not(:hover):not(.focus) span.sh_fa_icon .path2::before, 
+        .sh_night_mode .sh_backmate_theme_appmenu_div span.dropdown-item.o_app2:not(:hover):not(.focus) span.sh_fa_icon .path2::before{color: #556ee6 !important; opacity: 1;}
+
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path1::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app.focus span.sh_fa_icon .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2:hover .path2::before,
+        .sh_night_mode .sh_backmate_theme_appmenu_div.o_navbar_apps_menu span.dropdown-item.o_app2.focus span.sh_fa_icon .path2::before{color: #94A2C7 !important;}
+    }
+}

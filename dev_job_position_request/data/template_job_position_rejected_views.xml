@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="email_template_job_position_request_rejected" model="mail.template">
+        <field name="name">Job Position Request Rejected Email</field>
+        <field name="subject">Job Position Request Rejected</field>
+        <field name="model_id" ref="dev_job_position_request.model_job_position_request"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html" type="html">
+            <div>
+                <p>Hello</p>
+                <p>Your Job Position Request <strong><t t-out='object.name'/></strong>, has been rejected</p>
+
+                <p>You can access it from below butoon</p>
+                <br/>
+                <t t-set="url" t-value="object.make_url()"/>
+                <br/>
+                <a t-attf-href="{{object.make_url()}}"
+                   style="background-color: #1abc9c;
+                padding: 20px; text-decoration: none; color: #fff;
+                border-radius: 5px; font-size: 16px;"
+                   class="o_default_snippet_text" target="_blank">
+                    View Request
+                </a>
+                <br/>
+                <br/>
+            </div>
+        </field>
+    </record>
+</odoo>

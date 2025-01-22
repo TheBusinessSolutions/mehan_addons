@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template">
+
+    <t t-extend="TaxTotalsField">
+        <xpath expr="//table/tbody" position="inside">
+<!--        <t t-jquery="table tbody" t-operation="inside">-->
+            <tr>
+                <td class="o_td_label">
+                    <label class="o_form_label o_tax_total_label">Discount</label>
+                </td>
+
+                <td>
+                    <span style="white-space: nowrap; font-weight: bold;" t-esc="totals.value.formatted_discount_amount"/>
+                </td>
+            </tr
+        </xpath>
+<!--    </t>-->
+    </t>
+
+</templates>

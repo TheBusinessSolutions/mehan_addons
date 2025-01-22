@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Form View of sector-->
+        <record id="view_sector_form" model="ir.ui.view">
+            <field name="name">view.sector.form</field>
+            <field name="model">sector</field>
+            <field name="arch" type="xml">
+                <form string="Sector">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View of sector-->
+        <record id="view_sector_tree" model="ir.ui.view">
+            <field name="name">view.sector.tree</field>
+            <field name="model">sector</field>
+            <field name="arch" type="xml">
+                <tree string="Sector">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action of sector-->
+        <record id="action_sector" model="ir.actions.act_window">
+            <field name="name">Sector</field>
+            <field name="res_model">sector</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_sector" name="Sector" parent="hr.menu_human_resources_configuration_employee"
+                  action="action_sector"/>
+    </data>
+</odoo>

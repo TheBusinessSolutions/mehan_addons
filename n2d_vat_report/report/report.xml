@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <record id="report_vat_xlsx" model="ir.actions.report">
+            <field name="name">Vat Report</field>
+            <field name="model">vat.report</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">n2d_vat_report.vat_xlsx</field>
+            <field name="report_file">n2d_vat_report.vat_xlsx</field>
+            <field name="binding_type">report</field>
+        </record>
+
+
+    </data>
+</odoo>

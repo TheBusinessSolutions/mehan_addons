@@ -1,0 +1,326 @@
+// style 1 // 
+@if $discuss_chatter_style == 'style_1'{
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_actionListContainer{right: 30px;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item.o_MessageList_message .o_Message_actionListContainer{z-index: 1;}
+
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_Message_active{background: transparent;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message > .d-flex{justify-content: flex-end;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar{order: 2;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 75%;flex-grow: unset !important;background: #f1f3fa;padding: 8px;position: relative;border-radius: 4px;margin: 2px 8px;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after {content: ' ';position: absolute;width: 0;height: 0;left: -10px;right: auto;top: 0px;bottom: auto;border: 14px solid;border-color: #f1f3fa transparent transparent transparent;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after{content: ' ';position: absolute;width: 0;height: 0;right: -10px;left: auto;top: 0px;bottom: auto;border: 14px solid;border-color: #f1f3fa transparent transparent transparent;}
+
+
+    .o_Discuss .o_DiscussSidebar.o_Discuss_sidebar[name="root"]{border: 0px !important;margin: 10px 13px;box-shadow: 0 1px 10px rgba(0, 10, 10, 0.10);border-right: 0px !important;border-radius: 4px !important;background-color: #ffffff !important;}
+    .o_Discuss .o_Discuss_content{margin: 10px 13px 10px 0px;box-shadow: 0 1px 10px rgba(0, 10, 10, 0.10) !important;border-radius: 4px;}
+
+    .o_Discuss .o_Message.o-discussion.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView{background: #ffffff;padding-left: 30px;padding-bottom: 4px;}
+    .o_Discuss .o_Message.o-discussion.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView::before{top: 12px;left: 10px;}
+
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_actionListContainer{right: 30px;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item.o_MessageList_message .o_Message_actionListContainer{z-index: 1;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_Message_active,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_Message_active{background: transparent;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message > .d-flex,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message > .d-flex{justify-content: flex-end;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar{order: 2;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 75%;flex-grow: unset !important;background: #f1f3fa;padding: 8px;position: relative;border-radius: 4px;margin: 2px 8px;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after {content: ' ';position: absolute;width: 0;height: 0;left: -10px;right: auto;top: 0px;bottom: auto;border: 14px solid;border-color: #f1f3fa transparent transparent transparent;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after{content: ' ';position: absolute;width: 0;height: 0;right: -10px;left: auto;top: 0px;bottom: auto;border: 14px solid;border-color: #f1f3fa transparent transparent transparent;}
+
+
+    .o_Discuss .o_DiscussSidebar.o_Discuss_sidebar[name="root"]{border: 0px !important;margin: 10px 13px;box-shadow: 0 0px 10px rgba(147, 147, 147, 0.23), 0 3px 6px rgba(147, 147, 147, 0.23);border-right: 0px !important;border-radius: 4px !important;background-color: #ffffff !important;}
+    .o_Discuss .o_Discuss_content{margin: 10px 13px 10px 0px;box-shadow: 0 0px 10px rgba(147, 147, 147, 0.23), 0 3px 6px rgba(147, 147, 147, 0.23);border-radius: 4px;}
+
+    .o_Discuss .o_Message.o-discussion.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView{background: transparent;padding-left: 30px;padding-bottom: 4px;}
+    .o_Discuss .o_Message.o-discussion.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView::before{top: 12px;left: 10px;}
+
+
+    /* 2-7-2022 */
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core, 
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core{background: $primaryColor;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after{border-color: $primaryColor transparent transparent transparent;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_subject,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_subject,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_date,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_originThread,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_originThread .o_Message_originThreadLink,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody p,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody,
+    .o_Discuss .o_Message.sh_left_chat.o-discussion.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_author,
+    .o_Discuss .o_Message.sh_left_chat.o-discussion.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_body p,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody p{color: #ffffff !important;}
+
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox:hover,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox.o-active,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChannel .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer.o_Message_sidebarItem .o_Message_authorAvatar.rounded-circle,
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item .o_Message_sidebar .o_Message_authorAvatarContainer .o_Message_authorAvatar.rounded-circle,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChat .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item{border-radius: 4px !important;}
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox.o-active,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox:hover{background: #f1f3fa;}
+    .o_DiscussSidebar_category .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_newItem .o_DiscussSidebarCategory_itemNewInput,.o_ThreadView .o_ThreadViewTopbar_actions .o_ChannelInvitationForm input,
+    .o_Discuss_content .o_ThreadView .o_ThreadViewTopbar_title input{border: 1px solid #e4e8f7;padding: 5px;border-radius: 4px;}
+
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_originThread,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_originThread .o_Message_originThreadLink{color: $primaryColor !important;}
+    .o_Message .o_Message_actionListContainer .o_MessageActionList,
+    .o_Message .o_Message_actionListContainer .o_MessageActionList .o_MessageActionList_action:hover{border-radius: 4px !important;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment{background: transparent;box-shadow: none !important; width: auto;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_authorName,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_date,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_date{ color: #000  !important;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_AttachmentList .o_AttachmentList_partialListImages,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_AttachmentList .o_AttachmentList_partialListImages{justify-content: end !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.flex-grow-1:after,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment.flex-grow-1:after{border: none !important;}
+
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox .o_DiscussSidebarMailbox_counter.o_DiscussSidebarMailbox_item.badge.badge-pill{color: $primaryColor !important;} 
+}
+
+@if $discuss_chatter_style == 'style_2'{
+
+    .o_Discuss .o_DiscussSidebar.o_Discuss_sidebar[name="root"]{border: 0px !important;margin: 10px 13px;box-shadow: 0 1px 10px rgba(0, 10, 10, 0.10);border-right: 0px !important;border-radius: 20px !important;background-color: #ffffff !important;}
+    .o_Discuss .o_Discuss_content{margin: 10px 13px 10px 0px;box-shadow: 0 1px 10px rgba(0, 10, 10, 0.10);border-radius: 20px;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_Message_active,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_Message_active{background: transparent;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message > .d-flex,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message > .d-flex{justify-content: flex-end;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar{max-width: 30px !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar{order: 2;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 70% !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 55%;flex-grow: unset !important;background: $primaryColor ; padding: 10px 30px;position: relative;border-radius: 50px !important;margin: 2px 8px; box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 55%;flex-grow: unset !important;background:  #ffffff;  padding: 10px 30px;position: relative;border-radius: 50px !important;margin: 2px 8px;box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView::before,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_author,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView::before,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_author{color: #ffffff !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_authorName{color: #dcdcdc;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_date,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_date{color: #d5dce3;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_body p,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_body p{color: #dcdcdc !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core:not(.sh_message_attchment) .o_Message_content .o_Message_prettyBody p,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core:not(.sh_message_attchment) .o_Message_content .o_Message_prettyBody p{color: #ffffff !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar{align-items: end;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer{margin-left: -50px !important;z-index: 4;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer{margin-right: -60px !important;z-index: 4;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer img,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer img,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer img,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer img{box-shadow: 0 0 0 0.5rem #f2f0f7 !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item{background-color: transparent !important;}
+    // .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList,
+    // .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList{background: url("https://doot-light.react.themesbrand.com/static/media/pattern-05.ffd181cd.png");background-color: #f2f0f7;}
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox:hover,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox.o-active,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChannel .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item,
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item .o_Message_sidebar .o_Message_authorAvatarContainer .o_Message_authorAvatar.rounded-circle,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer.o_Message_sidebarItem .o_Message_authorAvatar.rounded-circle,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChat .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item{border-radius: 25px !important;}
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox.o-active,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox:hover{background: #f1f3fa;}
+    .o_DiscussSidebar_category .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_newItem .o_DiscussSidebarCategory_itemNewInput,.o_ThreadView .o_ThreadViewTopbar_actions .o_ChannelInvitationForm input,.o_Discuss_content .o_ThreadView .o_ThreadViewTopbar_title input{border: 1px solid #e4e8f7;padding: 5px;border-radius: 25px;}
+
+    .o_Message .o_Message_actionListContainer .o_MessageActionList,
+    .o_Message .o_Message_actionListContainer .o_MessageActionList .o_MessageActionList_action:hover{border-radius: 15px !important;}
+
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_Composer_actionButton.o-last.o-has-current-partner-avatar.o-composer-is-compact{border-radius: 0 25px 25px 0 !important;}
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_Composer_textInput.o-has-current-partner-avatar.o-composer-is-compact,
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_Composer .o_ComposerTextInput.o_Composer_textInput.o-composer-is-compact.o-has-current-partner-avatar textarea.o_ComposerTextInput_textarea{border-radius: 25px 0 0 25px;}
+
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadViewTopbar{background-color: #ffffff ;}
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_Composer{background-color: #ffffff ;}
+    .o_MessageList.o_ThreadView_messageList .o_MessageList_separator .o_MessageList_separatorLabel,
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList .o_MessageList_separator .o_MessageList_separatorLabel{color: $primaryColor;border-radius: 25px;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_headerDate ,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_originThread ,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_originThread .o_Message_originThreadLink,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody a,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core:not(.sh_message_attchment) .o_Message_content .o_Message_prettyBody p{color: #ffffff !important;}
+
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_originThread,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_originThread .o_Message_originThreadLink{color: $primaryColor !important;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment{background: transparent;box-shadow: none !important; width: auto;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_authorName,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_date,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_date{ color: #000  !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_AttachmentList .o_AttachmentList_partialListImages,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_AttachmentList .o_AttachmentList_partialListImages{justify-content: end !important;}
+
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox .o_DiscussSidebarMailbox_counter.o_DiscussSidebarMailbox_item.badge.badge-pill{color: $primaryColor !important;} 
+    .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_content .o_Message_prettyBody,.o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_content .o_Message_prettyBody p{color: #212121 !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList{
+        background: url('/web/image?model=sh.back.theme.config.settings&id=1&field=discuss_chatter_style_image');
+        background-color: #f2f0f7;
+    }
+}
+
+@if $discuss_chatter_style == 'style_3'{
+
+    .o_Discuss .o_DiscussSidebar.o_Discuss_sidebar[name="root"]{border: 0px !important;margin: 10px 13px;box-shadow: 0 1px 10px rgba(0, 10, 10, 0.10);border-right: 0px !important;border-radius: 0px !important;background-color: #ffffff !important;}
+    .o_Discuss .o_Discuss_content{margin: 10px 13px 10px 0px;box-shadow: 0 1px 10px rgba(0, 10, 10, 0.10);border-radius: 0px;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_Message_active,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_Message_active{background: transparent;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message > .d-flex,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message > .d-flex{justify-content: flex-end;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_sidebar{order: 2;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 70% !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 55%;flex-grow: unset !important;background: linear-gradient(80deg, $primaryColor 40%, lighten($primaryColor, 20%)); padding: 10px 30px;position: relative;border-radius: 0px  !important;margin: 2px 8px; box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_left_chat.o_MessageList_item.o_MessageList_message .o_Message_core{width: 55%;flex-grow: unset !important;background:  #ffffff;  padding: 10px 30px;position: relative;border-radius:0px!important;margin: 2px 8px;box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView::before,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_author,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView::before,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_author{color: #ffffff !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_authorName{color: #dcdcdc;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_date,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_date{color: #d5dce3;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_body p,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView .o_MessageInReplyToView_body p{color: #dcdcdc !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core:not(.sh_message_attchment) .o_Message_content .o_Message_prettyBody p,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core:not(.sh_message_attchment) .o_Message_content .o_Message_prettyBody p{color: #ffffff !important;}
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item{background-color: transparent !important;}
+
+    // .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList,
+    // .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList{background: url("https://themesbrand.com/velzon/html/default/assets/images/chat-bg-pattern.png");background-color: #f2f0f7;}
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox:hover,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox.o-active,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChannel .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item,
+    .o_Discuss .o_Discuss_content .o_Composer.o_ThreadView_composer .o_Composer_coreMain .o_ComposerTextInput.o_Composer_textInput,
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_Composer_actionButton.o-last.o-has-current-partner-avatar.o-composer-is-compact,
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item .o_Message_sidebar .o_Message_authorAvatarContainer .o_Message_authorAvatar.rounded-circle,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.o_MessageList_item.o_MessageList_message .o_Message_sidebar .o_Message_authorAvatarContainer.o_Message_sidebarItem .o_Message_authorAvatar.rounded-circle,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChat .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item{border-radius: 0px !important;}
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox.o-active,
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox:hover{background: #f1f3fa;}
+    .o_DiscussSidebar_category .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_newItem .o_DiscussSidebarCategory_itemNewInput,
+    .o_ThreadView .o_ThreadViewTopbar_actions .o_ChannelInvitationForm input,.o_Discuss_content .o_ThreadView .o_ThreadViewTopbar_title input{border: 1px solid #e4e8f7;padding: 5px;border-radius: 0px;}
+
+
+    .o_Message .o_Message_actionListContainer .o_MessageActionList,
+    .o_Message .o_Message_actionListContainer .o_MessageActionList .o_MessageActionList_action:hover{border-radius: 0px !important;}
+
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadViewTopbar{background-color: #ffffff ;}
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_Composer{background-color: #ffffff;}
+    .o_MessageList.o_ThreadView_messageList .o_MessageList_separator .o_MessageList_separatorLabel,
+    .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList .o_MessageList_separator .o_MessageList_separatorLabel{color: $primaryColor;}
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_MessageInReplyToView,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_headerDate ,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_originThread ,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_originThread .o_Message_originThreadLink,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_content .o_Message_prettyBody a,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core .o_Message_header .o_Message_notificationIconClickable.o-error,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core:not(.sh_message_attchment) .o_Message_content .o_Message_prettyBody p{color: #ffffff !important;}
+
+
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_originThread,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_originThread .o_Message_originThreadLink{color: $primaryColor !important;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment{background: transparent;box-shadow: none !important; width: auto;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_authorName,
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_date,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_authorName,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_Message_header .o_Message_date{ color: #000  !important;}
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_AttachmentList .o_AttachmentList_partialListImages,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList .o_Message.sh_right_chat.o_MessageList_item.o_MessageList_message .o_Message_core.sh_message_attchment .o_AttachmentList .o_AttachmentList_partialListImages{justify-content: end !important;}
+
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox .o_DiscussSidebarMailbox_counter.o_DiscussSidebarMailbox_item.badge.badge-pill{color: $primaryColor !important;} 
+
+    .o_ThreadView.o_ChatWindow_thread .o_ThreadView_bottomPart .o_ThreadView_core .o_MessageList.o_ThreadView_messageList,
+    .o_Discuss .o_Discuss_content .o_ThreadView .o_ThreadView_core .o_MessageList.o_ThreadView_messageList{
+        background: url('/web/image?model=sh.back.theme.config.settings&id=1&field=discuss_chatter_style_image');
+        background-color: #f2f0f7;
+    }
+}
+
+// discuss chat sidebar //
+
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox{flex-flow: row !important;/* background-color: #f1f3fa;box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);*/ margin: 0 10px !important;justify-content: center;}
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox .o_DiscussSidebarMailbox_item{margin-right: 2.5px !important;}
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox{padding: 0.5rem 0 !important;margin: 0px 2px;}
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox .o_DiscussSidebarMailbox .o_DiscussSidebarMailbox_item:first-child{margin-left: 14px !important;}
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChannel .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item,
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChat .o_DiscussSidebarCategory_content .o_DiscussSidebarCategory_item{    background-color: #f1f3fa;box-shadow: 0 5px 10px rgba(0, 10, 10, 0.04) !important; margin: 0 10px !important; margin-bottom: 10px !important;padding: 0.8rem 0;}
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChannel .o_DiscussSidebarCategory_header,
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryChat .o_DiscussSidebarCategory_header{margin: 5px 0px 5px 10px !important;}
+
+@media screen and (max-width: 820px) {
+    .o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox{flex-flow: column !important;}
+}
+
+.o_Discuss .o_Discuss_sidebar.o_DiscussSidebar .o_DiscussSidebar_category.o_DiscussSidebar_categoryMailbox{overflow: auto;}

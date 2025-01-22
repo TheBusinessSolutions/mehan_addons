@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="rocker_calendar" xml:space="preserve">
+
+    <t t-name="rocker_timesheet.calendar-button">
+        <p> </p><b>Filter tasks:</b>
+        <button class="btn btn-secondary btn-all" type="button">
+            <t t-esc="all"/>
+        </button>
+        <button class="btn btn-secondary btn-billable" type="button">
+            <t t-esc="billable"/>
+        </button>
+        <button class="btn btn-secondary btn-nonbillable" type="button">
+            <t t-esc="nonbillable"/>
+        </button>
+        <button class="btn btn-secondary btn-internal" type="button">
+            <t t-esc="internal"/>
+        </button>
+        <button class="btn btn-secondary btn-member" type="button">
+            <t t-esc="member"/>
+        </button>
+        <button class="btn btn-secondary btn-mine" type="button">
+            <t t-esc="mine"/>
+        </button>
+    </t>
+
+    <t t-name="rocker_timesheet.tree-button">
+        <button class="btn btn-primary btn-roller2" type="button">
+            <t t-esc="roller2"/>
+        </button>
+        <p> </p><b>Filter tasks:</b>
+        <button class="btn btn-secondary btn-all2" type="button">
+            <t t-esc="all2"/>
+        </button>
+        <button class="btn btn-secondary btn-billable2" type="button">
+            <t t-esc="billable2"/>
+        </button>
+        <button class="btn btn-secondary btn-nonbillable2" type="button">
+            <t t-esc="nonbillable2"/>
+        </button>
+        <button class="btn btn-secondary btn-internal2" type="button">
+            <t t-esc="internal2"/>
+        </button>
+        <button class="btn btn-secondary btn-member2" type="button">
+            <t t-esc="member2"/>
+        </button>
+        <button class="btn btn-secondary btn-mine2" type="button">
+            <t t-esc="mine2"/>
+        </button>
+    </t>
+
+    <t t-name="rocker_timesheet.roller-button">
+        <button class="btn btn-primary btn-roller" type="button">
+            <t t-esc="roller"/>
+        </button>
+    </t>
+
+</templates>

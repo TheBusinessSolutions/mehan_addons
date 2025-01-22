@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_resume_alert" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.hr.resume</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath
+                        expr="//div[hasclass('app_settings_block') and @data-key='hr']"
+                        position="inside">
+                    <h2>Resume Alert</h2>
+                    <div class="col-12 col-lg-6 o_setting_box mt16">
+                        <div class="o_setting_right_pane">
+                            <label for="resume_alert_days"/>
+                            <div class="text-muted">
+                                Days needed to notify for resume lines
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <span>
+                                        <field name="resume_alert_days" class="oe_inline"/>
+                                        days
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

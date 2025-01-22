@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+
+
+        <template id="era_layout">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <!--            <t t-esc="company.update_scss()"/>-->
+
+
+            <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name"
+                 t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-call="web.address_layout"/>
+                <t t-raw="0"/>
+            </div>
+
+            <!--            <t t-raw="0" />-->
+            <t t-call="n2d_era_inv_no_header.era_layout_footer"/>
+        </template>
+
+        <template id="era_layout_header">
+            <div class="header">
+
+            </div>
+        </template>
+        <template id="era_layout_footer">
+            <div class="footer">
+
+
+            </div>
+        </template>
+    </data>
+</odoo>

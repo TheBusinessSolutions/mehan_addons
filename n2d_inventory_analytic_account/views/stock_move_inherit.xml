@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="stock_move_inherit_search_view" model="ir.ui.view">
+            <field name="name">stock.move.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="line"/>
+                    <field name="sub_inventory"/>
+                    <field name="site"/>
+                    <field name="move_no"/>
+                    <field name="dor_type"/>
+                    <field name="dor_no"/>
+                    <field name="mr_id"/>
+                    <field name="stp_owner"/>
+                    <field name="owner_partner_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Move No" context="{'group_by':'move_no'}" name='group_by_move_no'/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock_move_line_inherit_search_view" model="ir.ui.view">
+            <field name="name">stock.move.line.inherit</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='picking_id']" position="after">
+                    <field name="name"/>
+                    <field name="line"/>
+                    <field name="sub_inventory"/>
+                    <field name="site"/>
+                    <field name="move_no"/>
+                    <field name="dor_type"/>
+                    <field name="dor_no"/>
+                    <field name="mr_id"/>
+                    <field name="stp_owner"/>
+                    <field name="owner_partner_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Move No" context="{'group_by':'move_no'}" name='group_by_move_no'/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

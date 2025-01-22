@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!--Salary Rules-->
+
+
+        <record id="hr_rule_overtime" model="hr.salary.rule">
+            <field name="name">Overtime</field>
+            <field name="sequence" eval="11"/>
+            <field name="code">OVRT</field>
+            <field name="category_id" ref="hr_payroll_community.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.overtime_amount</field>
+            <!--            <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>-->
+
+        </record>
+
+        <record id="hr_rule_absence" model="hr.salary.rule">
+            <field name="name">Absence</field>
+            <field name="sequence" eval="101"/>
+            <field name="code">ABS</field>
+            <field name="category_id" ref="hr_payroll_community.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = -payslip.absence_amount</field>
+            <!--            <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>-->
+
+        </record>
+
+        <record id="hr_rule_penalty" model="hr.salary.rule">
+            <field name="name">Penalty</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">PN</field>
+            <field name="category_id" ref="hr_payroll_community.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = -payslip.penalty_amount</field>
+            <!--            <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>-->
+
+        </record>
+        <record id="hr_rule_bonus" model="hr.salary.rule">
+            <field name="name">Bonus</field>
+            <field name="sequence" eval="103"/>
+            <field name="code">BN</field>
+            <field name="category_id" ref="hr_payroll_community.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.bonus_amount</field>
+            <!--            <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>-->
+
+        </record>
+
+        <!--Sequences-->
+        <record id="seq_hr_overtime" model="ir.sequence">
+            <field name="name">Overtime</field>
+            <field name="code">hr.overtime</field>
+            <field name="prefix">OVRT</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="seq_hr_absence" model="ir.sequence">
+            <field name="name">Absence</field>
+            <field name="code">hr.absence</field>
+            <field name="prefix">ABS</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="seq_hr_penalty" model="ir.sequence">
+            <field name="name">Penalty</field>
+            <field name="code">hr.penalty</field>
+            <field name="prefix">PN</field>
+            <field name="padding">4</field>
+        </record>
+         <record id="seq_hr_bonus" model="ir.sequence">
+            <field name="name">Bonus</field>
+            <field name="code">hr.bonus</field>
+            <field name="prefix">BN</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

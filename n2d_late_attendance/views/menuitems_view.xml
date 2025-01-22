@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!--<menuitem id="menu_late_absence_information"/>-->
+        <menuitem id="menu_late_attendance" name="Late Attendance" parent="hr.menu_hr_root"/>
+        <menuitem id="menu_late_absence_information" name="Late Attendance Rule" parent="menu_late_attendance"
+                  action="action_late_rule_attendance"/>
+        <menuitem id="menu_late_attendance_report" name="Late Attendance Report" parent="menu_late_attendance"
+                  action="action_attendance_report"/>
+    </data>
+</odoo>

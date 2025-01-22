@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_site_allowance,site.allowance,model_site_allowance,base.group_user,1,1,1,1
+access_site_allowance_wizard,site.allowance.wizard,model_site_allowance_wizard,base.group_user,1,1,1,1
+
+

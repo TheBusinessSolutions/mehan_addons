@@ -1,0 +1,45 @@
+.todo_layout { background: white; min-width: 420px; max-width: 420px; z-index: 10; position: fixed; top: 0; right: 0; bottom: 0; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.11); overflow: auto; margin-right: -625px; transition: all ease-in-out 0.3s; }
+.todo_layout.sh_theme_model { display: block; margin-right: 0px;}
+.todo_layout .theme_header { display: flex; justify-content: space-between; align-items: center; padding: 13px 20px; background-color: $primaryColor; color: #fff; }
+.todo_layout .theme_header h3 { margin-bottom: 0; color: #fff; }
+.todo_layout .theme_header .close_todo_setting {cursor: pointer;}
+.todo_layout .add_todo_section{padding: 10px 20px;}
+.todo_layout .add_todo_section .input-group-append .btn.sh_add_todo{ font-weight: bold; padding: 7px 30px !important;}
+.todo_layout .add_todo_section .input-group{margin-bottom: 0 !important;}
+.todo_layout .add_todo_section .input-group .sh_add_todo_input{padding:  7px 1.375rem !important; box-shadow: 0 0 10px rgba(0, 0, 0, 0.20); height: auto !important;}
+
+.todo_layout .ui-sortable .card {margin: 10px 20px;padding: 0px !important; box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);position: relative;}
+.todo_layout .ui-sortable .card .card-header{display: flex; padding: 2px !important; justify-content: space-between; align-items: center;background: $primaryColor !important;position: absolute;top: 10px;right: 0;left: 0;border-bottom: none !important;opacity: 0;transition: all .5s;width: 100%;z-index: 1;height: 30px;}
+.todo_layout .ui-sortable .card .sh_blank_div{height: 12px;}
+.todo_layout .ui-sortable .card .card-header:hover{opacity: 1;top: 0;visibility: visible;}
+// .todo_layout .ui-sortable .card .card-header .sh-card-header{display: flex; align-items: center;}
+.todo_layout .ui-sortable .card .card-header .sh-card-header-button span.fa{font-size: 14px; padding: 3px 10px; color: #ffffff; cursor: pointer;}
+.todo_layout .ui-sortable .card .card-header .sh-card-header-button{display: flex;}
+.todo_layout .ui-sortable .card .card-header .sh-card-header h5 .btn{ padding-left: 0 !important;}
+.todo_layout .ui-sortable .card .card-header .sh-card-header .sh_edit_todo_lebel { border: 1px solid $primary_active !important; border-radius: 2px !important; padding: 3px 5px !important; }
+.todo_layout .ui-sortable .card .card-body{ padding: 10px !important; margin-bottom: 0px;}
+.todo_layout .ui-sortable .card.sh_done_todo .sh_todo_label{text-decoration: line-through;}
+.todo_layout .card .sh-card-header-button .sh_to_do_edit_btn,.todo_layout .card .sh-card-header-button .sh_to_do_remove_btn,.todo_layout .card .sh-card-header-button .sh_to_do_save_btn,.todo_layout .card .sh-card-header .custom-control.custom-checkbox{position: relative;}
+.todo_layout .card .sh-card-header .sh_mark_completed_tooltip,
+.todo_layout .card .sh-card-header-button .sh_to_do_edit_btn .sh_mark_edit_tooltip,
+.todo_layout .card .sh-card-header-button .sh_to_do_remove_btn .sh_mark_remove_tooltip,
+.todo_layout .card .sh-card-header-button .sh_to_do_save_btn .sh_mark_save_tooltip{opacity: 0;transition: all .5s;position: absolute;left: -10px;white-space: nowrap;padding: 2px 8px;font-size: 11px;top: 30px;background: #29292a;color: #ffffff;letter-spacing: .4px;}
+.todo_layout .card .sh-card-header-button .sh_to_do_edit_btn:hover .sh_mark_edit_tooltip,.todo_layout .card .sh-card-header-button .sh_to_do_remove_btn:hover .sh_mark_remove_tooltip,.todo_layout .card .sh-card-header-button .sh_to_do_save_btn:hover .sh_mark_save_tooltip,.todo_layout .card .sh-card-header .custom-control.custom-checkbox:hover .sh_mark_completed_tooltip{opacity: 1;top: 24px;}
+.o_web_client .todo_layout .card .card-header .sh-card-header .custom-control.custom-checkbox .custom-control-input.sh_todo_checklist + .custom-control-label::before{border: 2px solid #ffffff !important;}
+
+
+.o_web_client .todo_layout .card .card-header .sh-card-header .custom-control.custom-checkbox > [type='checkbox']:not(:checked) + label:not(.lever):before{height: 16px !important;width: 16px !important;}
+.o_web_client .todo_layout .card .card-header .sh-card-header .custom-control.custom-checkbox [type='checkbox']:checked + label:not(.lever):before{width: 9px;height: 15px;}
+.o_web_client .todo_layout .card .card-header .sh-card-header .custom-control.custom-checkbox [type='checkbox'] + label:not(.lever){height: 20px;}
+.o_web_client .todo_layout .ui-sortable .card .card-body .sh_todo_description{margin-top: 5px;}
+@media only screen and (max-width: 767.98px){.todo_layout{min-width: 300px; max-width: 300px;}}
+@media only screen and (max-width: 992px){
+    .todo_layout .ui-sortable .card .card-header{position: unset;opacity: 1;top: 0;}
+    .o_web_client .todo_layout .ui-sortable .card .card-body .sh_todo_description{margin-top: 0px;}
+}
+
+.todo_layout #accordion .card .card-header + div .card-body{transition: all .5s;}
+@media only screen and (min-width: 993px){
+    .todo_layout #accordion .card .card-header:hover + div .card-body{padding-top: 35px !important;}
+}
+

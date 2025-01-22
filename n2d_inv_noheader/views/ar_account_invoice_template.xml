@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="ar_report_invoice_document_without_layout">
+            <t t-call="web.basic_layout">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <div class="page" style="direction:rtl;">
+                    <div class="row">
+                        <div name="invoice_address" class="col-xs-5" style="text-align:left">
+                            <address t-field="o.partner_id"
+                                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                            <div t-if="o.partner_id.vat" class="mt16"><t
+                                    t-esc="o.company_id.country_id.vat_label or 'TIN'"/>:
+                                <span t-field="o.partner_id.vat"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>
+                        <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">فاتورة</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'draft'">مسودة فاتورة</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">الغاء الفاتورة</span>
+                        <span t-if="o.type == 'out_refund'">رد فاتورة</span>
+                        <span t-if="o.type == 'in_refund'">رد فاتورة مورد</span>
+                        <span t-if="o.type == 'in_invoice'">فاتورة مورد</span>
+                        <span t-field="o.number"/>
+                    </h2>
+
+                    <div class="row mt32 mb32" style="direction:rtl;">
+                        <div class="col-xs-2" t-if="o.name">
+                            <strong style="text-align:right">الوصف:</strong>
+                            <p t-field="o.name"/>
+                        </div>
+                        <div class="col-xs-2" t-if="o.date_invoice">
+                            <strong style="text-align:right">تاريخ الفاتورة:</strong>
+                            <p t-field="o.date_invoice"/>
+                        </div>
+                        <div class="col-xs-2"
+                             t-if="o.date_due and o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">
+                            <strong style="text-align:right">تاريخ الدفع:</strong>
+                            <p t-field="o.date_due"/>
+                        </div>
+                        <div class="col-xs-2" t-if="o.origin">
+                            <strong style="text-align:right">المصدر:</strong>
+                            <p t-field="o.origin"/>
+                        </div>
+                        <div class="col-xs-2" t-if="o.partner_id.ref">
+                            <strong style="text-align:right">الرقم المرجعي للعميل:</strong>
+                            <p t-field="o.partner_id.ref"/>
+                        </div>
+                        <div name="reference" class="col-xs-2" t-if="o.reference">
+                            <strong style="text-align:right">الرقم المرجعي:</strong>
+                            <p t-field="o.reference"/>
+                        </div>
+                    </div>
+
+                    <!-- Is there a discount on at least one line? -->
+                    <t t-set="display_discount" t-value="any([l.discount for l in o.invoice_line_ids])"/>
+
+                    <table class="table table-condensed" name="invoice_line_table" style="text-align:right">
+                        <thead>
+                            <tr>
+                                <th style="text-align:right">الوصف</th>
+                                <th style="text-align:right" class="hidden">مصدر الوثيقه</th>
+                                <th style="text-align:right" class="text-right">الكمية</th>
+                                <th style="text-align:right" class="text-right">سعر الوحدة</th>
+                                <th style="text-align:right" t-if="display_discount" class="text-right">الخصم.(%)</th>
+                                <th style="text-align:right" class="text-right">الضرائب</th>
+                                <th style="text-align:right" class="text-right">القيمة</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <tr t-foreach="o.invoice_line_ids" t-as="l">
+                                <td>
+                                    <span t-field="l.name"/>
+                                </td>
+                                <td class="hidden">
+                                    <span t-field="l.origin"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.quantity"/>
+                                    <span t-field="l.uom_id" groups="product.group_uom"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.price_unit"/>
+                                </td>
+                                <td t-if="display_discount" class="text-right">
+                                    <span t-field="l.discount"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), l.invoice_line_tax_ids))"/>
+                                </td>
+                                <td class="text-right" id="subtotal">
+                                    <span t-field="l.price_subtotal"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="range(max(5-len(o.invoice_line_ids),0))" t-as="l">
+                                <td>&amp;nbsp;</td>
+                                <td class="hidden"></td>
+                                <td></td>
+                                <td></td>
+                                <td t-if="display_discount"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="clearfix">
+                        <div id="total" class="row pull-left">
+                            <div>
+                                <table class="table-condensed" style="min-width: 250px;max-width: 400px;">
+                                    <tr class="border-black" style="border-bottom:1px solid #dddddd;">
+                                        <td>
+                                            <strong style="text-align:right">الاجمالي الفرعي</strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_untaxed"
+                                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                    <t t-set="tax_groups_length" t-value="len(o._get_tax_amount_by_group())"/>
+                                    <t t-foreach="o._get_tax_amount_by_group()" t-as="amount_by_group">
+                                        <tr style="border-bottom:1px solid #dddddd;">
+                                            <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                                <td>
+                                                    <span t-esc="amount_by_group[0]"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-esc="amount_by_group[1]"
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td>
+                                                    <span t-esc="amount_by_group[0]"/>
+                                                    <span>&amp;nbsp;
+                                                        <span>on</span>
+                                                        <t t-esc="amount_by_group[2]"
+                                                           t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-esc="amount_by_group[1]"
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                    </t>
+                                    <tr class="border-black">
+                                        <td>
+                                            <strong style="text-align:right">الاجمالي</strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_total"
+                                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <p t-if="o.comment">
+                        <span style="text-align:right" t-field="o.comment"/>
+                    </p>
+                    <p t-if="o.payment_term_id">
+                        <span style="text-align:right" t-field="o.payment_term_id.note"/>
+                    </p>
+                    <p t-if="o.fiscal_position_id.note">
+                        <span style="text-align:right" t-field="o.fiscal_position_id.note"/>
+                    </p>
+                </div>
+            </t>
+        </template>
+
+        <template id="ar_report_invoice_document_with_payments_without_layout"
+                  inherit_id="n2d_inv_noheader.ar_report_invoice_document_without_layout" primary="True">
+            <xpath expr="//div[@id='total']/div/table" position="inside">
+                <t t-set="payments_vals" t-value="o._get_payments_vals()"/>
+                <t t-foreach="payments_vals" t-as="payment_vals">
+                    <tr>
+                        <td>
+                            <i class="oe_form_field text-right oe_payment_label">
+                                <t t-esc="payment_vals['date']"/>
+                                دفعت في
+                            </i>
+                        </td>
+                        <td class="text-right">
+                            <span t-esc="payment_vals['amount']"
+                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>
+                    </tr>
+                </t>
+                <t t-if="len(payments_vals) > 0">
+                    <tr class="border-black">
+                        <td>
+                            <strong>القيمة المتبقية</strong>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.amount_residual"
+                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>
+                    </tr>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="ar_report_invoice_with_payments_without_layout">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="n2d_inv_noheader.ar_report_invoice_document_with_payments_without_layout"
+                   t-lang="o.partner_id.lang"/>
+            </t>
+        </template>
+
+        <report
+                id="ar_account_invoices_without_layout"
+                model="account.invoice"
+                string="Arabic Invoices Without Header and Footer"
+                report_type="qweb-pdf"
+                name="n2d_inv_noheader.ar_report_invoice_with_payments_without_layout"
+                file="n2d_inv_noheader.ar_report_invoice_with_payments_without_layout"
+                attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+                print_report_name="(object._get_printed_report_name())"
+                menu="True"
+        />
+
+    </data>
+</odoo>

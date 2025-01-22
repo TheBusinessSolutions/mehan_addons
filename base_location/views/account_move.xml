@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+         <!-- Inherit Form View to Modify it -->
+        <record id="account_move_search_inherit_zip" model="ir.ui.view">
+            <field name="name">account.move.search.inherit.zip</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//filter[@name='salesperson']" position="before">
+               <filter string="Area" name="area" domain="[]" context="{'group_by': 'city_id'}"/>
+                    <filter string="Zip" name="area" domain="[]" context="{'group_by': 'zip_id'}"/>
+
+
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

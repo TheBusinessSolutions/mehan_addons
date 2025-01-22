@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_scrap_batch_form">
+            <field name="name">stock.scrap.batch.form</field>
+            <field name="model">stock.scrap.batch</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_validate" states="draft" string="Validate" type="object" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object" class="oe_stat_button" icon="fa-building"
+                                    name="open_scrap"
+                                    >
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Scrap Orders</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" string="Name"/>
+                            <h1>
+                                <field name="name" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="location_id" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="scrap_location_id" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        </group>
+                        <notebook>
+                            <page string="Scrap Lines">
+                                <field name="scrap_ids" attrs="{'readonly': [('state', '=', 'done')]}">
+                                    <tree editable="bottom">
+                                        <field name="product_id" required="1"/>
+                                        <field name="scrap_qty" required="1"/>
+                                        <field name="batch_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <group col="4">
+                                            <field name="product_id" required="1"/>
+                                            <field name="scrap_qty" required="1"/>
+                                            <field name="batch_id" invisible="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_scrap_batch_tree">
+            <field name="name">stock.scrap.batch.tree</field>
+            <field name="model">stock.scrap.batch</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="location_id"/>
+                    <field name="scrap_location_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_scrap_batch">
+            <field name="name">Scrap Batch</field>
+            <field name="res_model">stock.scrap.batch</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_stock_scrap_batch"
+                name="Scrap Batch"
+                parent="stock.menu_stock_warehouse_mgmt"
+                action="action_scrap_batch"
+                sequence="98"/>
+    </data>
+</odoo>

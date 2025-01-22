@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr_holiday_status_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.leave.type.form</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="is_unpaid"/>
+                    <field name="leave_type"/>
+                    <field name="allow_days_off"/>
+                    <field name="no_of_days" attrs="{'invisible': [('leave_type', 'not in', ['haj','dead','learning', 'conference'])]}"/>
+                    <field name="husband_dead_duration_muslim" attrs="{'invisible': [('leave_type', '!=', 'husband_dead')]}"/>
+                    <field name="husband_dead_duration_non_muslim" attrs="{'invisible': [('leave_type', '!=', 'husband_dead')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

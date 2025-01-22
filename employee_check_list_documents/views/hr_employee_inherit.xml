@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="hr_employee_inherit_checklist_form_view">
+        <field name="name">hr.employee.form.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <page name="hr_settings" position="after">
+                <page name="checklist" string="Checklist" invisible="1">
+                    <group>
+                        <group name="entry_checklist" string="Entry Checklist">
+                            <field name="entry_checklist" widget="many2many_checkboxes" readonly="1" force_save="1"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+            <div class="oe_button_box" position="inside">
+                <button class="oe_stat_button" name="entry_document_view" type="object" icon="fa-list-ol">
+                    <field string="Documents" name="entry_document_count" widget="statinfo"/>
+                </button>
+            </div>
+            <field name="category_ids" position="after">
+                <div>
+                    <field name="entry_progress" widget="percentpie"/>
+                </div>
+            </field>
+            <xpath expr="//header" position="inside">
+                <button name="add_checklists_button" string="Add Documents" type="object" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

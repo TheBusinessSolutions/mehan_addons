@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="tcr_sequence" model="ir.sequence">
+            <field name="name">TCR Sequence</field>
+            <field name="code">account.analytic.account</field>
+            <field name="prefix">STP</field>
+            <field name="number_next">1000</field>
+            <field name="number_increment">1</field>
+            <field name="padding">5</field>
+        </record>
+    </data>
+</odoo>

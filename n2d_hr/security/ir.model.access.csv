@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_hr_overtime,access_hr_overtime,n2d_hr.model_hr_overtime,,1,1,1,1
+access_hr_absence,access_hr_absence,n2d_hr.model_hr_absence,,1,1,1,1
+access_hr_penalty_confg,access__hr_penalty_confg,n2d_hr.model_hr_penalty_confg,,1,1,1,1
+access_hr_bonus_confg,access__hr_bonus_confg,n2d_hr.model_hr_bonus_confg,,1,1,1,1
+access_hr_penalty,access__hr_penalty,n2d_hr.model_hr_penalty,,1,1,1,1
+access_hr_bonus,access__hr_bonus,n2d_hr.model_hr_bonus,,1,1,1,1
+access_hr_bankvisa,access_hr_bankvisa,n2d_hr.model_bank_visa,,1,1,1,1
+access_hr_employee_bank,hr.employee.bank,n2d_hr.model_hr_employee_bank,,1,1,1,1
+

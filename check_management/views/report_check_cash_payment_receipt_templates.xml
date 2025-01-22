@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_receipt_cash_checck">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="o">
+				<t t-call="check_management.receipt_check_cash_payment_print" t-lang="lang"/>
+			</t>
+		</t>
+	</template>
+    <template id="receipt_check_cash_payment_print">
+        <t t-call="web.external_layout">
+            <t t-foreach="docs" t-as="o"/>
+            <div class="page">
+                <h3><strong>Payment Receipt: <span t-field="o.name"/></strong></h3>
+                <h3><strong>Receipt No: <span t-field="o.receipt_number"/></strong></h3>
+                <div class="row mt64">
+                    <div class="col-6" t-if="o.payment_date">
+                        <strong>Payment Date: </strong> <span t-field="o.payment_date"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <t>
+                            <strong>Customer: </strong>
+                        </t><span t-field="o.partner_id"/>
+
+                    </div>
+                    <div class="col-6" t-if="o.payment_method">
+                        <strong>Payment Method: </strong><span t-field="o.payment_method"/>
+                    </div>
+
+                </div>
+                <div class="row mb64">
+                    <div class="col-6" t-if="o.amount">
+                        <strong>Payment Amount: </strong><span t-field="o.amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                     </div>
+                    <div class="col-6" t-if="o.payment_subtype">
+                        <strong>payment subtype: </strong><span t-field="o.payment_subtype"/>
+                    </div>
+
+                </div>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th><span>Check Number</span></th>
+                            <th><span>Check Date</span></th>
+                            <th class="text-right"><span>Check Amount</span></th>
+                            <th class="text-right"><span>Check Bank</span></th>
+                            <th class="text-right"><span>Deposit Bank</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="o.pay_check_ids" t-as="inv">
+                            <td><span t-field="inv.check_number"/></td>
+                            <td><span t-field="inv.check_date"/></td>
+                            <td class="text-right"><span t-field="inv.amount"/></td>
+                            <td class="text-right"><span t-field="inv.bank"/></td>
+                            <td class="text-right"><span t-field="inv.dep_bank"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_payment_receipt">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.partner_id.lang"/>
+                <t t-call="check_management.receipt_check_cash_payment" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

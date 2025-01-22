@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.menu" id="account.account_analytic_def_account">
+            <field name="name">TCR</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="analytic.action_account_analytic_account_form">
+            <field name="name">TCR</field>
+        </record>
+    </data>
+</odoo>

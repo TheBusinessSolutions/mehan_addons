@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+   <t t-name="ToDoWidget">
+      <div class="todo_layout" id="todo_layout">
+      		<div class="theme_header">
+      			<h3>To Do</h3>
+      			<i class="fa fa-close close_todo_setting"></i>
+      		</div>
+            <div class="add_todo_section">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control sh_add_todo_input" required="required" placeholder="Add To Do..." aria-label="Add To Do..." aria-describedby="basic-addon2"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary sh_add_todo" type="button">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div id="accordion" >
+                
+            </div>
+           
+      </div>
+   </t>
+   <t t-name="ToDoCard">
+    <div  t-att-id="rec" t-att-class="is_done ? 'card sh_done_todo' : 'card'">
+        <!-- <div class="sh_blank_div"></div> -->
+            <div class="card-header" id="headingOne" >
+                <div class="sh-card-header" >
+                    <div class="custom-control custom-checkbox">
+                        <t t-if="is_done">
+                            <input checked="checked" type="checkbox" t-att-id="'todo-checkbox-'+rec" class="custom-control-input sh_todo_checklist"/>
+                        </t>
+                        <t t-else="">
+                            <input type="checkbox" t-att-id="'todo-checkbox-'+rec" class="custom-control-input sh_todo_checklist"/>
+                        </t>
+                    
+                        <label t-att-for="'todo-checkbox-'+rec" class="custom-control-label"></label>
+                        <!-- <div class="sh_to_do_check_btn"> -->
+                            <span class="sh_mark_completed_tooltip">Mark Completed</span>
+                        <!-- </div> -->
+                    </div>
+                
+                </div>
+                <div class="sh-card-header-button">
+                    <div class="sh_to_do_edit_btn">
+                        <span class="fa fa-pencil sh_header_pencil" t-att-id="rec"/>
+                        <span class="sh_mark_edit_tooltip">Edit</span>
+                    </div>
+                    <div class="sh_to_do_save_btn">
+                        <span class="fa fa-save sh_header_save" t-att-id="rec" style="display:none;"/>
+                        <span class="sh_mark_save_tooltip">Save</span>
+                    </div>
+                    <div class="sh_to_do_remove_btn">
+                        <span class="fa fa-times sh_header_times" t-att-id="rec"/>
+                        <span class="sh_mark_remove_tooltip">Remove</span>
+                    </div>
+                </div>
+            
+            
+        </div>
+
+        <div t-att-id="'collapseOne_'+rec">
+            <div class="card-body">
+                <span class="sh_todo_label" t-att-id="rec"><t t-esc="name"/></span>
+               <textarea class="sh_todo_description" t-att-id="rec" style="white-space:normal;display:none;"><t t-esc="name"/></textarea>
+            </div>
+        </div>
+    </div>
+</t>
+</template>

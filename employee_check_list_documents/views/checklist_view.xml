@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model='ir.ui.view' id='employee_check_list_form_view'>
+        <field name="name">employee.checklist.form</field>
+        <field name="model">custom.employee.checklist</field>
+        <field name="arch" type="xml">
+            <form string="Checklist">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model='ir.ui.view' id='employee_check_list_tree_view'>
+        <field name="name">employee.checklist.tree</field>
+        <field name="model">custom.employee.checklist</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model='ir.ui.view' id='employee_check_list_document_form_view'>
+        <field name="name">employee.checklist.document.form</field>
+        <field name="model">custom.employee.checklist.document</field>
+        <field name="arch" type="xml">
+            <form string="Document">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="checklist_id"/>
+                        </group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="is_attached" string="Attached"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model='ir.ui.view' id='employee_check_list_document_tree_view'>
+        <field name="name">employee.checklist.document.tree</field>
+        <field name="model">custom.employee.checklist.document</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="checklist_id"/>
+                <field name="is_attached"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_employee_checklist" model="ir.actions.act_window">
+        <field name="name">Checklists</field>
+        <field name="res_model">custom.employee.checklist</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_employee_checklist_document" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="res_model">custom.employee.checklist.document</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="employee_checklist_root_menu" name="Checklist" parent="hr.menu_hr_root" sequence="3"/>
+
+    <menuitem id="employee_checklist_menu" name="Checklists" parent="employee_checklist_root_menu"
+              action="action_employee_checklist"/>
+
+    <menuitem id="employee_document_checklist_menu" name="Documents" parent="employee_checklist_root_menu"
+              action="action_employee_checklist_document"/>
+
+</odoo>

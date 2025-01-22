@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_as_product_label,as.product_label,model_as_product_label,,1,1,1,1
+access_as_product_label_line,as.product_label.line,model_as_product_label_line,,1,1,1,1
+access_product_tags,access_product_tags,model_product_tags,,1,1,1,1
+access_as_product_brand,as.product.brand,model_as_product_brand,,1,1,1,1
+access_as_product_tab,as.product.tab,model_as_product_tab,,1,1,1,1
+access_product_tab_line,product.tab.line,model_product_tab_line,,1,1,1,1
+access_faq,model_faq,model_faq,,1,1,1,1
+access_as_product_extra_info,access_as_product_extra_info,model_as_product_extra_info,,1,1,1,1

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_site_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style>
+                            table, td{
+                            border: 1px solid black;
+                            text-align: center;
+                            }
+                        </style>
+                        <div class="col">
+                            <div class="col-xs-6">
+                                <strong>Date From:</strong>
+                                <span>
+                                    <t t-esc="docs[-1].check_in" t-options='{"widget": "date","format": "dd-MM-yyyy"}'/>
+                                </span>
+                            </div>
+                            <div class="col-xs-6">
+                                <strong>Date To:</strong>
+                                <t t-esc="docs[0].check_in" t-options='{"widget": "date","format": "dd-MM-yyyy"}'/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="col-xs-6">
+                                <strong>Employee:</strong>
+                                <t t-esc="docs[0].employee_id.name"/>
+                            </div>
+                        </div>
+                        <table style="height: 100%; width: 100%;">
+                            <t t-set="total" t-value="0"/>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <strong></strong>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <strong>Site Name</strong>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <strong>Date</strong>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <strong>Allowance</strong>
+                                    </td>
+                                </tr>
+                                <t t-set="count" t-value="0"/>
+                                <t t-foreach="docs" t-as="o">
+                                    <t t-set="count" t-value="count + 1"/>
+                                    <tr>
+                                        <td>
+                                            <span t-esc="count"/>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <span t-field="o.site_id"/>
+                                        </td>
+                                         <td style="text-align: center;">
+                                            <span t-field="o.check_in" t-options='{"widget": "date","format": "dd-MM-yyyy"}'/>
+                                        </td>
+                                         <td style="text-align: center;">
+                                            <span t-field="o.site_allowance"/>
+                                             <t t-set="total" t-value="total + o.site_allowance"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td style="text-align: center;">
+                                        <t t-esc="'{:,.3f}'.format(total)"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </t>
+            </t>
+        </template>
+
+        <report
+                id="action_report_employee_site"
+                model="hr.attendance"
+                string="Employee Site Report"
+                report_type="qweb-pdf"
+                name="hr_site_allowance.report_site_template"
+                file="hr_site_allowance.report_site_template"
+                menu="False"/>
+    </data>
+</odoo>

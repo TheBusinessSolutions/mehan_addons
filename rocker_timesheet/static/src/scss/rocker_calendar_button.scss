@@ -1,0 +1,9 @@
+.o_rocker_calendar .o_content {
+    .o_rocker_container {
+        height: 6rem;
+    }
+
+    .o_calendar_container {
+      height: calc(100% - 6rem);
+    }
+}

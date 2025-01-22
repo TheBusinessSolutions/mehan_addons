@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="group_petty_cash_approval" model="res.groups">
+            <field name="name">Petty Cash Approval</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_petty_cash_confirmation" model="res.groups">
+            <field name="name">Petty Cash Confirmation</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+<!--        <record id="hr_employees_generic_access" model="ir.rule">-->
+<!--            <field name="name">Generic Access to Employees</field>-->
+<!--            <field name="model_id" ref="hr.model_hr_employee"/>-->
+<!--            <field name="groups" eval="[(4, ref('base.group_user'))]"/>-->
+<!--            <field name="domain_force">[('user_id', '=', user.id)]</field>-->
+<!--            <field eval="0" name="perm_unlink"/>-->
+<!--            <field eval="0" name="perm_write"/>-->
+<!--            <field eval="1" name="perm_read"/>-->
+<!--            <field eval="0" name="perm_create"/>-->
+<!--        </record>-->
+
+        <record id="hr_employees_petty_access" model="ir.rule">
+            <field name="name">Groups Access to Employees</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="domain_force">[]</field>
+            <field name="groups"
+                   eval="[(4, ref('n2d_petty_cash.group_petty_cash_approval')),(4, ref('n2d_petty_cash.group_petty_cash_confirmation'))]"/>
+            <field eval="1" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="add_cash_generic_access" model="ir.rule">
+            <field name="name">Generic Access to Add Cash</field>
+            <field name="model_id" ref="n2d_petty_cash.model_cash_in_petty"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="add_cash_petty_access" model="ir.rule">
+            <field name="name">Groups Access to Add Cash</field>
+            <field name="model_id" ref="n2d_petty_cash.model_cash_in_petty"/>
+            <field name="domain_force">[]</field>
+            <field name="groups"
+                   eval="[(4, ref('n2d_petty_cash.group_petty_cash_approval')),(4, ref('n2d_petty_cash.group_petty_cash_confirmation'))]"/>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="cash_to_generic_access" model="ir.rule">
+            <field name="name">Generic Access Cash to petty</field>
+            <field name="model_id" ref="n2d_petty_cash.model_cash_to_petty"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="cash_to_petty_access" model="ir.rule">
+            <field name="name">Groups Access Cash to Petty</field>
+            <field name="model_id" ref="n2d_petty_cash.model_cash_to_petty"/>
+            <field name="domain_force">[]</field>
+            <field name="groups"
+                   eval="[(4, ref('n2d_petty_cash.group_petty_cash_approval')),(4, ref('n2d_petty_cash.group_petty_cash_confirmation'))]"/>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="cash_from_generic_access" model="ir.rule">
+            <field name="name">Generic Access Cash From Petty</field>
+            <field name="model_id" ref="n2d_petty_cash.model_cash_from_petty"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="cash_from_petty_access" model="ir.rule">
+            <field name="name">Groups Access Cash From Petty</field>
+            <field name="model_id" ref="n2d_petty_cash.model_cash_from_petty"/>
+            <field name="domain_force">[]</field>
+            <field name="groups"
+                   eval="[(4, ref('n2d_petty_cash.group_petty_cash_approval')),(4, ref('n2d_petty_cash.group_petty_cash_confirmation'))]"/>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="petty_batch_generic_access" model="ir.rule">
+            <field name="name">Generic Access Petty Batch</field>
+            <field name="model_id" ref="n2d_petty_cash.model_petty_batch"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="cash_batch_petty_access" model="ir.rule">
+            <field name="name">Groups Access Petty Batch</field>
+            <field name="model_id" ref="n2d_petty_cash.model_petty_batch"/>
+            <field name="domain_force">[]</field>
+            <field name="groups"
+                   eval="[(4, ref('n2d_petty_cash.group_petty_cash_approval')),(4, ref('n2d_petty_cash.group_petty_cash_confirmation'))]"/>
+            <field eval="0" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+    </data>
+</odoo>

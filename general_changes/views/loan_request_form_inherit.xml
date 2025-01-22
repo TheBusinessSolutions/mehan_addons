@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_loan_inherited_general" model="ir.ui.view">
+            <field name="name">HR LOAN</field>
+            <field name="model">hr.loan</field>
+            <field name="inherit_id" ref="ohrms_loan.hr_loan_form_view"/>
+            <field name="arch" type="xml">
+                <field name="department_id" position="after">
+                    <field name="is_department_manager" invisible="1"/>
+                </field>
+                <field name="state" position="replace">
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,departmentapprove,hrapprove,waiting_approval_1,approve"/>
+                </field>
+                <xpath expr="//button[@name='action_submit']" position="replace">
+                    <button name="action_submit" type="object" string="Submit" states="hrapprove" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button name="action_department_approve" type="object" string="Approve" class="oe_highlight"
+                            attrs="{'invisible':['|',('state','not in', ['draft']),('is_department_manager','=', False)]}"/>
+                    <button name="action_hr_approve" type="object" string="Approve" states="departmentapprove"
+                            class="oe_highlight" groups="hr.group_hr_manager"/>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

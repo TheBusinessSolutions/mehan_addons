@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="vat_report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+            <t t-set="total_tax" t-value="0"/>
+                <div class="page">
+                    <center>
+                        <h2>VAT Details Report</h2>
+                    </center>
+                    <div>
+                        <div>
+                            <strong>Date from:</strong>
+                            <span t-esc="date_from"/>
+                        </div>
+                        <div>
+                            <strong>Date to:</strong>
+                            <span t-esc="date_to"/>
+                        </div>
+                    </div>
+                    <div>
+                        <t t-if="account_type == 'customer_invoices'">
+                            <strong>Account Type: {Customer}</strong>
+                        </t>
+                        <t t-if="account_type == 'supplier_invoices'">
+                            <strong>Account Type: {Supplier}</strong>
+                        </t>
+                        <t t-if="account_type == 'both'">
+                            <strong>Account Type: {Both Customer and Supplier}</strong>
+                        </t>
+                    </div>
+                    <br/>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Partner</th>
+                                <th>TRN (الرقم الضريبي)</th>
+                                <th>Date</th>
+                                <th>Invoice #</th>
+                                <th>VAT Amount</th>
+                                <th>Total Invoice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="tax_data" t-as="line">
+                                <tr>
+                                    <td>
+                                        <span t-esc="line['partner']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['trn']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['date']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['invoice']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['vat_amount']"/>
+                                        <t t-set="total_tax" t-value="total_tax+line['vat_amount']"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line['total_invoice']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <div style="text-align:right;background-color:red;color:white;padding:15px 150px;">
+                        ===<strong>
+                            Total TAX: 
+                        </strong>
+                        [<strong style="font-size: 20px;" t-esc="total_tax"></strong>]===
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="action_vat_report"
+            model="vat.report"
+            string="VAT Report"
+            report_type="qweb-pdf"
+            name="n2d_vat_report.vat_report"
+            file="n2d_vat_report.vat_report"
+    />
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr_payslip_attendance_hours" model="ir.ui.view">
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll_community.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='credit_note']" position="after">
+                    <field name="absence_days" readonly="1"/>
+                    <field name="attend_amount" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

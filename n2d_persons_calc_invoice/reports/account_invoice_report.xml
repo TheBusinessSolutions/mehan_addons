@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <template id="account_invoice_report_barcode" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@class='page']" position='inside'>
+                <t t-if="o.is_party">
+                    <table class="table table-condensed">
+                        <tr>
+                            <td>
+                                <strong>Product</strong>
+                            </td>
+                            <td>
+                                <strong>Quantity</strong>
+                            </td>
+                        </tr>
+                        <t t-foreach="o.dishes_ids" t-as="d">
+                            <tr>
+                                <td>
+                                    <span t-field="d.product_id"/>
+                                </td>
+                                <td>
+                                    <span t-field="d.product_uom_qty"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+
+                </t>
+            </xpath>
+        </template>
+
+
+    </data>
+</odoo>

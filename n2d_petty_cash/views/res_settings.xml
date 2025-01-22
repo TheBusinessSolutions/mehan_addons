@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Petty" string="Petty Cash" data-key="petty">
+                        <h2>Petty-Cash</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <label for="petty_cash_account_id" string="Petty-Cash Transfers"/>
+                                <div class="text-muted">
+                                    Account used in Petty-Cash
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <field name="petty_cash_account_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <label for="petty_cash_journal_id" string=" Petty-Cash Journals"/>
+                                <div class="text-muted">
+                                    Journal used in Petty-Cash
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <field name="petty_cash_journal_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <label for="petty_cash_journal_id" string="Employee Account Petty Cash"/>
+                                <div class="text-muted">
+                                    <field name="employee_account_petty_cash"/>
+                                    Employee Account Petty Cash
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

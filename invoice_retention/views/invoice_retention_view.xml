@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+    <!-- Invoice Retentions -->
+    <record id="retention_line_search" model="ir.ui.view">
+        <field name="name">retention.line.search</field>
+        <field name="model">retention.line</field>
+        <field name="arch" type="xml">
+            <search string="Invoice Retentions">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="invoice_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Customer" name="partner_id" context="{'group_by':'partner_id'}"/>
+                    <filter string="Invoice" name="invoice_id" context="{'group_by':'invoice_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="retention_line_list_view" model="ir.ui.view">
+        <field name="name">retention.line.list</field>
+        <field name="model">retention.line</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Retentions" decoration-info="state=='to_invoice'" decoration-muted="state=='invoiced'">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="invoice_id"/>
+                <field name="product_id"/>
+                <field name="amount"/>
+                <field name="payment_invoice_id"/>
+                <field name="state" readonly="1"/>
+				<field name="retention_inv_type"/>	                
+            </tree>
+        </field>
+    </record>
+
+    <record id="retention_line_form_view" model="ir.ui.view">
+        <field name="name">retention.line.form</field>
+        <field name="model">retention.line</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="Invoice Retentions">
+                <header>
+                    <field name="state" widget="statusbar" nolabel="1"/>
+                </header>
+                <sheet string="Invoice">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="product_id"/>
+                            <field name="invoice_id"/>
+                            <field name="payment_invoice_id"/>
+                        </group>
+                        <group>
+                            <field name="partner_id"/>
+							<field name="retention_inv_type"/>                            
+                            <field name="amount"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="retention_line_action" model="ir.actions.act_window">
+        <field name="name">Invoice Retentions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">retention.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to define a new retention.
+          </p><p>
+            Invoice Retentions are used to Manage retention amount for ongoing project and once project get completed can create Invoice and pay it.
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_retention_line" name="Invoice Retentions"
+        sequence="90" parent="account.menu_finance_payables" action="retention_line_action"/>
+
+   
+    <!-- Partner View -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            
+        	<div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object"  name="partner_retention_action" icon="fa-pencil-square-o"> 
+                    <field name="retention_count" widget="statinfo"/>
+                </button>
+            </div>
+            
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object"  name="partner_retention_customer_inv_action" icon="fa-pencil-square-o"> 
+                    <field name="retention_count_customer_inv" widget="statinfo"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <!-- Invoice View -->
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">account.invoice.form.retention</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//sheet/group/group[@id='header_right_group']" position="inside">
+                  <label for="retention_fee" attrs="{'invisible':[('move_type', 'not in', ['in_invoice','out_invoice'])]}"/>
+                  <div name='retention_fee' attrs="{'invisible':[('move_type', 'not in', ['in_invoice','out_invoice'])]}">
+                      <div>
+                        <field name='retention_fee' class="oe_inline" nolabel="1" attrs="{'invisible': [('move_type', 'not in', ['in_invoice','out_invoice'])]}"/>
+                        <button name="create_retention" string="Add Line" type="object" class="oe_inline fa fa-arrow-right oe_link" attrs="{'invisible': ['|','|',('retention_fee','=', False), ('state','!=', 'draft'),('move_type', 'not in', ['in_invoice','out_invoice'])]}"/>
+                      </div>
+                  </div>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>

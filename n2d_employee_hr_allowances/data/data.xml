@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!--Salary Rules-->
+        <record id="contract_allowances_bonus" model="hr.salary.rule">
+            <field name="name">Bonus Allowances</field>
+            <field name="sequence" eval="11"/>
+            <field name="code">BonusAll</field>
+            <field name="category_id" ref="hr_payroll_community.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.bonus</field>
+<!--            <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>-->
+
+        </record>
+
+        <record id="contract_allowances_other" model="hr.salary.rule">
+            <field name="name">Other Allowances</field>
+            <field name="sequence" eval="11"/>
+            <field name="code">OtherAll</field>
+            <field name="category_id" ref="hr_payroll_community.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.other</field>
+<!--            <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>-->
+
+        </record>
+
+        <record id="insurance_salary_rule" model="hr.salary.rule">
+            <field name="name">INSURANCE</field>
+            <field name="sequence" eval="101"/>
+            <field name="code">INS</field>
+            <field name="category_id" ref="hr_payroll_community.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">if employee.is_saudi:
+                result = -((contract.accom + contract.wage) * 0.1)
+                else:
+                result = 0
+            </field>
+<!--            <field name="struct_id" ref="n2d_hr_structure.structure_worker_001"/>-->
+
+        </record>
+    </data>
+</odoo>

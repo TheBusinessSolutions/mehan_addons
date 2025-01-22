@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <menuitem id="actions_main_menu" name="Employee Actions" groups="actions_management.actions_group_department_manager,actions_management.actions_group_administration_manager"/>
+
+        <menuitem name="Overtime" id="menu_action_view_overtime" action="action_view_overtime" sequence="1"
+                  parent="actions_main_menu"/>
+
+
+        <menuitem name="Absence" id="menu_action_view_absence" action="action_view_absence" sequence="2"
+                  parent="actions_main_menu"/>
+
+
+        <menuitem name="Penalty" id="menu_action_view_penalty" action="action_view_penalty" sequence="3"
+                  parent="actions_main_menu"/>
+        <menuitem name="Bonus" id="menu_action_view_bonus" action="action_view_bonus" sequence="4"
+                  parent="actions_main_menu"/>
+
+        <menuitem id="penalty_conf_main_menu" name="Penalty Configuration" action="action_view_hr_penalty_confg"
+                  parent="hr.menu_human_resources_configuration" sequence="5"/>
+        <menuitem id="bonus_conf_main_menu" name="Bonus Configuration" action="action_view_hr_bonus_confg"
+                  parent="hr.menu_human_resources_configuration" sequence="6"/>
+
+    </data>
+</odoo>

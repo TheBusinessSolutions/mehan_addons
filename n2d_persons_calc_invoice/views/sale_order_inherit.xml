@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sales_order_inherit_view_form" model="ir.ui.view">
+            <field name="name">sale.order.view.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_term_id" position="after">
+                    <field name="is_party"/>
+                </field>
+                <xpath expr="//notebook/page[1]" position="after">
+                    <page string="Menu Item" attrs="{'invisible': [('is_party', '=', False)]}">
+                        <field name="dishes_ids">
+                            <tree editable="bottom">
+                                <field name="product_id" required="1"/>
+                                <field name="product_uom_qty"/>
+                                <field name="unit_price"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+<!--
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="name">External Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="context">{}</field>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel')),('is_party', '=', False)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a Quotation, the first step of a new sale.
+                </p>
+                <p>
+                    Once the quotation is confirmed, it becomes a sales order.
+                    You'll be able to invoice it and collect payments.
+                    From the <i>Sales Orders</i> menu, you can track delivery
+                    orders or services.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_orders_internal" model="ir.actions.act_window">
+            <field name="name">Material Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="context">{}</field>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel')),('is_party', '=', True)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a Quotation, the first step of a new sale.
+                </p>
+                <p>
+                    Once the quotation is confirmed, it becomes a sales order.
+                    You'll be able to invoice it and collect payments.
+                    From the <i>Sales Orders</i> menu, you can track delivery
+                    orders or services.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_orders_internal" action="action_orders_internal" name="Material Orders"
+                  parent="sale.sale_order_menu" groups="group_material"/>
+
+        <record model="ir.ui.menu" id="sale.menu_sale_order">
+            <field name="groups_id" eval="[(6,0,[ref('n2d_persons_calc_invoice.group_external')])]"/>
+            <field name="name" >External Orders</field>
+        </record>
+-->
+
+    </data>
+</odoo>

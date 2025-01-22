@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_annual_leave_allowances,access.annual.leave.allowances,model_annual_leave_allowances,,1,1,1,1

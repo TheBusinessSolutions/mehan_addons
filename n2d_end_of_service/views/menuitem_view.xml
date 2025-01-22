@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem id="eos_reason_menuitem"
+                  name="E.O.S Reason"
+                  parent="hr.menu_human_resources_configuration"
+                  action="action_eos_reason"/>
+
+        <menuitem id="employee_eos_menuitem"
+                  name="Employee E.O.S"
+                  parent="hr.menu_hr_root"
+                  action="action_employee_end_of_service"/>
+    </data>
+</odoo>

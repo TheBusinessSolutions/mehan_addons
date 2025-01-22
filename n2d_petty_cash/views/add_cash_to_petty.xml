@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="add_cash_to_petty_form" model="ir.ui.view">
+            <field name="name">Add cash in petty-cash</field>
+            <field name="model">cash.in.petty</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Approve" name="action_approve" states="draft" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_approval"/>
+
+                        <button string="Reject" name="action_reject" states="draft,approved,confirmed" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_confirmation"/>
+
+                        <button string="Confirm" name="action_confirm" states="approved" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_confirmation"/>
+
+                        <button string="Set to Draft" name="set_to_draft" states="rejected" type="object"
+                                class="oe_highlight" groups="n2d_petty_cash.group_petty_cash_confirmation"/>
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,approved,confirmed"/>
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_id" required="1"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="amount" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="date" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="payment_voucher_no" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                            </group>
+                            <group>
+                                <field name="account_id" groups="n2d_petty_cash.group_petty_cash_confirmation"
+                                       attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <field name="move_id" readonly="1"/>
+                                <field name="entry_state" invisible="1"/>
+                                <field name="doc_number" attrs="{'readonly': [('state', 'in', ['rejected','confirmed'])]}"/>
+                                <!--<field name="analytic_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>-->
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="add_cash_to_petty_tree" model="ir.ui.view">
+            <field name="name">Add cash in petty-cash</field>
+            <field name="model">cash.in.petty</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="amount"/>
+                    <field name="account_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_add_cash_to_petty" model="ir.actions.act_window">
+            <field name="name">Add cash in petty-cash</field>
+            <field name="res_model">cash.in.petty</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_petty_cash" name="Petty Cash" 
+                  sequence="4" web_icon="n2d_petty_cash,static/description/icon.png"/>
+
+        <menuitem name="Add cash in petty-cash" id="menu_add_cash_to_petty" action="action_add_cash_to_petty"
+                  parent="menu_petty_cash"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="custom_serial_number_tree_view" model="ir.ui.view">
+            <field name="name">custom.serial.number.tree.view</field>
+            <field name="model">custom.serial.number</field>
+            <field name="arch" type="xml">
+                <tree string="Serial Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="custom_serial_number_form_view">
+            <field name="name">custom.serial.number.form</field>
+            <field name="model">custom.serial.number</field>
+            <field name="arch" type="xml">
+                <form string="Serial Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="serial_product_ids" widget="many2many" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="custom_serial_number_action_window">
+            <field name="name">Serial Number</field>
+            <field name="res_model">custom.serial.number</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Serial" id="custom_serial_number_menu" parent="sale.sale_order_menu"
+                  action="custom_serial_number_action_window" sequence="6"/>
+
+    </data>
+</openerp>

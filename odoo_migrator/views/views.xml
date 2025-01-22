@@ -1,0 +1,147 @@
+<odoo>
+  <data>
+    <record id="odoo_migrato_view_form" model="ir.ui.view">
+        <field name="name">_view_form</field>
+        <field name="model">migarator.models</field>
+        <field name="arch" type="xml">
+            <form string="_form">
+                <header>
+                    <button name="get_data_from_api" string="Get Data" type="object" states="draft"/>
+                    <button name="check_fields_many2one" string="Check Fields M2o" type="object" states="draft"/>
+                    <button name="check_fields_many2many" string="Check Fields M2M" type="object" states="draft"/>
+                    <button name="check_fields_selection" string="Check Fields Selection" type="object" states="draft"/>
+                    <button name="check_fields_all" string="Check Fields All" type="object" states="draft"/>
+                    <button name="check_fields_all2" string="Check Fields All2" type="object" states="draft"/>
+                    <button name="get_selct" string="Get Select" type="object" />
+                    <button name="reseq" string="Resq" type="object" />
+<!--                    <button name="create_cron_all" string="Create All " type="object" states="draft"/>-->
+<!--                    <button name="run_cron_all" string="Run All " type="object" states="draft"/>-->
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="src_model"/>
+                        <field name="dest_model"/>
+                        <field name="is_write"/>
+                        <field name="src_res_id" attrs="{'invisible':[('is_write','=',False)]}"/>
+                        <field name="dest_res_id" attrs="{'invisible':[('is_write','=',False)]}"/>
+                        <field name="fields_not_in"/>
+                        <field name="length"/>
+                        <field name="domain"/>
+
+                    </group>
+                    <notebook>
+                        <page string="Fields">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="src_field"/>
+                                    <field name="dest_field"/>
+                                    <field name="is_many_2_one"/>
+                                    <field name="is_many_2_many"/>
+                                    <field name="is_selection"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="odoo_migrator_list">
+      <field name="name">Migrator</field>
+      <field name="model">migarator.models</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="src_model"/>
+          <field name="dest_model"/>
+          <field name="is_write"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="odoo_migrator_search">
+      <field name="name">Migrator</field>
+      <field name="model">migarator.models</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="src_model"/>
+          <field name="dest_model"/>
+          <field name="is_write"/>
+          <field name="state"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_migrator_action_window">
+      <field name="name">Migrator</field>
+      <field name="res_model">migarator.models</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <menuitem name="Migrator" id="odoo_migrator_menu_2" action="odoo_migrator_action_window"/>
+
+                  <record id="res_config_settings_view_form_50" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.cliens</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Migarator" string="Migarator" data-key="migarator">
+                    <h2>Migarator</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">
+                                    <label for="migarator_host_name"/>
+                                </span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="migarator_host_name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">
+                                    <label for="migarator_database"/>
+                                </span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="migarator_database" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">
+                                    <label for="migarator_user_name"/>
+                                </span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="migarator_user_name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">
+                                    <label for="migarator_password"/>
+                                </span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="migarator_password" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+  </data>
+</odoo>

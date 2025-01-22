@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+
+    <t t-name="mail.Message" t-inherit="mail.Message" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_Message')]" position="attributes">
+            <attribute name="t-att-class">
+            {
+                'o_Message_active': isActive,
+                'sh_right_chat':isLoginUser,
+                'sh_left_chat':!isLoginUser,
+                'o-clicked': state.isClicked,
+                'o-discussion': messageView and (messageView.message.is_discussion or messageView.message.is_notification),
+                'o-has-message-selection': threadView and threadView.replyingToMessageView,
+                'o-highlighted': messageView and (messageView.message.isHighlighted or messageView.isHighlighted),
+                'o-mobile': messaging and messaging.device.isMobile,
+                'o-not-discussion': messageView and !(messageView.message.is_discussion or messageView.message.is_notification),
+                'o-notification': messageView and messageView.message.message_type === 'notification',
+                'o-selected': isSelected,
+                'o-squashed': messageView and messageView.isSquashed,
+                'o-starred': messageView and messageView.message.isStarred,
+                'mt-3': messageView and !messageView.isSquashed,
+                'mb-3': messageView and !messageView.isSquashed,
+            }
+            </attribute>
+        </xpath> 
+        <xpath expr="//div[hasclass('o_Message_core')]" position="attributes">
+            <attribute name="t-att-class">
+            {
+                'sh_message_attchment':messageView and messageView.attachmentList,
+            
+            }
+            </attribute>
+        </xpath>
+        <xpath expr="//MessageInReplyToView" position="replace">
+        </xpath>
+        <xpath expr="//div[@t-if='isActive and messageView.messageActionList']" position="replace">
+        </xpath> 
+        <xpath expr="//div[hasclass('o_Message_core')]/t[@t-if='!messageView.isSquashed']" position="before">
+            <MessageInReplyToView t-if="messageView.messageInReplyToView" messageInReplyToViewLocalId="messageView.messageInReplyToView.localId"/>
+            <div t-if="isActive and messageView.messageActionList" class="o_Message_actionListContainer pl-5 pr-3" t-att-class="{ 'o-squashed': messageView.isSquashed }">
+                    <MessageActionList messageActionListLocalId="messageView.messageActionList.localId"/>
+                </div>
+        </xpath>
+
+
+    </t>
+</templates>

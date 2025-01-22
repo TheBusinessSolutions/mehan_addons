@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_vat_report" model="ir.ui.view">
+            <field name="name">vat.report.form</field>
+            <field name="model">vat.report</field>
+            <field name="arch" type="xml">
+                <form string="Vat Report">
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="account_type"/>
+                        <field name="part_id"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" class="btn-primary"/>
+                        <button name="print_report_xlsx" string="Generate xlsx" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_vat_model" model="ir.actions.act_window">
+            <field name="name">Vat Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vat.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_type">report</field>
+        </record>
+
+
+        <menuitem id="menu_vat_model" name="Vat Report" parent="account.account_reports_management_menu"
+                  action="action_vat_model" sequence="9"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+// #sh_owl_items{padding: 5px 10px;}
+#sh_owl_items > .owl-stage-outer > .owl-stage:not(:empty){padding: 5px 10px;}
+#sh_owl_items > .owl-stage-outer > .owl-stage {display: flex;}
+
+#sh_owl_items .owl-item .item{cursor: pointer !important;padding: 0.25rem 0.7rem;border: 1px solid #ccc;white-space: nowrap;position: relative;width: auto !important;margin-right: 1px !important;}
+#sh_owl_items .owl-item .sh_remove_tab{margin-left: 4px !important;padding: 2px 3px 1px 3px;border-radius: 50rem;font-size: 12px;}
+#sh_owl_items .owl-item .sh_remove_tab:hover{background-color: lighten($primaryColor, 20%);color: #fff;transition: all .3s;}
+#sh_owl_items .owl-item .item.sh_active,#sh_owl_items .owl-item .item:hover{background-color: lighten($primaryColor, 52%);color: $primaryColor;}
+#sh_owl_items #sh_tab_ul.sh_multi_tab_ul::-webkit-scrollbar{height: 0px !important;width: 0px !important;}
+
+@if $button_style == 'style_1'{
+    #sh_owl_items .owl-item .item{border-radius: 2px;}
+}
+@if $button_style == 'style_2'{
+    #sh_owl_items .owl-item .item{border-radius: 4px;}
+}
+@if $button_style == 'style_3'{
+    #sh_owl_items .owl-item .item{border-radius: 0px 15px 0px 15px;}
+}
+@if $button_style == 'style_4'{
+    #sh_owl_items .owl-item .item{border-radius: 50rem;}
+}
+@if $button_style == 'style_5'{
+    #sh_owl_items .owl-item .item{border-radius: 0px;}
+}
+
+@media only screen and (max-width: 992px){
+    #sh_owl_items{display: none !important;}
+}
+
+#sh_owl_items #sh_tab_ul{width: 100% !important;}
+
+.sh_main_content .custom-nav.owl-nav,.sh_main_content #sh_owl_items .owl-dots{display: none !important;} 
+
+
+// .o_web_client .o_action_manager .main-content.sh_main_content + .o_action.o_view_controller{height: 94.3% !important;}
+
+@media only screen and (min-width: 993px){
+    .o_web_client .main-content.sh_main_content{height: 8%;}
+    .o_web_client .main-content.sh_main_content:not(.sh_no_multi_tab) + .o_action,
+    .o_web_client .main-content.sh_main_content:not(.sh_no_multi_tab) + .o_widget_Discuss{height: calc(100% - 8%) !important;}
+}

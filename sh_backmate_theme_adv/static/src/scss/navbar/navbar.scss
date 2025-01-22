@@ -1,0 +1,81 @@
+.o_main_navbar > ul > li > a, .o_main_navbar > ul > li > label,
+.o_main_navbar .o_menu_systray div.dropdown > .dropdown-toggle,.o_main_navbar .o_menu_systray .o_night_mode > span,.o_main_navbar .o_menu_systray .sh_bookmark .o_user_bookmark_menu > a,
+nav.o_main_navbar .o_menu_systray .o_full_screen .open_full_screen,
+.o_main_navbar .o_menu_systray .sh_language_icon > a{color:$header_font_color;}
+.o_main_navbar>ul>li>a:hover,
+.o_main_navbar>ul>li>label:hover {
+	color: #fff;
+	background-color:$header_hover_color;
+}
+.o_main_navbar > a:focus, .o_main_navbar > a:active, .o_main_navbar > a:focus:active, .o_main_navbar > button:focus, .o_main_navbar > button:active, .o_main_navbar > button:focus:active{background-color: $header_active_color;}
+.o_main_navbar>a:hover,
+.o_main_navbar>a:focus,
+.o_main_navbar>button:hover,
+.o_main_navbar>button:focus {
+	background-color: $header_active_color;
+}
+nav.o_main_navbar .o_menu_systray .sh_calc_util{display: flex !important;align-items: center;padding: 0px 8px;}
+
+nav.o_main_navbar .o_menu_systray li.sh_search .sh_search_container .sh_search_input .input-group-text span:hover,
+nav.o_main_navbar .o_menu_systray div.o_night_mode .fa:hover,
+.o_main_navbar .o_menu_systray div.dropdown a.gift_icon i:hover,
+.o_main_navbar .o_menu_systray div.dropdown .icon-expand:hover,
+nav.o_main_navbar .o_menu_systray div.dropdown.o_full_screen .compress_img:hover,
+nav.o_main_navbar .sh_bookmark .o_user_bookmark_menu:hover,
+nav.o_main_navbar .o_menu_systray li.sh_search .sh_search_container .sh_search_input .input-group-text:hover,
+nav.o_main_navbar .o_menu_systray .o_full_screen .open_full_screen:hover,
+.o_main_navbar .o_menu_systray .sh_language_icon > a:hover{color: $header_hover_color;}
+
+
+nav.o_main_navbar .o_menu_systray li.sh_search .sh_search_container .sh_search_input .input-group-text span:active, 
+nav.o_main_navbar .o_menu_systray div.o_night_mode .fa:active, 
+nav.o_main_navbar .o_menu_systray div.dropdown.o_debug_manager .dropdown-toggle .fa:active, 
+nav.o_main_navbar .o_menu_systray div.dropdown.o_debug_manager.show .dropdown-toggle,
+.o_main_navbar .o_menu_systray .o_mail_systray_item.dropdown a.dropdown-toggle:active, 
+.o_main_navbar .o_menu_systray .o_mail_systray_item.dropdown.show > a.dropdown-toggle .icon-activity,
+.o_main_navbar .o_menu_systray .o_MessagingMenu.dropdown .o_MessagingMenu_icon:active,
+.o_main_navbar .o_menu_systray .o_MessagingMenu.dropdown.show .o_MessagingMenu_toggler, 
+.o_main_navbar > ul > li > a.gift_icon i:active, 
+nav.o_main_navbar .o_menu_systray .o_switch_company_menu.dropdown.show > .dropdown-toggle, 
+.o_main_navbar > ul > li > a .icon-expand:active, 
+nav.o_main_navbar .o_menu_systray div.dropdown.o_full_screen .compress_img:active, 
+nav.o_main_navbar .sh_bookmark .o_user_bookmark_menu i:active,
+nav.o_main_navbar .o_menu_systray li.sh_search .sh_search_container .sh_search_input .input-group-text:active,
+nav.o_main_navbar .o_menu_systray .o_full_screen .open_full_screen:active,
+.o_main_navbar .o_menu_systray .sh_language_icon.show > a,
+.o_main_navbar .o_menu_systray .sh_language_icon > a:focus{color: $header_active_color !important;}
+
+nav.o_main_navbar .o_menu_systray li.sh_search .sh_search_container .sh_search_input .input-group-text:hover,
+nav.o_main_navbar .o_menu_systray div.dropdown.o_debug_manager .dropdown-toggle:hover,
+.o_main_navbar .o_menu_systray .o_MessagingMenu.dropdown .o_MessagingMenu_toggler:hover,
+.o_main_navbar .o_menu_systray .o_mail_systray_item.dropdown > a.dropdown-toggle:hover,
+.o_main_navbar .o_menu_systray .o_night_mode:hover > span,.o_main_navbar .o_menu_systray .o_night_mode:focus > span,
+nav.o_main_navbar .o_menu_systray .o_switch_company_menu.dropdown > .dropdown-toggle:hover{color: $header_hover_color !important; }
+
+nav.o_main_navbar .o_menu_systray .o_full_screen{margin: 0px 6px;}
+.o_main_navbar .o_menu_systray .o_night_mode,
+.o_main_navbar .o_menu_systray .o_user_bookmark_menu{padding: 0px 8px !important;}
+
+.o_main_navbar .o_menu_systray .sh_bookmark.show .dropdown-menu.dropdown-menu-right.sh_wqm_quick_menu_submenu_list_cls .dropdown-item:hover{color: $primaryColor;}
+.o_main_navbar .o_menu_systray .sh_bookmark.show .dropdown-menu.dropdown-menu-right.sh_wqm_quick_menu_submenu_list_cls{border: 1px solid #dee2e6;}
+
+.o_main_navbar .o_menu_systray .sh_bookmark.active .o_user_bookmark_menu > a .fa{color: $primaryColor;}
+
+.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls a.dropdown-item svg{margin-right: 8px;fill: #495057;}
+.o_main_navbar .o_menu_systray .sh_bookmark .sh_wqm_quick_menu_submenu_list_cls a.dropdown-item:hover svg{fill: $primaryColor;}
+
+@if $theme_style == 'style_1'{
+	nav.o_main_navbar .o_menu_systray li.theme_settings{padding: 0px 15px !important;}
+}
+.o_main_navbar .o_menu_systray{align-items: center;}
+/* ---- language selector menu -----*/ 
+.o_main_navbar .o_menu_systray .sh_language_icon svg{width: 15px;fill: $header_font_color;}
+.o_main_navbar .o_menu_systray .sh_language_icon > a:hover,
+.o_main_navbar .o_menu_systray > div.sh_language_icon.show > a{background-color: transparent !important;}
+.o_main_navbar .o_menu_systray .sh_language_icon:hover svg{fill: $header_hover_color;}
+.o_main_navbar .o_menu_systray .sh_language_icon.show svg{fill: $header_active_color;}
+.o_main_navbar .o_menu_systray .sh_language_icon{margin: 0px 6px;}
+.o_main_navbar .o_menu_systray .sh_language_icon .sh_user_language_list_cls.dropdown-menu {border: 1px solid #C9CCD2 !important;}
+.o_menu_systray .sh_language_icon .sh_user_language_list_cls .dropdown-item.active:not(.dropdown-item_active_noarrow):before, .o_menu_systray .sh_language_icon .sh_user_language_list_cls .dropdown-item.selected:not(.dropdown-item_active_noarrow):before{display: none;}
+.o_menu_systray .sh_language_icon .sh_user_language_list_cls .dropdown-item.active:focus, .o_menu_systray .sh_language_icon .sh_user_language_list_cls .dropdown-item.active:hover, .o_menu_systray .sh_language_icon .sh_user_language_list_cls .dropdown-item.selected:focus, .o_menu_systray .sh_language_icon .sh_user_language_list_cls .dropdown-item.selected:hover,.o_menu_systray .sh_language_icon .sh_user_language_list_cls .dropdown-item.active{background-color: rgba(0, 0, 0, 0.08);}
+.o_menu_systray .sh_language_icon .sh_user_language_list_cls img.sh_lang_flag{height: 25px;width: 25px;object-fit: cover;margin-right: 5px;}

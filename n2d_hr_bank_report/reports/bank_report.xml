@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_bank_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style>
+                                table, td{
+                                border: 1px solid black;
+                                text-align: center;
+                                }
+                            </style>
+                            <div class="col">
+                                <div class="col-xs-6">
+                                    <strong>Date From:</strong>
+                                    <span>
+                                        <t t-if="o.date_from">
+                                            <t t-esc="o.date_from.strftime('%d-%m-%Y')"/>
+                                        </t>
+                                    </span>
+                                </div>
+                                <div class="col-xs-6">
+                                    <strong>Date To:</strong>
+                                    <t t-if="o.date_to">
+                                        <t t-esc="o.date_to.strftime('%d-%m-%Y')"/>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="col-xs-6">
+                                    <strong>Bank:</strong>
+                                    <t t-esc="o.bank_id.name"/>
+                                </div>
+                            </div>
+                            <table style="height: 100%; width: 100%;">
+                                <t t-set="total" t-value="0"/>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <strong>Serial</strong>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <strong>Employee Name</strong>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <strong>Bank Number.</strong>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <strong>Net Salary</strong>
+                                        </td>
+                                    </tr>
+                                    <t t-set="count" t-value="0"/>
+                                    <t t-set="view_payslip" t-value="o.results"/>
+                                    <t t-foreach="view_payslip" t-as="res">
+                                        <t t-set="count" t-value="count + 1"/>
+                                        <tr>
+                                            <td>
+                                                <span t-esc="count"/>
+                                            </td>
+                                            <td style="text-align: left; padding-left: 4px">
+                                                <span t-field="res.employee_id"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span t-field="o.account_number"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <t t-foreach="res.line_ids" t-as="l">
+                                                    <t t-if="l.code == 'NET'">
+                                                        <span t-field="l.amount"/>
+                                                        <t t-set="total" t-value="total + l.amount"/>
+                                                    </t>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td style="text-align: center;">
+                                            <!--<t t-esc="total"/>-->
+                                            <!--<t t-esc="'{0:,.3f}'.format(int(total))" digits="[16,3]"/>-->
+                                            <t t-esc="'{:,.3f}'.format(total)"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report
+                id="action_report_bank"
+                model="bank.report.wizard"
+                string="Bank Report"
+                report_type="qweb-pdf"
+                name="n2d_hr_bank_report.report_bank_template"
+                file="n2d_hr_bank_report.report_bank_template"
+                menu="False"/>
+    </data>
+</odoo>

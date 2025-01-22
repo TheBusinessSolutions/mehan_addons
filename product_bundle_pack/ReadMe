@@ -1,0 +1,9 @@
+15.0.0.1 ==>fixed issue of cost in account move line for product pack.
+
+Version 15.0.0.2: (01/09/22)
+		-- If in the list of pack product there is service product then not added it in the picking.
+		-- If main product is a service product and in the pack product list there is a product type is product or consu. then create picking for that.
+
+
+15.0.0.3 ==>1.fixed issue of onhand quantity was not updating in pack product.
+            2.fixed issue of quantity of delivery order when we change quantity in sale.

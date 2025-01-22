@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="sale_order_search_inherit" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//filter[@name='salesperson']" position="before">
+               <filter string="Area" name="area" domain="[]" context="{'group_by': 'city_id'}"/>
+                    <filter string="Zip" name="area" domain="[]" context="{'group_by': 'zip_id'}"/>
+
+
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

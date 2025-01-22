@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="asset_qr_wizard_form_view" model="ir.ui.view">
+        <field name="name">asset.qr.wizard.form</field>
+        <field name="model">asset.qr.wizard</field>
+        <field name="arch" type="xml">
+            <form string="QR Code Report">
+                <group col="4">
+                    <field name="asset_ids" widget="many2many_tags"/>
+                </group>
+                <footer>
+                    <button name="get_data" type="object" string="Print" class="btn-primary"/>
+                    <button special="cancel" string="Cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_asset_qr_wizard" model="ir.actions.act_window">
+        <field name="name">Assets QR Code Report</field>
+        <field name="res_model">asset.qr.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <menuitem id="menu_asset_management_reports" name="Reports"
+              parent="asset_management_main_menu"
+              sequence="5"/>
+
+    <menuitem id="asset_qr_wizard_menu" name="Assets QR Code" action="action_asset_qr_wizard"
+              parent="menu_asset_management_reports"/>
+
+</odoo>

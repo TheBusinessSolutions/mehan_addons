@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_confirm']" position="after">
+                    <button name="create_purchase_order" string="Create Purchase Order" type="object"/>
+                </xpath>
+                <xpath expr="//button[@name='action_view_invoice']" position="after">
+                    <button name="action_open_po_orders"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o"
+                    >
+                        <field name="purchase_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="sale_order_view_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="purchase_count" invisible="1"/>
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="decoration-success">purchase_count &gt; 0</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_order_search_view" model="ir.ui.view">
+            <field name="name">n2d.sale.order.search.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="purchase_created"/>
+                </field>
+                <xpath expr="//filter[@name='my_sale_orders_filter']" position="after">
+                    <separator/>
+                    <filter string="Has Purchase?" name="purchase_created" domain="[('purchase_created','=',True)]" />
+
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

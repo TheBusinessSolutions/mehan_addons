@@ -1,0 +1,175 @@
+
+
+
+@if $modal_popup_style == 'style_1' {
+    .modal .modal-dialog{
+        animation-duration: 1s;
+        animation-name: ZoomIn ;
+    }
+    @keyframes ZoomIn{
+        0%{
+            opacity: 0;;
+            transform: scale(0);
+        }
+        100%{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+    
+@if $modal_popup_style == 'style_2' {
+    
+    .modal .modal-dialog{
+        animation-duration: 1s;
+        animation-name: fadeInDown ;
+    }
+    @keyframes fadeInDown{
+        0%{
+            opacity: 0;
+            -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+        }
+        100%{
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+    
+@if $modal_popup_style == 'style_3' {
+    .modal .modal-dialog{
+        animation-duration: 1s;
+        animation-name: fadeInUp ;
+       
+    }
+    @keyframes fadeInUp{
+        0%{
+            opacity: 0;
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+        }
+        100%{
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+@if $modal_popup_style == 'style_4' {
+    .modal .modal-dialog {
+        animation: fadeInRight 1s ease-in-out;
+    }
+    @keyframes fadeInRight {
+        from{
+            opacity: 0;       
+            transform: translateX(100px);
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+@if $modal_popup_style == 'style_5' {  
+    .modal .modal-dialog {
+        animation: fadeInLeft 1s ease-in-out;
+    }
+    @keyframes fadeInLeft {
+        from{
+            opacity: 0;       
+            transform: translateX(-100px);
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+@if $modal_popup_style == 'style_6' {
+    .modal .modal-dialog {
+        animation: animationScal 1s ;
+    }
+    @keyframes animationScal {
+        from{
+            // opacity: 0;       
+            transform: scale(0) rotate(360deg);
+        }
+        to {
+            // opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    }
+}
+@if $modal_popup_style == 'style_7' {
+    .modal .modal-dialog {
+        animation: fadeInLeft 1s ease-in-out;
+    }
+    @keyframes fadeInLeft {
+        from{
+            opacity: 0;       
+            transform: rotateX(-70deg);
+        }
+        to {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+}
+@if $modal_popup_style == 'style_8' {
+    /* style 8 3D sign*/
+    .modal{perspective: 1300px;}
+    
+    .modal .modal-dialog {
+        animation: rotateAnimationbackUp 1s ;
+        transform-style: preserve-3d;
+       transform-origin: 50% 0;
+    }
+    @keyframes rotateAnimationbackUp {
+        from{
+            transform: rotateX(-60deg) ;
+           
+        }
+        to {
+            transform: rotateX(0deg) ;
+        }
+    }
+}
+    
+@if $modal_popup_style == 'style_9' {
+    /* style 9 3D sign*/
+    .modal{perspective: 1300px;}
+    .modal .modal-dialog {
+        animation: rotateAnimationUpdown 1s ;
+        transform-style: preserve-3d;
+       transform-origin: 50% 0;
+    }
+    @keyframes rotateAnimationUpdown {
+        from{
+            transform: rotateX(60deg) ;
+           
+        }
+        to {
+            transform: rotateX(0deg) ;
+        }
+    }
+}
+@if $modal_popup_style == 'style_10' {
+    /* style 10 slide fall */
+    .modal{perspective: 1300px;}
+    .modal .modal-dialog {
+        animation: rotateAnimationZ 1s ;
+        transform-style: preserve-3d;
+    transform-origin: 50% 0;
+    }
+    @keyframes rotateAnimationZ {
+        from{
+            transform: translate(30%) translateZ(600px) rotate(10deg);
+        
+        }
+        to {
+            transform: translate(0%) translateZ(0) rotate(0deg);
+        }
+    }
+
+}
+    
+    
+    

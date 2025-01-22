@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_advance_branch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-30 12:56+0000\n"
+"PO-Revision-Date: 2022-09-30 18:29+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_advance_branch
+#: model:ir.model.fields,field_description:bi_advance_branch.field_res_branch__apply_prefix
+msgid "Apply Branch Sequence Prefix ??"
+msgstr "Appliquer le préfixe de séquence de branche ??"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_res_branch
+msgid "Branch"
+msgstr "Bifurquer"
+
+#. module: bi_advance_branch
+#: model:ir.model.fields,field_description:bi_advance_branch.field_res_branch__branch_logo
+msgid "Branch Logo"
+msgstr "Logo de la succursale"
+
+#. module: bi_advance_branch
+#: model:ir.model.fields,field_description:bi_advance_branch.field_res_branch__prefix
+msgid "Branch Sequence Prefix"
+msgstr "Préfixe de séquence de branche"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Branch:"
+msgstr "Bifurquer:"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_account_move
+msgid "Journal Entry"
+msgstr "Entrée de journal"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Logo"
+msgstr "Logo"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.res_branch_ir_sequence_view_
+msgid "Name"
+msgstr "Nom"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Page : <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: bi_advance_branch
+#: model_terms:ir.ui.view,arch_db:bi_advance_branch.external_layout_branch_standard
+msgid "Phone:"
+msgstr "Téléphoner:"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_purchase_order
+msgid "Purchase Order"
+msgstr "Bon de commande"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: bi_advance_branch
+#: code:addons/bi_advance_branch/models/ir_sequence_branch.py:0
+#: model:ir.model.constraint,message:bi_advance_branch.constraint_res_branch_prefix_branch_uniq
+#, python-format
+msgid "The prefix per branch must be unique !"
+msgstr "Le préfixe par branche doit être unique !"
+
+#. module: bi_advance_branch
+#: model:ir.model,name:bi_advance_branch.model_stock_picking
+msgid "Transfer"
+msgstr "Transférer"

@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+
+
+        <record id="n2d_purchase_confirm_category" model="ir.module.category">
+            <field name="name">Purchase</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+
+        <record id="n2d_purchase_confirm_group" model="res.groups">
+            <field name="name">Confirm Purchase Order</field>
+            <field name="category_id" ref="n2d_purchase_confirm_category"/>
+            <field name="implied_ids" eval="[(4, ref('purchase.group_purchase_user'))]"/>
+
+        </record>
+
+
+    </data>
+</odoo>

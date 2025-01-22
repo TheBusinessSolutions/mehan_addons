@@ -1,0 +1,14 @@
+@if $backend_all_icon_style == 'style_1'{
+    .o_menu_systray .o_debug_manager .fa.fa-bug::before{content: '\f188' !important;font-family: 'fontAwesome';}
+    .o_menu_systray .o_MessagingMenu .o_MessagingMenu_toggler .fa.fa-comments::before{content: '\f086' !important;font-family: 'fontAwesome' !important;}
+    .o_menu_systray .o_mail_systray_item.dropdown .fa-clock-o::before{content: '\f017' !important;font-family: 'fontAwesome' !important;}
+    .o_menu_systray .sh_bookmark .fa-bookmark-o::before{content: '\f097' !important;font-family: 'fontAwesome' !important;}
+    .o_menu_systray .sh_bookmark .fa-bookmark::before{content: '\f02e' !important;font-family: 'fontAwesome' !important;}
+    .o_menu_systray .o_full_screen .expand_img::before{content: '\f065' !important;font-family: 'fontAwesome' !important;}
+    .o_menu_systray .o_full_screen .compress_img::before{content: '\f066' !important;font-family: 'fontAwesome' !important;}
+    .o_menu_systray .o_debug_manager .fa.fa-bug::before, .o_menu_systray .o_MessagingMenu .o_MessagingMenu_icon:before, .o_menu_systray .o_mail_systray_item .dropdown-toggle .fa.fa-clock-o::before{font-size: 14px;}
+    @media only screen and (min-width: 768px){
+        .o_main_navbar .o_menu_systray .o_switch_company_menu.o-dropdown.dropdown .dropdown-toggle::before{content: '\f0f7' !important;font-family: 'fontAwesome' !important;font-size: 14px;}
+    }
+
+}

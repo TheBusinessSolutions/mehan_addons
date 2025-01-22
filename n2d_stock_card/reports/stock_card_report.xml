@@ -1,0 +1,123 @@
+<odoo>
+
+	<report
+	    id="stock_card_report"
+	    model="wizard.stock_card_wizard"
+	    string="Stock card"
+	    report_type="qweb-pdf"
+	    name="n2d_stock_card.stock_card_template"
+	    file="n2d_stock_card.stock_card_template" />
+
+	<template id="stock_card_template">
+	    <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+
+                	<style>
+                		table {
+						  border-collapse: collapse;
+						}
+						
+						th,td {
+							border: 1px solid #cecfd5;
+							padding: 10px 15px;
+						}
+
+						.si_fi {
+							background-color: #95A5A6;
+						}
+
+						.alnright { 
+							text-align: right; 
+							white-space: nowrap;
+						}
+
+						.alncenter { 
+							text-align: center; 
+						}
+                	</style>
+
+                    <table width="80%" class="table table-condensed table table-striped">
+                    	<tbody>
+                    		<tr>
+                    			<td style="border-top: 0; border-right: 0; border-left: 0;" colspan="2"><b>Warehouse</b></td>
+                    			<td style="border-top: 0; border-right: 0; border-left: 0;" colspan="2"><span t-esc="data['warehouse']"/></td>
+                    		</tr>
+                                <tr>
+                                    <td style="border-top: 0; border-right: 0; border-left: 0;">
+                                        <b>Location</b>
+                                    </td>
+                                    <td style="border-top: 0; border-right: 0; border-left: 0;">
+                                        <span t-esc="data['location']"/>
+                                    </td>
+                                    <td style="border-top: 0; border-right: 0; border-left: 0;">
+                                        <b>Total</b>
+                                    </td>
+                                    <td style="border-top: 0; border-right: 0; border-left: 0;">
+                                        <span t-esc="data['tot_tot_amount']"/>
+                                    </td>
+                                </tr>
+                    		<tr>
+                    			<td style="border-top: 0; border-right: 0; border-left: 0;"><b>Date from</b></td>
+                    			<td style="border-top: 0; border-right: 0; border-left: 0;"><span t-esc="data['date_from']"/></td>
+                    			<td style="border-top: 0; border-right: 0; border-left: 0;"><b>Date to</b></td>
+                    			<td style="border-top: 0; border-right: 0; border-left: 0;"><span t-esc="data['date_to']"/></td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+
+                    <br/><br/>
+
+                    <table width="100%" table="table table-striped">
+                    	<thead>
+                    		<tr>
+	                    		<td><b>Reference</b></td>
+	                    		<td><b>Designation</b></td>
+	                    		<td><b>UoM</b></td>
+	                    		<td><b>Initial stock</b></td>
+	                    		<td><b>In</b></td>
+	                    		<td><b>Out</b></td>
+	                    		<!--
+	                    		<td><b>Balance</b></td>
+	                    		<td><b>Final Stock</b></td>
+	                    		-->
+								<!--<td><b>Sales Price</b></td>-->
+	                    		<td><b>Balance</b></td>
+	                    		<!--<td><b>Bala*price</b></td>-->
+								<td><b>Value Amount</b></td>
+	                    	</tr>
+                    	</thead>
+                    	<tbody>
+	                    	<tr t-foreach="data['lines']" t-as="line">
+	                    		<td><span t-esc="line['ref']"/></td>
+	                    		<td><span t-esc="line['name']"/></td>
+	                    		<td><span t-esc="line['uom']"/></td>
+	                    		<td class='alnright' ><span t-esc="line['si']"/></td>
+	                    		<td class='alnright' ><span t-esc="line['in']"/></td>
+	                    		<td class='alnright' ><span t-esc="line['out']"/></td>
+	                    		<!--<td class='alnright' ><b><span t-esc="line['bal']"/></b></td>-->
+	                    		<!--<td class='alnright' ><span t-esc="line['price']"/></td>-->
+	                    		<td class='alnright' ><span t-esc="line['fi']"/></td>
+	                    		<!--<td class='alnright' ><span t-esc="line['Bala*price']"/></td>-->
+	                    		<td class='alnright' ><span t-esc="line['tot_amount']"/></td>
+	                    	</tr>
+							<tr>
+								<td t-att-colspan="7" class="alnright">
+									<b>Total:</b>
+								</td>
+								<td class="alnright si_fi">
+									<b>
+										<span>
+											<t t-esc="data['tot_tot_amount']"/>
+										</span>
+									</b>
+								</td>
+							</tr>
+	                    </tbody>
+                    </table>
+                </div>
+            </t>
+	    </t>
+	</template>
+
+</odoo>
