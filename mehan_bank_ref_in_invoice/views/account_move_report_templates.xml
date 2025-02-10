@@ -1,38 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <!-- Inherit the invoice report template -->
-  <template id="report_invoice_document_inherit_bank_ref" inherit_id="account.report_invoice_document">
-    <!-- Replace the payments section to add Bank Ref -->
-    <xpath expr="//t[@t-set='payments_vals']" position="replace">
-      <t t-set="payments_vals" t-value="o.sudo()._get_reconciled_info_JSON_values()"/>
-      <t t-if="payments_vals">
-        <table class="table table-sm mt16">
-          <thead>
-            <tr>
-              <th>Payment Date</th>
-              <th class="text-right">Amount</th>
-              <th class="text-left">Bank Ref</th>
-            </tr>
-          </thead>
-          <tbody>
-            <t t-foreach="payments_vals" t-as="payment_vals">
-              <tr>
-                <td>
-                  <i class="oe_form_field text-right oe_payment_label">
-                    Paid on <t t-esc="payment_vals['date']" t-options="{'widget': 'date'}"/>
-                  </i>
-                </td>
-                <td class="text-right">
-                  <span t-esc="payment_vals['amount']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                </td>
-                <td class="text-left">
-                  <span t-esc="payment_vals.get('bank_ref', '')"/>
-                </td>
-              </tr>
+    <!-- Inherit the invoice report template -->
+    <template id="report_invoice_document_inherit_bank_ref" inherit_id="account.report_invoice_document">
+        <!-- Replace the payments section to add Bank Ref -->
+        <xpath expr="//t[@t-if='print_with_payments']" position="replace">
+            <t t-set="payments_vals" t-value="o.sudo()._get_reconciled_info_JSON_values()"/>
+            <t t-if="payments_vals">
+                <table class="table table-sm mt16">
+                    <thead>
+                        <tr>
+                            <th>Payment Date</th>
+                            <th class="text-right">Amount</th>
+                            <th class="text-left">Bank Ref</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="payments_vals" t-as="payment_vals">
+                            <tr>
+                                <td>
+                                    <i class="oe_form_field text-right oe_payment_label">
+                                        Paid on
+                                        <t t-esc="payment_vals['date']" t-options="{'widget': 'date'}"/>
+                                    </i>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="payment_vals['amount']"
+                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                </td>
+                                <td class="text-left">
+                                    <span t-esc="payment_vals.get('bank_ref', '')"/>
+                                </td>
+                            </tr>
+
+                        </t>
+                        <t t-if="len(payments_vals) > 0">
+                                <tr class="border-black font-weight-bold">
+                                    <td>Amount Due</td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_residual"/>
+                                    </td>
+                                </tr>
+                            </t>
+                    </tbody>
+                </table>
             </t>
-          </tbody>
-        </table>
-      </t>
-    </xpath>
-  </template>
+        </xpath>
+    </template>
 </odoo>
