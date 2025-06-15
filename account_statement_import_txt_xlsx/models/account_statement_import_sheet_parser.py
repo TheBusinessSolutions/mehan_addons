@@ -183,6 +183,8 @@ class AccountStatementImportSheetParser(models.TransientModel):
             columns[column_name] = self._get_column_indexes(
                 header, column_name, mapping
             )
+            print("columns")
+            print(columns)
         return self._parse_rows(mapping, currency_code, csv_or_xlsx, columns)
 
     def _get_values_from_column(self, values, columns, column_name):
@@ -423,8 +425,17 @@ class AccountStatementImportSheetParser(models.TransientModel):
         if note:
             transaction["narration"] = note
 
-        if partner_name:
+        # if partner_name:
+        #     transaction["partner_name"] = partner_name     error_import_partner name
+
+        if partner_name:   #new one
             transaction["partner_name"] = partner_name
+
+            partner = self.env['res.partner'].search([('name', '=', partner_name)], limit=1)
+            if not partner:
+                partner = self.env['res.partner'].create({'name': partner_name})
+
+            transaction["partner_id"] = partner.id
         if bank_account:
             transaction["account_number"] = bank_account
 
