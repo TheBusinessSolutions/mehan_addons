@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_statement_inherited" inherit_id="account.report_statement">
+        <xpath expr="//table[2]" position="replace">
+            <table class="table table-borderless m-0">
+                <thead>
+                    <th>Date<br/>التـاريخ
+                    </th>
+                    <th>Label<br/>البـيان
+                    </th>
+                    <th>Partner<br/>الجـهه
+                    </th>
+                    <th>ID<br/>الكـود المؤسسي
+                    </th>
+                    <th>Reference<br/>رقـم امرالدفع
+                    </th>
+                    <th>Amount
+                        <br/>
+                        المـبلغ
+                    </th>
+                    <th>Notes
+                        <br/>
+                        ملاحـظات
+                    </th>
+                </thead>
+                <tbody>
+                    <t t-set="total_amount" t-value="0"/>
+                    <tr t-foreach="o.line_ids" t-as="line" class="pb-2" style="text-align:center;">
+                        <!--                        <td class="pl-0 pr-0">-->
+                        <!--                            <table class="table table-borderless">-->
+                        <!--                                <tr>-->
+                        <t t-set="total_amount" t-value="total_amount+line.amount"/>
+                        <td class="p-0 w-25">
+                            <span class="d-block font-weight-bold" t-field="line.date"/>
+                        </td>
+                        <td class="p-0 w-25">
+                            <span class="d-block" t-if="line.payment_ref" t-field="line.payment_ref"/>
+                        </td>
+                        <td class="p-0">
+                            <span class="d-block font-weight-bold" t-if="line.partner_id"
+                                  t-field="line.partner_id"/>
+                            <span class="d-block" t-if="line.partner_bank_id"
+                                  t-field="line.partner_bank_id"/>
+                            <!--                                            <span class="d-block" t-if="line.payment_ref" t-field="line.payment_ref"/>-->
+                            <!--                                            <span class="d-block" t-if=" not is_html_empty(line.narration)" t-field="line.narration"/>-->
+                        </td>
+                        <td class="p-0 w-25">
+                            <span class="d-block font-weight-bold" t-field="line.partner_vat"/>
+                        </td>
+                        <td class="text-right p-0">
+                            <span class="d-block font-weight-bold" t-field="line.ref"/>
+                        </td>
+                        <td class="text-right p-0">
+                            <span class="d-block font-weight-bold" t-field="line.amount"/>
+                        </td>
+                        <td class="text-right p-0">
+                            <span class="d-block" t-if=" not is_html_empty(line.narration)"
+                                  t-field="line.narration"/>
+                        </td>
+                        <!--                                </tr>-->
+                        <!--                            </table>-->
+                        <!--                        </td>-->
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="text-align:right;">
+                            <span class="d-block font-weight-bold" t-esc="total_amount"  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                        </td>
+                        <td/>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </xpath>
+    </template>
+</odoo>
