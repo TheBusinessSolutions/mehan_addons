@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ins_partner_ledger_wizard_inherit" model="ir.ui.view">
+        <field name="name">ins.partner.ledger.view</field>
+        <field name="model">ins.partner.ledger</field>
+        <field name="inherit_id" ref="account_dynamic_reports.ins_partner_ledger_wizard"/>
+        <field name="arch" type="xml">
+            <xpath expr="//footer/button[@name='action_view']" position="after">
+                <button name="action_pdf_company_group" type="object" string="Print by Group" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
