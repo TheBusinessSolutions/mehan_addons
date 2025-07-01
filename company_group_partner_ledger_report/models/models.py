@@ -41,6 +41,15 @@ FETCH_RANGE = 2000
 class InsPartnerLedger(models.TransientModel):
     _inherit = "ins.partner.ledger"
 
+    company_group_ids = fields.Many2many(
+        "res.partner",
+        "ins_partner_ledger_company_group_rel",
+        "wizard_id", "partner_id",
+        string="Company Groups",
+        domain=[("is_company", "=", True)],
+    )
+
+
     def action_pdf_company_group(self):
         data = self.read()[0]
         output = io.BytesIO()
@@ -67,18 +76,29 @@ class InsPartnerLedger(models.TransientModel):
         sheet.screen_gridlines = False
         sheet_2.screen_gridlines = False
 
+
         format_title = workbook.add_format({'bold': True, 'align': 'center', 'font_size': 12, 'font': 'Arial'})
         format_header = workbook.add_format({'bold': True, 'font_size': 10, 'align': 'center', 'font': 'Arial'})
         content_header = workbook.add_format({'font_size': 10, 'align': 'center', 'border': True, 'font': 'Arial'})
         content_header_date = workbook.add_format({'font_size': 10, 'align': 'center', 'border': True, 'font': 'Arial'})
 
-        line_header = workbook.add_format({'bold': True, 'font_size': 10, 'align': 'center', 'top': True, 'bottom': True, 'font': 'Arial'})
-        line_header_light = workbook.add_format({'font_size': 10, 'align': 'center', 'text_wrap': True, 'font': 'Arial', 'valign': 'top'})
-        line_header_light_initial = workbook.add_format({'italic': True, 'font_size': 10, 'align': 'center', 'bottom': True, 'font': 'Arial', 'valign': 'top'})
-        line_header_light_initial_bold = workbook.add_format({'bold': True, 'italic': True, 'font_size': 10, 'align': 'center', 'bottom': True, 'font': 'Arial', 'valign': 'top'})
-        line_header_light_ending = workbook.add_format({'italic': True, 'font_size': 10, 'align': 'center', 'top': True, 'font': 'Arial', 'valign': 'top'})
-        line_header_light_ending_bold = workbook.add_format({'bold': True, 'italic': True, 'font_size': 10, 'align': 'center', 'bottom': True, 'font': 'Arial', 'valign': 'top'})
-        company_group_header = workbook.add_format({'bold': True, 'font_size': 10, 'align': 'center', 'valign': 'vcenter', 'font': 'Arial', 'bg_color': '#D9E1F2', 'border': 1})
+        line_header = workbook.add_format(
+            {'bold': True, 'font_size': 10, 'align': 'center', 'top': True, 'bottom': True, 'font': 'Arial'})
+        line_header_light = workbook.add_format(
+            {'font_size': 10, 'align': 'center', 'text_wrap': True, 'font': 'Arial', 'valign': 'top'})
+        line_header_light_initial = workbook.add_format(
+            {'italic': True, 'font_size': 10, 'align': 'center', 'bottom': True, 'font': 'Arial', 'valign': 'top'})
+        line_header_light_initial_bold = workbook.add_format(
+            {'bold': True, 'italic': True, 'font_size': 10, 'align': 'center', 'bottom': True, 'font': 'Arial',
+             'valign': 'top'})
+        line_header_light_ending = workbook.add_format(
+            {'italic': True, 'font_size': 10, 'align': 'center', 'top': True, 'font': 'Arial', 'valign': 'top'})
+        line_header_light_ending_bold = workbook.add_format(
+            {'bold': True, 'italic': True, 'font_size': 10, 'align': 'center', 'bottom': True, 'font': 'Arial',
+             'valign': 'top'})
+        company_group_header = workbook.add_format(
+            {'bold': True, 'font_size': 10, 'align': 'center', 'valign': 'vcenter', 'font': 'Arial',
+             'bg_color': '#D9E1F2', 'border': 1})
 
         lang = self.env.user.lang
         lang_id = self.env['res.lang'].search([('code', '=', lang)], limit=1)
@@ -93,23 +113,41 @@ class InsPartnerLedger(models.TransientModel):
         content_header_date.num_format = date_fmt
 
         row_pos = 0
-        sheet.merge_range(0, 0, 0, 9, _('Partner Ledger') + ' - ' + data['company_id'][1], format_title)
+        group_names = ', '.join(self.company_group_ids.mapped('name')) if self.company_group_ids else \
+        data['company_id'][1]
+        sheet.merge_range(0, 0, 0, 9, _('Partner Ledger') + ' - ' + group_names, format_title)
 
         Partner = self.env['res.partner']
         grouped_lines = OrderedDict()
 
         for partner_id, vals in account_lines.items():
             partner = Partner.browse(partner_id)
-            company = partner.company_group_id or partner
-            comp_entry = grouped_lines.setdefault(company.id, {'name': company.name, 'debit': 0.0, 'credit': 0.0, 'balance': 0.0, 'partners': []})
+            group_company = partner.company_group_id
+
+            if self.company_group_ids and group_company not in self.company_group_ids:
+                continue
+
+            company = group_company or partner
+            comp_entry = grouped_lines.setdefault(
+                company.id,
+                {'name': company.name, 'debit': 0.0, 'credit': 0.0, 'balance': 0.0, 'partners': []}
+            )
             comp_entry['debit'] += vals['debit']
             comp_entry['credit'] += vals['credit']
             comp_entry['balance'] += vals['balance']
-            comp_entry['partners'].append({'partner': partner, 'name': vals['name'], 'debit': vals['debit'], 'credit': vals['credit'], 'balance': vals['balance']})
+            comp_entry['partners'].append({
+                'partner': partner,
+                'name': vals['name'],
+                'debit': vals['debit'],
+                'credit': vals['credit'],
+                'balance': vals['balance'],
+            })
 
+        # Header row
         row_pos += 3
         if filters.get('include_details', False):
-            headers = [_('Tax ID'), _('Date'), _('JRNL'), _('Account'), _('Ref'), _('Move'), _('Entry Label'), _('Debit'), _('Credit'), _('Balance')]
+            headers = [_('Tax ID'), _('Date'), _('JRNL'), _('Account'), _('Ref'), _('Move'), _('Entry Label'),
+                       _('Debit'), _('Credit'), _('Balance')]
             for col, title in enumerate(headers):
                 sheet.write(row_pos, col, title, format_header)
         else:
@@ -128,14 +166,15 @@ class InsPartnerLedger(models.TransientModel):
 
             for p_data in comp_data['partners']:
                 row_pos += 1
-                sheet.write(row_pos, 0,'', line_header_light)
+                sheet.write(row_pos, 0, p_data['partner'].vat or '', line_header_light)
                 sheet.merge_range(row_pos, 1, row_pos, 6, p_data['name'], line_header_light)
                 sheet.write(row_pos, 7, p_data['debit'], line_header_light)
                 sheet.write(row_pos, 8, p_data['credit'], line_header_light)
                 sheet.write(row_pos, 9, p_data['balance'], line_header_light)
 
                 if filters.get('include_details', False):
-                    count, offset, sub_lines = record.build_detailed_move_lines(offset=0, partner=p_data['partner'].id, fetch_range=1000000)
+                    count, offset, sub_lines = record.build_detailed_move_lines(offset=0, partner=p_data['partner'].id,
+                                                                                fetch_range=1000000)
                     for sub_line in sub_lines:
                         row_pos += 1
                         move_name = sub_line.get('move_name')
@@ -176,8 +215,9 @@ class InsPartnerLedger(models.TransientModel):
         return {
             'type': 'ir.actions.act_url',
             'url': (
-                '/web/binary/download_document?model=common.xlsx.out'
-                '&field=filedata&id=%s&filename=PartnerLedger.xls' % report_id.id
+                    '/web/binary/download_document?model=common.xlsx.out'
+                    '&field=filedata&id=%s&filename=PartnerLedger.xls' % report_id.id
             ),
             'target': 'new',
         }
+

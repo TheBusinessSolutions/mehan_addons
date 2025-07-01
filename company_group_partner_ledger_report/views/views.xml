@@ -9,6 +9,9 @@
             <xpath expr="//footer/button[@name='action_view']" position="after">
                 <button name="action_pdf_company_group" type="object" string="Print by Group" class="oe_highlight"/>
             </xpath>
+            <xpath expr="//field[@name='partner_ids']" position="after">
+                <field name="company_group_ids"  widget="many2many_tags"/>
+            </xpath>
         </field>
     </record>
 
