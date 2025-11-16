@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mehan_order_payment_tree_view" model="ir.ui.view">
+            <field name="name">mehan.order.payment.tree.view</field>
+            <field name="model">mehan.order.payment</field>
+            <field name="arch" type="xml">
+                <tree string="Order Payment Tree">
+                    <field name="name"/>
+                    <field name="deceased_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mehan_order_payment_form_view">
+            <field name="name">mehan.order.payment.form</field>
+            <field name="model">mehan.order.payment</field>
+            <field name="arch" type="xml">
+                <form string="Order Payment Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="deceased_id"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="order_compensation_percentage" invisible="1"/>
+                                <field name="serial"/>
+                                <field name="member_type" invisible="1"/>
+                                <field name="payment_amount" readonly="1" force_save="1"
+                                       attrs="{'invisible':[('member_type','=', 'dead')]}"/>
+                            </group>
+                            <group>
+                                <field name="expense_type_id" string=" " readonly="1" force_save="1"/>
+                                <field name="pension_payment" string=" " readonly="1" force_save="1"/>
+                                <field name="beneficiaries_no" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Beneficiaries" attrs="{'invisible':[('member_type','=', 'injured')]}">
+                                <field name="payment_Beneficiaries_ids">
+                                    <tree create="false" delete="false">
+                                        <field name="name"/>
+                                        <field name="serial"/>
+                                        <field name="relationship_degree_id"/>
+                                        <field name="age_phase"/>
+                                        <field name="birth_date"/>
+                                        <field name="age_years"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name" readonly="1" force_save="1"/>
+                                                <field name="serial" readonly="1" force_save="1"/>
+                                                <field name="bank_id" readonly="1" force_save="1"/>
+                                                <field name="branch_id" readonly="1" force_save="1"/>
+                                                <field name="accounting_no" readonly="1" force_save="1"/>
+                                                <field name="iban_no" readonly="1" force_save="1"/>
+                                                <label for="payment_percentage" string="Payment Percentage"/>
+                                                <span>
+                                                    <field name="payment_percentage" readonly="1" force_save="1"
+                                                           nolabel="1"/>
+                                                    <span>%</span>
+                                                </span>
+                                                <field name="expected_payment_amount" readonly="1" force_save="1"/>
+                                                <field name="tax_position" readonly="1" force_save="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="national_id" readonly="1" force_save="1"/>
+                                                <field name="birth_date" readonly="1" force_save="1"/>
+                                                <label for="age_years" string="Age"/>
+                                                <span>
+                                                    <field name="age_years" nolabel="1" readonly="1" force_save="1"/>
+                                                    years
+                                                    <field name="age_months" nolabel="1" readonly="1" force_save="1"/>
+                                                    months
+                                                </span>
+                                                <field name="age_phase" readonly="1" force_save="1"/>
+                                                <field name="relationship_degree_id" readonly="1" force_save="1"/>
+                                                <field name="payment_amount" readonly="1" force_save="1"/>
+                                                <label for="compensation_percentage" string="Compensation Percentage"/>
+                                                <span>
+                                                    <field name="compensation_percentage" readonly="1" force_save="1"
+                                                           nolabel="1"/>
+                                                    <span>%</span>
+                                                </span>
+                                                <field name="phone" readonly="1" force_save="1"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                        <field name="activity_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="mehan_order_payment_search_view" model="ir.ui.view">
+            <field name="name">order.payment.search.view</field>
+            <field name="model">mehan.order.payment</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="deceased_id" string="Name"/>
+                    <field name="name" string="Order No."/>
+                </search>
+            </field>
+        </record>
+
+        <record id="mehan_order_payment_search_view" model="ir.ui.view">
+            <field name="name">mehan.order.payment.search.view</field>
+            <field name="model">mehan.order.payment</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="national_id" string="National ID"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="mehan_order_payment_action_window">
+            <field name="name">Order Payment</field>
+            <field name="res_model">mehan.order.payment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Order Payment" id="mehan_order_payment_menu" parent="Mehan_menu_root"
+                  action="mehan_order_payment_action_window" sequence="3"/>
+
+
+    </data>
+</odoo>

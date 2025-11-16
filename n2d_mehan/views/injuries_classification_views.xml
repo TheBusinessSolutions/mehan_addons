@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="injuries_classification_tree_view" model="ir.ui.view">
+            <field name="name">injuries.classification.tree.view</field>
+            <field name="model">injuries.classification</field>
+            <field name="arch" type="xml">
+                <tree string="Injuries Classification Tree">
+                    <field name="name"/>
+                    <field name="percentage"/>
+                    <field name="injury_category"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="injuries_classification_form_view">
+            <field name="name">injuries.classification.form</field>
+            <field name="model">injuries.classification</field>
+            <field name="arch" type="xml">
+                <form string="Bank Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="percentage"/>
+                                <field name="injury_category"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="injuries_classification_action_window">
+            <field name="name">Injuries Classification</field>
+            <field name="res_model">injuries.classification</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Injuries Classification" id="injuries_classification_menu" parent="mehan_configurations_menu"
+                  action="injuries_classification_action_window"/>
+
+
+
+    </data>
+</odoo>

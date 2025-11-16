@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mehan_committee_tree_view" model="ir.ui.view">
+            <field name="name">mehan.committee.tree.view</field>
+            <field name="model">mehan.committee</field>
+            <field name="arch" type="xml">
+                <tree string="Committee Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mehan_committee_form_view">
+            <field name="name">mehan.committee.form</field>
+            <field name="model">mehan.committee</field>
+            <field name="arch" type="xml">
+                <form string="Committee Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Committee Name"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <record id="mehan_registration_stage_tree_view" model="ir.ui.view">
+            <field name="name">registration.stage.tree.view</field>
+            <field name="model">registration.stage</field>
+            <field name="arch" type="xml">
+                <tree string="Registration Stage Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mehan_registration_stage_form_view">
+            <field name="name">registration.stage.form</field>
+            <field name="model">registration.stage</field>
+            <field name="arch" type="xml">
+                <form string="Registration Stage Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Registration Stage"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="mehan_committee_action_window">
+            <field name="name">Committee</field>
+            <field name="res_model">mehan.committee</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mehan_registration_stage_action_window">
+            <field name="name">Registration Stage</field>
+            <field name="res_model">registration.stage</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Committee" id="mehan_committee_menu" parent="mehan_configurations_menu"
+                  action="mehan_committee_action_window"/>
+
+        <menuitem name="Registration Stage" id="mehan_registration_stage_menu" parent="mehan_configurations_menu"
+                  action="mehan_registration_stage_action_window"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mehan_expense_tree_view" model="ir.ui.view">
+            <field name="name">mehan.expense.tree.view</field>
+            <field name="model">mehan.expense</field>
+            <field name="arch" type="xml">
+                <tree string="Expense Type Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mehan_expense_form_view">
+            <field name="name">mehan.expense.form</field>
+            <field name="model">mehan.expense</field>
+            <field name="arch" type="xml">
+                <form string="Expense Type Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Expense Type"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="member_type"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="mehan_expense_action_window">
+            <field name="name">Expense Type</field>
+            <field name="res_model">mehan.expense</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Expense Type" id="mehan_expense_menu" parent="mehan_configurations_menu"
+                  action="mehan_expense_action_window"/>
+
+
+    </data>
+</odoo>

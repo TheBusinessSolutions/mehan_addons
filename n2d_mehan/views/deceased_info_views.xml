@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="deceased_info_tree_view" model="ir.ui.view">
+            <field name="name">deceased.info.tree.view</field>
+            <field name="model">deceased.info</field>
+            <field name="arch" type="xml">
+                <tree string="Deceased Info Tree">
+                    <field name="name"/>
+                    <field name="national_id"/>
+                    <field name="member_type"/>
+                    <field name="job_id" optional="show"/>
+                    <field name="compensation_amount" optional="show"/>
+                    <field name="work_place_id" optional="show"/>
+                    <field name="sub_work_place_id" optional="show"/>
+                    <field name="tag_id" optional="show"/>
+                    <field name="public_serial" optional="show"/>
+                    <field name="committee_id" optional="show"/>
+                    <field name="expense_type_id" optional="show"/>
+                    <field name="phone" optional="show"/>
+                    <field name="birth_date" optional="show"/>
+                    <field name="death_date" optional="show"/>
+                    <field name="beneficiaries_no" optional="show"/>
+                    <field name="injury_class_id" optional="show"/>
+                    <field name="injury_category" optional="show"/>
+                    <field name="injury_place" optional="show"/>
+                    <field name="no_55" optional="show"/>
+                    <field name="no_224" optional="show"/>
+                    <field name="date_55" optional="show"/>
+                    <field name="date_224" optional="show"/>
+                    <field name="state"
+                           decoration-success="state in ('certified')"
+                           decoration-warning="state in ('review55', 'review244')"
+                           decoration-info="state in ('draft')"
+                           optional="show" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="deceased_info_form_view">
+            <field name="name">deceased.info.form</field>
+            <field name="model">deceased.info</field>
+            <field name="arch" type="xml">
+                <form string="Deceased Info Form">
+                    <header>
+
+                        <button name="action_new_member" type="object" string="New Member" class="btn-primary"
+                                attrs="{'invisible':['|',('is_new_member','=', True), ('state','not in', ['draft'])]}"/>
+                        <button name="action_review55" type="object" string="Review 55" class="btn-primary"
+                                attrs="{'invisible':['|',('state','not in', ['draft']), ('is_new_member','=', False)]}"/>
+                        <button name="action_review244" type="object" string="Review 244" class="btn-primary"
+                                attrs="{'invisible':[('state','not in', ['review55'])]}"/>
+                        <button name="action_certify" type="object" string="Confirm" class="btn-primary"
+                                attrs="{'invisible':[('state','not in', ['review244'])]}"/>
+                        <button name="action_set_draft" type="object" string="Set to draft" class="btn-primary"
+                                attrs="{'invisible':[('state','not in', ['certified'])]}"/>
+                        <field name="state" widget="statusbar" nolabel="1"
+                               statusbar_visible="draft,review55,review244,certified"/>
+                    </header>
+                    <sheet>
+                        <widget name="web_ribbon" title="single beneficiary" bg_color="bg-danger"
+                                attrs="{'invisible': [('beneficiaries_no', '!=', 1)]}"/>
+                        <div class="oe_title">
+                            <label for="name" string="injured Name"  attrs="{'invisible':[('member_type','=', 'dead')]}"/>
+                            <label for="name" string="Deceased Name" attrs="{'invisible':[('member_type','=', 'injured')]}"/>
+                            <h1>
+                                <field name="name" required="True" attrs="{'readonly':[('state','=', 'certified')]}"/>
+                            </h1>
+                        </div>
+                        <field name="member_type" options="{'horizontal': true}" widget="radio"
+                               attrs="{'readonly':[('state','=', 'certified')]}"/>
+                        <group>
+                            <group string="Info">
+                                <field name="national_id" required="True"
+                                       attrs="{'readonly':[('state','=', 'certified')]}"/>
+                                <field name="birth_date" readonly="1" force_save="1"/>
+                                <field name="death_date"
+                                       attrs="{'invisible':[('member_type','=', 'injured')],'readonly':[('state','=', 'certified')]}"/>
+                                <label for="age" string="Age"/>
+                                <span>
+                                    <field name="age" nolabel="1"/>
+                                    years
+                                    <field name="age_months" nolabel="1"/>
+                                    months
+                                    <field name="age_days" nolabel="1"/>
+                                    days
+                                </span>
+                                <field name="phone" string="Phone"/>
+                                <field name="bank_id" attrs="{'invisible':[('member_type','=', 'dead')]}" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="branch_id" attrs="{'invisible':[('member_type','=', 'dead')]}" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="accounting_no" attrs="{'invisible':[('member_type','=', 'dead')]}"/>
+                                <field name="iban_no" attrs="{'invisible':[('member_type','=', 'dead')]}"/>
+                                <field name="national_id_attachment"
+                                       attrs="{'invisible':[('member_type','=', 'dead')]}"/>
+                                <field name="beneficiaries_no" readonly="1" force_save="1"
+                                       attrs="{'invisible':[('member_type','=', 'injured')]}"/>
+                            </group>
+                            <group string="Info">
+                                <field name="committee_id" attrs="{'readonly':[('state','=', 'certified')]}" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="expense_type_id" attrs="{'readonly':[('state','=', 'certified')]}"
+                                       options="{'no_open':True,'no_create_edit':True,'no_quick_create':True,'no_create': True}"
+                                       required="1"/>
+                                <field name="pension_payment" string=" "
+                                       attrs="{'readonly':[('state','=', 'certified')]}"/>
+                                <field name="compensation_amount" readonly="1" force_save="1"/>
+                                <field name="payment_amount" readonly="1" force_save="1"
+                                       attrs="{'invisible':[('member_type','=', 'dead')]}"/>
+                                <field name="registration_date"
+                                       attrs="{'invisible':[('member_type','=', 'dead')]}"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible':[('member_type','=', 'injured')]}">
+                            <group>
+                                <field name="fundamental_supporter"
+                                       attrs="{'readonly':['|',('is_administrative','=', True), ('state','=', 'certified')],'invisible':[('is_administrative','=', False)]}"/>
+                                <field name="fundamental_supporter_2"
+                                       attrs="{'readonly':[('state','=', 'certified')],'invisible':[('is_administrative','=', True)]}"/>
+                            </group>
+                            <group>
+                                <field name="fundamental_supporter_attach"
+                                       attrs="{'readonly':[('state','=', 'certified')]}"/>
+                                <field name="fund_subscription_payment"
+                                       attrs="{'readonly':[('state','=', 'certified')]}"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible':[('member_type','=', 'dead')]}">
+                            <group>
+                                <field name="injury_class_id" string="compensation value"
+                                       attrs="{'readonly':[('state','=', 'certified')]}" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="injury_category" readonly="1" force_save="1"/>
+                                <field name="injury_place" attrs="{'readonly':[('state','=', 'certified')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="public_serial" readonly="1" force_save="1"/>
+                                <field name="cert_management_serial"
+                                       attrs="{'readonly':[('state','=', 'certified')],'invisible':[('member_type','=', 'injured')]}"/>
+                                <field name="cert_management_image"
+                                       attrs="{'readonly':[('state','=', 'certified')],'invisible':[('member_type','=', 'injured')]}"/>
+                                <field name="tag_id" attrs="{'readonly':[('state','=', 'certified')]}"
+                                       options="{'no_open':True,'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="work_place_id" attrs="{'readonly':[('state','=', 'certified')]}"
+                                       options="{'no_open':True,'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="sub_work_place_id" attrs="{'readonly':[('state','=', 'certified')]}"
+                                       options="{'no_open':True,'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="job_id" attrs="{'readonly':[('state','=', 'certified')]}"
+                                       options="{'no_open':True,'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="is_new_member" invisible="1"/>
+                                <field name="is_administrative" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="no_55"
+                                       attrs="{'invisible':[('is_new_member','=', False)],
+                                       'readonly':[('state','in', ['review55', 'review244', 'certified'])]}"/>
+                                <field name="date_55"
+                                       attrs="{'invisible':[('is_new_member','=', False)],
+                                       'readonly':[('state','in', ['review55', 'review244', 'certified'])]}"/>
+                                <field name="no_224"
+                                       attrs="{'invisible':[('state','not in', ['review55', 'review244', 'certified'])],
+                                       'readonly':[('state','in', ['review244', 'certified'])]}"/>
+                                <field name="date_224"
+                                       attrs="{'invisible':[('state','not in', ['review55', 'review244', 'certified'])],
+                                       'readonly':[('state','in', ['review244', 'certified'])]}"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Beneficiaries"
+                                  attrs="{'invisible':[('member_type','=', 'injured')]}">
+                                <field name="death_Beneficiaries_ids" attrs="{'readonly':[('state','=', 'certified')]}">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="serial" readonly="1" force_save="1"/>
+                                        <field name="relationship_degree_id"/>
+                                        <field name="birth_date"/>
+                                        <field name="age_years"/>
+                                        <field name="age_phase"/>
+                                        <field name="bank_id"/>
+                                        <field name="branch_id"/>
+                                        <field name="accounting_no"/>
+                                        <field name="payment_amount"/>
+
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="serial" readonly="1" force_save="1"/>
+                                                <field name="bank_id" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                                <field name="branch_id" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                                <field name="accounting_no"
+                                                       attrs="{'required':[('required_acc_number','=', True)]}"/>
+                                                <field name="required_acc_number" invisible="1"/>
+                                                <field name="iban_no"/>
+                                                <field name="payment_percentage" string="Payment Percentage %"/>
+                                                <field name="expected_payment_amount" readonly="1" force_save="1"/>
+                                                <field name="tax_position"/>
+                                                <field name="tax_certificate"
+                                                       attrs="{'invisible':[('tax_position','=', 'notfulfilled')]}"/>
+                                                <field name="tax_letter"
+                                                       attrs="{'invisible':[('tax_position','=', 'fulfilled')]}"/>
+                                                <field name="tax_amount"
+                                                       attrs="{'invisible':[('tax_position','=', 'fulfilled')]}"/>
+                                                <field name="errand_id"
+                                                       attrs="{'invisible':[('tax_position','=', 'fulfilled')]}"/>
+                                            </group>
+                                            <group>
+                                                <field name="registration_date" required="True"/>
+                                                <field name="national_id" required="True"/>
+                                                <field name="birth_date" readonly="1" force_save="1"/>
+                                                <label for="age_years" string="Age"/>
+                                                <span>
+                                                    <field name="age_years" nolabel="1"/>
+                                                    years
+                                                    <field name="age_months" nolabel="1"/>
+                                                    months
+                                                    <field name="age_days" nolabel="1"/>
+                                                    days
+                                                </span>
+                                                <field name="age_phase" readonly="1" force_save="1"/>
+                                                <field name="national_id_attachment"
+                                                       attrs="{'invisible':[('age_phase','=', 'underage')]}"/>
+                                                <field name="relationship_degree_id" required="True" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                                <field name="payment_amount" readonly="1" force_save="1"/>
+                                                <label for="compensation_percentage" string="Compensation Percentage"/>
+                                                <span>
+                                                    <field name="compensation_percentage" readonly="1" force_save="1"
+                                                           nolabel="1"/>
+                                                    <span>%</span>
+                                                </span>
+                                                <field name="phone"/>
+                                            </group>
+                                        </group>
+                                        <group style="width:50%;">
+                                            <group style="width:10%;">
+                                                <field name="is_bank_letter" nolabel="1"/>
+                                                <br/>
+                                                <field name="is_prosecution_letter" nolabel="1"
+                                                       attrs="{'invisible':[('age_phase','=', 'adult')]}"/>
+                                                <br/>
+                                                <field name="is_birth_certificate" nolabel="1"
+                                                       attrs="{'invisible':[('age_phase','=', 'adult')]}"/>
+                                            </group>
+                                            <group style="width:40%;">
+                                                <field name="bank_letter" string="Bank Letter"
+                                                       attrs="{'required':[('age_phase','=', 'underage')]}"/>
+                                                <field name="prosecution_letter" string="Prosecution Letter"
+                                                       attrs="{'required':[('age_phase','=', 'underage')], 'invisible':[('age_phase','=', 'adult')]}"/>
+                                                <field name="birth_certificate" string="Birth Certificate"
+                                                       attrs="{'required':[('age_phase','=', 'underage')], 'invisible':[('age_phase','=', 'adult')]}"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                        <div style="width:25%;" attrs="{'invisible':[('member_type','=', 'injured')]}">
+                            <label for="compensation_percentage" string="Compensation Percentage"/>
+                            <span>
+                                <field name="compensation_percentage" readonly="1" force_save="1"/>
+                                <span>%</span>
+                            </span>
+                        </div>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                        <field name="activity_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="deceased_info_search_view" model="ir.ui.view">
+            <field name="name">deceased.info.search.view</field>
+            <field name="model">deceased.info</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Name"/>
+                    <field name="national_id" string="National ID"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="deceased_info_action_window">
+            <field name="name">Deceased Info</field>
+            <field name="res_model">deceased.info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Mehan" id="Mehan_menu_root" groups="n2d_mehan.mehan_group_view"/>
+        <menuitem name="Deceased Info" id="deceased_info_menu" parent="Mehan_menu_root"
+                  action="deceased_info_action_window" sequence="1"/>
+
+        <menuitem name="Configuration" id="mehan_configurations_menu" parent="Mehan_menu_root"
+        />
+
+    </data>
+</odoo>

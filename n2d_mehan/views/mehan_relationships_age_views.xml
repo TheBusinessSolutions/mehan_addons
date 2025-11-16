@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="relationship_degree_tree_view" model="ir.ui.view">
+            <field name="name">relationship.degree.tree.view</field>
+            <field name="model">relationship.degree</field>
+            <field name="arch" type="xml">
+                <tree string="Relationship degree Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="relationship_degree_form_view">
+            <field name="name">relationship.degree.form</field>
+            <field name="model">relationship.degree</field>
+            <field name="arch" type="xml">
+                <form string="Relationship degree Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Relationship degree"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="mehan_relationship_degree_action_window">
+            <field name="name">Relationship degree</field>
+            <field name="res_model">relationship.degree</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Relationship degree" id="mehan_relationship_degree_menu" parent="mehan_configurations_menu"
+                  action="mehan_relationship_degree_action_window"/>
+
+
+    </data>
+</odoo>

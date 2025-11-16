@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mehan_job_tree_view" model="ir.ui.view">
+            <field name="name">mehan.job.tree.view</field>
+            <field name="model">mehan.job</field>
+            <field name="arch" type="xml">
+                <tree string="Jobs Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mehan_job_form_view">
+            <field name="name">mehan.job.form</field>
+            <field name="model">mehan.job</field>
+            <field name="arch" type="xml">
+                <form string="Jobs Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Job Name"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="compensation_amount_tree_view" model="ir.ui.view">
+            <field name="name">compensation.amount.tree.view</field>
+            <field name="model">compensation.amount</field>
+            <field name="arch" type="xml">
+                <tree string="Compensation Amount Tree">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="compensation_amount_form_view">
+            <field name="name">compensation.amount.form</field>
+            <field name="model">compensation.amount</field>
+            <field name="arch" type="xml">
+                <form string="Compensation Amount Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Compensation Amount"/>
+                            <h1>
+                                <field name="name" required="True" widget="monetary"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date" required="True" string="Date"/>
+                                <field name="description" string="Description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="tax_errand_tree_view" model="ir.ui.view">
+            <field name="name">tax_errand.tree.view</field>
+            <field name="model">tax.errand</field>
+            <field name="arch" type="xml">
+                <tree string="Tax Errand Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="tax_errand_form_view">
+            <field name="name">tax.errand.form</field>
+            <field name="model">tax.errand</field>
+            <field name="arch" type="xml">
+                <form string="Tax Errand Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Errand Name"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mehan_job_action_window">
+            <field name="name">Mehan Job</field>
+            <field name="res_model">mehan.job</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="compensation_amount_action_window">
+            <field name="name">compensation amount</field>
+            <field name="res_model">compensation.amount</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="tax_errand_action_window">
+            <field name="name">tax errand</field>
+            <field name="res_model">tax.errand</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Jobs" id="mehan_job_menu" parent="mehan_configurations_menu"
+                  action="mehan_job_action_window"/>
+
+        <menuitem name="Compensation Amount" id="compensation_amount_menu" parent="mehan_configurations_menu"
+                  action="compensation_amount_action_window"/>
+
+        <menuitem name="Tax Errand" id="tax_errand_menu" parent="mehan_configurations_menu"
+                  action="tax_errand_action_window"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <record id="sequence_permissionno" model="ir.sequence">
+        <field name="name">Permission Number</field>
+        <field name="code">self.permissionno</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">Bp</field>
+        <field name="padding">6</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <record id="disbursement_permission_tree_view" model="ir.ui.view">
+        <field name="name">disbursement_permission_tree_view</field>
+        <field name="model">beneficiary.disbursement.permission</field>
+        <field name="arch" type="xml">
+            <tree string="Order Payment Permission">
+                <field name="name"/>
+                <field name="mustfid_id" string="beneficiary"/>
+                <field name="dead_id" string="Dead"/>
+                <field name="national_id" invisible="1"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mehan_beneficiary_disbursement_permission_form_view">
+        <field name="name">disbursement.permission.form.view</field>
+        <field name="model">beneficiary.disbursement.permission</field>
+        <field name="arch" type="xml">
+            <form string="Order Payment Permission">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="mustfid_id" string="Beneficiary"
+                                   options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                            <field name="dead_id" string="Dead"/>
+                            <field name="national_id" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="mehan_beneficiary_disbursement_permission_search_view" model="ir.ui.view">
+        <field name="name">mehan.order.disbursement.search.view</field>
+        <field name="model">beneficiary.disbursement.permission</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="national_id" string="National ID"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="mehan_beneficiary_disbursement_permission_action_window">
+        <field name="name">Order Payment Permission</field>
+        <field name="res_model">beneficiary.disbursement.permission</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Order Payment Permission"
+              id="mehan_beneficiary_disbursement_permission"
+              parent="Mehan_menu_root"
+              action="mehan_beneficiary_disbursement_permission_action_window"
+              sequence="4"
+    />
+</odoo>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mehan_bank_tree_view" model="ir.ui.view">
+            <field name="name">mehan.bank.tree.view</field>
+            <field name="model">mehan.bank</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mehan_bank_form_view">
+            <field name="name">mehan.bank.form</field>
+            <field name="model">mehan.bank</field>
+            <field name="arch" type="xml">
+                <form string="Bank Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Bank Name"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="required_acc_number" string="Required Account Number"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mehan_bank_branch_tree_view" model="ir.ui.view">
+            <field name="name">mehan.bank.branch.tree.view</field>
+            <field name="model">mehan.bank.branch</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Branch Tree">
+                    <field name="name"/>
+                    <field name="bank_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mehan_bank_branch_form_view">
+            <field name="name">mehan.bank.branch.form</field>
+            <field name="model">mehan.bank.branch</field>
+            <field name="arch" type="xml">
+                <form string="Bank Branch Form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Bank Branch"/>
+                            <h1>
+                                <field name="name" required="True"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="bank_id" required="True"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="mehan_bank_action_window">
+            <field name="name">Bank</field>
+            <field name="res_model">mehan.bank</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mehan_bank_branch_action_window">
+            <field name="name">Bank Branch</field>
+            <field name="res_model">mehan.bank.branch</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Bank" id="mehan_bank_menu" parent="mehan_configurations_menu"
+                  action="mehan_bank_action_window"/>
+
+        <menuitem name="Bank Branch" id="mehan_bank_branch_menu" parent="mehan_configurations_menu"
+                  action="mehan_bank_branch_action_window"/>
+
+
+    </data>
+</odoo>

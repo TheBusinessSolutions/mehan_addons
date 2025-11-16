@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Wizard Form View -->
+    <record id="view_mehan_total_report_wizard_form" model="ir.ui.view">
+        <field name="name">mehan.total.report.wizard.form</field>
+        <field name="model">mehan.total.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Total Injured &amp; Death Report">
+                <group>
+                    <group>
+                        <field name="report_type" widget="radio"/>
+                    </group>
+                </group>
+                
+                <group>
+                    <group string="Date Range">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group string="Additional Filters (Optional)">
+                        <field name="committee_id"/>
+                        <field name="year_finance_id"/>
+                        <field name="work_place_id"/>
+                        <field name="tag_id"/>
+                    </group>
+                </group>
+                
+                <footer>
+                    <button name="action_generate_report" 
+                            string="Generate PDF Report" 
+                            type="object" 
+                            class="btn-primary"/>
+                    <button name="action_open_tree_view" 
+                            string="View in List" 
+                            type="object" 
+                            class="btn-secondary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Wizard Action -->
+    <record id="action_mehan_total_report_wizard" model="ir.actions.act_window">
+        <field name="name">Total Injured &amp; Death Report</field>
+        <field name="res_model">mehan.total.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_deceased_info"/>
+    </record>
+
+    <!-- Reporting Menu under Mehan app -->
+    <menuitem id="menu_mehan_reporting_root"
+              name="Reporting"
+              parent="Mehan_menu_root"
+              sequence="50"/>
+
+    <!-- Sub-menu: Total Injured & Death Report -->
+    <menuitem id="menu_mehan_total_report"
+              name="Total Injured &amp; Death Report"
+              parent="menu_mehan_reporting_root"
+              action="action_mehan_total_report_wizard"
+              sequence="10"/>
+
+</odoo>

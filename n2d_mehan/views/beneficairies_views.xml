@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="beneficiaries_line_tree_view" model="ir.ui.view">
+            <field name="name">beneficiaries.lines.tree</field>
+            <field name="model">death.beneficiaries.lines</field>
+            <field name="arch" type="xml">
+                <tree string="Beneficiaries" create="0" edit="0" default_order="id desc">
+                    <field name="name"/>
+                    <field name="dead_id" optional="show"/>
+                    <field name="relationship_degree_id"/>
+                    <field name="birth_date"/>
+                    <field name="age_years"/>
+                    <field name="age_phase"/>
+                    <field name="bank_id"/>
+                    <field name="accounting_no"/>
+                    <field name="payment_amount"/>
+                    <field name="state"
+                           decoration-success="state in ('done')"
+                           decoration-danger="state in ('return')"
+                           decoration-info="state in ('new')"
+                           optional="show" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="beneficiaries_line_form_view" model="ir.ui.view">
+            <field name="name">death.beneficiaries.lines.form</field>
+            <field name="model">death.beneficiaries.lines</field>
+            <field name="arch" type="xml">
+                <form string="Beneficiaries" create="false" default_order="id desc">
+                    <header>
+                        <button name="action_done" type="object" string="Done" class="btn-primary"
+                                attrs="{'invisible':[('state','=', 'done')]}"/>
+                        <button name="action_return" type="object" string="Return" class="btn-primary"
+                                states="done"/>
+
+                        <button name="print_Beneficiary_report" string="Print" type="object" class="btn-primary"
+                                attrs="{'invisible': [('is_return', '=', False)]}"/>
+
+
+                        <field name="state" widget="statusbar" nolabel="1"
+                               statusbar_visible="new,done,return"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="dead_id" readonly="1" force_save="1"/>
+                                <field name="serial" readonly="1" force_save="1"/>
+                                <field name="is_return"/>
+                                <field name="bank_id" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="branch_id" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="accounting_no"/>
+                                <field name="iban_no" readonly="1" force_save="1"/>
+                                <field name="payment_percentage" string="Payment Percentage %" readonly="1"
+                                       force_save="1"/>
+                                <field name="expected_payment_amount" readonly="1" force_save="1"/>
+                                <field name="tax_position"/>
+                                <field name="tax_certificate"
+                                       attrs="{'invisible':[('tax_position','=', 'notfulfilled')]}"/>
+                                <field name="tax_letter" attrs="{'invisible':[('tax_position','=', 'fulfilled')]}"/>
+                                <field name="tax_amount" attrs="{'invisible':[('tax_position','=', 'fulfilled')]}"/>
+                                <field name="errand_id" attrs="{'invisible':[('tax_position','=', 'fulfilled')]}" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                <field name="phone" readonly="1" force_save="1"/>
+                                <field name="exchange_note"/>
+                            </group>
+                            <group>
+
+                                <field name="registration_date" required="True"/>
+                                <field name="national_id" required="True" readonly="1" force_save="1"/>
+                                <field name="birth_date" readonly="1" force_save="1"/>
+                                <label for="age_years" string="Age"/>
+                                <span>
+                                    <field name="age_years" nolabel="1" readonly="1" force_save="1"/>
+                                    years
+                                    <field name="age_months" nolabel="1" readonly="1" force_save="1"/>
+                                    months
+                                    <field name="age_days" nolabel="1" readonly="1" force_save="1"/>
+                                    days
+                                </span>
+                                <field name="age_phase" readonly="1" force_save="1"/>
+                                <field name="national_id_attachment"/>
+                                <field name="relationship_degree_id" required="True" readonly="1" force_save="1"/>
+                                <field name="payment_amount" readonly="1" force_save="1"/>
+                                <label for="compensation_percentage" string="Compensation Percentage"/>
+                                <span>
+                                    <field name="compensation_percentage" readonly="1" force_save="1"
+                                           nolabel="1"/>
+                                    <span>%</span>
+                                </span>
+                                <field name="no_55"/>
+                                <field name="date_55"/>
+                                <field name="no_224"/>
+                                <field name="date_224"/>
+                                <field name="no_gp"/>
+                                <field name="date_gp"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible':[('age_phase','=', 'adult')]}" style="width:50%;">
+                            <group style="width:10%;">
+                                <field name="is_bank_letter" nolabel="1" readonly="1" force_save="1"/>
+                                <br/>
+                                <field name="is_prosecution_letter" nolabel="1" readonly="1" force_save="1"/>
+                                <br/>
+                                <field name="is_birth_certificate" nolabel="1" readonly="1" force_save="1"/>
+                            </group>
+                            <group style="width:40%;">
+                                <field name="bank_letter" string="Bank Letter" readonly="1" force_save="1"/>
+                                <field name="prosecution_letter" string="Prosecution Letter" readonly="1"
+                                       force_save="1"/>
+                                <field name="birth_certificate" string="Birth Certificate" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="GP">
+                                <field name="gb_Beneficiaries_ids" attrs="{'readonly':[('state','=', 'done')]}">
+                                    <tree editable="bottom">
+                                        <field name="name" string="GP"/>
+                                        <field name="date" string="Gp Date"/>
+                                        <field name="description" string="Description"/>
+                                         <field name="bank_id" string="Bank" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                        <field name="branch_id" string="Branch" options="{'no_create_edit':True,'no_quick_create':True,'no_create': True}"/>
+                                        <field name="account_no" string="Account Number"/>
+                                        <field name="no_55" string="Num 55" optional="hide"/>
+                                        <field name="date_55" string="Date 55" optional="hide"/>
+                                        <field name="no_224" string="Num 224" optional="hide"/>
+                                        <field name="date_224" string="Date 224" optional="hide"/>
+                                        <field name="settlement_number" string="Settlement Number"/>
+                                        <field name="settlement_date" string="Settlement Date"/>
+                                        <field name="gp_file" string="Upload GP File" optional="hide"/>
+
+                                    </tree>
+                                </field>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="death_beneficiaries_lines_action_window">
+            <field name="name">Beneficiaries</field>
+            <field name="res_model">death.beneficiaries.lines</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+        <menuitem name="Beneficiaries" id="death_beneficiaries_lines_menu" parent="Mehan_menu_root"
+                  action="death_beneficiaries_lines_action_window" sequence="2"/>
+
+
+    </data>
+</odoo>
