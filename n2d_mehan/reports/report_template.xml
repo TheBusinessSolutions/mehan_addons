@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Report Paper Format (Optional: A4 Landscape for wide tables) -->
+    <record id="paperformat_mehan_report" model="report.paperformat">
+        <field name="name">Mehan Report A4 Landscape</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">23</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Report Definition -->
+    <record id="action_mehan_total_report" model="ir.actions.report">
+        <field name="name">Total Injured &amp; Death Report</field>
+        <field name="model">deceased.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">n2d_mehan.report_mehan_total</field>
+        <field name="report_file">n2d_mehan.report_mehan_total</field>
+        <field name="binding_model_id" ref="model_deceased_info"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_mehan_report"/>
+    </record>
+
+    <!-- Report Template -->
+    <template id="report_mehan_total">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <!-- Report Header -->
+                    <div class="text-center">
+                        <h2>
+                            <t t-if="report_type == 'injured'">
+                                إجمالي عدد الإصابات
+                            </t>
+                            <t t-elif="report_type == 'dead'">
+                                Total Death Report
+                            </t>
+                            <t t-else="">
+                                Total Injured &amp; Death Report
+                            </t>
+                        </h2>
+                        <h4 t-if="report_type == 'injured'">
+                            إجمالي بأعداد الإصابات أعضاء المهن الطبية ممن تم الصرف لهم
+                            <t t-if="year_finance">
+                                للعام المالي: <span t-esc="year_finance"/>
+                            </t>
+                        </h4>
+                        <p>
+                            <t t-if="date_from">
+                                From: <span t-esc="date_from"/> -
+                            </t>
+                            <t t-if="date_to">
+                                To: <span t-esc="date_to"/>
+                            </t>
+                        </p>
+                    </div>
+
+                    <!-- Injured Report: Grouped Summary -->
+                    <t t-if="report_type == 'injured' and grouped_data">
+                        <table class="table table-bordered mt-4">
+                            <thead style="background-color: #f0f0f0;">
+                                <tr>
+                                    <th class="text-center">اسم الجهة</th>
+                                    <th class="text-center">عدد الإصابات</th>
+                                    <th class="text-center">إجمالي المبالغ المنصرفة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="total_count" t-value="0"/>
+                                <t t-set="total_amount" t-value="0.0"/>
+                                <t t-foreach="docs.env.context.get('grouped_data').items()" t-as="item">
+                                    <t t-set="work_place" t-value="item[0]"/>
+                                    <t t-set="data" t-value="item[1]"/>
+                                    <tr>
+                                        <td><span t-esc="work_place"/></td>
+                                        <td class="text-center"><span t-esc="data['count']"/></td>
+                                        <td class="text-right"><span t-esc="data['total_amount']" /></td>
+                                    </tr>
+                                    <t t-set="total_count" t-value="total_count + data['count']"/>
+                                    <t t-set="total_amount" t-value="total_amount + data['total_amount']"/>
+                                </t>
+                                <tr style="background-color: #e0e0e0; font-weight: bold;">
+                                    <td>الإجمالي</td>
+                                    <td class="text-center"><span t-esc="total_count"/></td>
+                                    <td class="text-right"><span t-esc="total_amount" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+
+                    <!-- Death Report or Both: Detailed table -->
+                    <t t-if="docs.env.context.get('report_type') != 'injured'">
+                        <!-- Summary Statistics -->
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <th>Total Records:</th>
+                                        <td><t t-esc="len(docs)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Injured:</th>
+                                        <td><t t-esc="len(docs.filtered(lambda r: r.member_type == 'injured'))"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Death:</th>
+                                        <td><t t-esc="len(docs.filtered(lambda r: r.member_type == 'dead'))"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <th>Total Beneficiaries:</th>
+                                        <td><t t-esc="sum(docs.mapped('beneficiaries_no'))"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Payment Amount:</th>
+                                        <td><t t-esc="sum(docs.mapped('payment_amount'))" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Records Table -->
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Serial</th>
+                                    <th>Name</th>
+                                    <th>National ID</th>
+                                    <th>Type</th>
+                                    <th>Committee</th>
+                                    <th>Work Place</th>
+                                    <th>Death Date</th>
+                                    <th>Age</th>
+                                    <th>Beneficiaries</th>
+                                    <th>Payment Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="docs" t-as="record">
+                                    <tr>
+                                        <td><span t-field="record.public_serial"/></td>
+                                        <td><span t-field="record.name"/></td>
+                                        <td><span t-field="record.national_id"/></td>
+                                        <td>
+                                            <span t-if="record.member_type == 'injured'" class="badge badge-info">Injured</span>
+                                            <span t-if="record.member_type == 'dead'" class="badge badge-danger">Dead</span>
+                                        </td>
+                                        <td><span t-field="record.committee_id"/></td>
+                                        <td><span t-field="record.work_place_id"/></td>
+                                        <td><span t-field="record.death_date"/></td>
+                                        <td>
+                                            <t t-if="record.age">
+                                                <span t-esc="record.age"/> Y, 
+                                                <span t-esc="record.age_months"/> M, 
+                                                <span t-esc="record.age_days"/> D
+                                            </t>
+                                        </td>
+                                        <td class="text-center"><span t-field="record.beneficiaries_no"/></td>
+                                        <td class="text-right">
+                                            <span t-field="record.payment_amount" />
+                                        </td>
+                                        <td>
+                                            <span t-field="record.state"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="external_layout_seti_2">
+        <div class="header" style="font-family: 'Droid Arabic Naskh'; font-weight: bold;background-color:#f2f7f2;">
+            <div style="width:100%; background-color:#f2f7f2; direction:rtl; padding:10px;">
+                <div style="width:30%;text-align:center;">
+                    <strong>رئاسة مجلس الوزراء</strong>
+                </div>
+                <div style="width:40%;text-align:center;">
+                    <strong>صندوق التعويض عن مخاطر المهن الطبية</strong>
+                </div>
+                <div style="width:30%;text-align:center;">
+                    <strong>المدير التنفيذى</strong>
+                </div>
+            </div>
+            <div class="row" style="margin-top:5px;margin-bottom:10px;margin-left:10px;">
+                <div class="col-4" style="text-align:center;">
+                    <h4 style="text-decoration: underline;">مذكرة صرف</h4>
+                </div>
+                <div class="col-2" style="text-align:left;">
+                    <span>رقم</span>
+                </div>
+                <div class="col-4" style="text-align:right;">
+                    <span t-esc="o.name"/>
+                </div>
+                <div class="col-2" style="text-align:center;">
+                    <span>متوفى</span>
+
+                </div>
+            </div>
+            <div style="direction:rtl; text-align:right;">
+                <table style="width:100%;margin-bottom:5px;">
+                    <tbody>
+                        <tr>
+                            <td style="width:13%;">
+                                <span>رقم الـ 55 ع ح :</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:22%;">
+                                <span t-esc="o.mustfid_id.dead_id.no_55"/>
+                            </td>
+                            <td style="width:15%;">
+                                <span>تاريـخ الـ 55 ع ح :</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:20%;">
+                                <span t-esc="o.mustfid_id.dead_id.date_55"/>
+                            </td>
+                            <td style="width:5%;">
+                            </td>
+                            <td style="padding:3px;width:20%;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:100%;margin-bottom:5px;">
+                    <tbody>
+                        <tr>
+                            <td style="width:18%;">
+                                <span>رقم الـ 224 ع ح:</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:20%;">
+                                <span t-esc="o.mustfid_id.dead_id.no_224"/>
+                            </td>
+                            <td style="width:18%;">
+                                <span>تاريـخ الـ 224 ع ح:</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:20%;">
+                                <span t-esc="o.mustfid_id.dead_id.date_224"/>
+                            </td>
+                            <td style="width:12%;">
+                            </td>
+                            <td style="padding:3px;width:10%;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:100%;margin-bottom:5px;">
+                    <tbody>
+                        <tr>
+                            <td style="width:10%;">
+                                <span>نوع الصرف</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:25%;">
+                                <span t-esc="o.mustfid_id.dead_id.expense_type_id.name"/>
+                            </td>
+                            <td style="width:15%;">
+                                <span>مؤيد الصرف</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:30%;">
+                                <t t-if="o.mustfid_id.dead_id.is_administrative">
+                                    <span>شهادة ادارية</span>
+                                </t>
+                                <t t-else="else">
+                                    <t t-if="o.mustfid_id.dead_id.fundamental_supporter_2 == 'injury'">
+                                        <span>شهادة وفاء اصابية</span>
+                                    </t>
+                                    <t t-if="o.mustfid_id.dead_id.fundamental_supporter_2 == 'stress'">
+                                        <span>قرار لجنة الاجهاد</span>
+                                    </t>
+                                </t>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div style="direction:rtl; text-align:right;">
+                <table style="width:100%;margin-bottom:5px;">
+                    <tbody>
+                        <tr>
+                            <td style="width:10%;">
+                                <span>اسم المتوفى</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:40%;">
+                                <span t-esc="o.mustfid_id.dead_id.name"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:100%;margin-bottom:5px;">
+                    <tbody>
+                        <tr>
+                            <td style="width:15%;">
+                                <span>الجهة الرئيسية</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:15%;">
+                                <span t-esc="o.mustfid_id.dead_id.tag_id.name"/>
+                            </td>
+                            <td style="width:10%;">
+                                <span>مكان العمل</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:25%;">
+                                <span t-esc="o.mustfid_id.dead_id.work_place_id.name"/>
+                            </td>
+                            <td style="width:15%;">
+                                <span>الجهة الفرعية</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:20%;">
+                                <span t-esc="o.mustfid_id.dead_id.sub_work_place_id.name"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:100%;margin-bottom:5px;">
+                    <tbody>
+                        <tr>
+                            <td style="width:10%;">
+                                <span>الوظيفة</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:30%;">
+                                <span t-esc="o.mustfid_id.dead_id.job_id.name"/>
+                            </td>
+                            <td style="width:15%;">
+                                <span>عدد المستفيدين</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:10%;">
+                                <span t-esc="o.mustfid_id.dead_id.beneficiaries_no"/>
+                            </td>
+                            <td style="width:20%;">
+                                <span>العدد الذى تم الصرف له</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:10%;">
+                                <span t-esc="o.mustfid_id.dead_id.beneficiaries_no"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:100%;margin-bottom:5px;">
+                    <tbody>
+                        <tr>
+                            <td style="width:18%;">
+                                <span>الرقم القومى للمتوفى</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:20%;">
+                                <span t-esc="o.mustfid_id.dead_id.national_id"/>
+                            </td>
+
+                            <td style="width:13%;">
+                                <span>السن عند الوفاة</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:10%;">
+                                <span t-esc="o.mustfid_id.dead_id.age"/>
+                            </td>
+
+                            <td style="width:11%;">
+                                <span>تاريـخ الوفاة</span>
+                            </td>
+                            <td style="padding:3px; border:1px solid #858c97;width:15%;">
+                                <span t-esc="o.mustfid_id.dead_id.death_date"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width:100%; background-color:black;height:4px;"/>
+        </div>
+        <div class="article o_report_layout_standard">
+            <t t-raw="0"/>
+        </div>
+        <div class="footer o_background_footer">
+            <div style="text-align:center;">
+                <p>Page
+                    <span class="page"/>
+                    of
+                    <span class="topage"/>
+                </p>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="beneficiary_disbursement_permission_template_report">
+        <t t-call="n2d_mehan.external_layout_seti_2">
+            <t t-foreach="doc" t-as="o">
+                <div class="page" style="font-family: 'Droid Arabic Naskh';">
+                    <div style="direction:rtl; text-align:right; color:black;font-weight: bold;page-break-inside: avoid;">
+                        <div style="margin-bottom:5px;">
+                            <table style="width:100%;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:10%;">
+                                            <span>مسلسل</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:15%;text-align:center;">
+                                            <span t-esc="o.mustfid_id.serial"/>
+                                        </td>
+                                        <td style="width:20%;">
+                                            <span>الرقم القومى للمستحق</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;">
+                                            <span t-esc="o.mustfid_id.national_id"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-bottom:5px;">
+                            <table style="width:100%;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:15%;">
+                                            <span>اسم المستحق</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:45%;">
+                                            <span t-esc="o.mustfid_id.name"/>
+                                        </td>
+                                        <td style="width:15%;">
+                                            <span>المرحلة العمرية</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:25%;">
+                                            <t t-if="o.mustfid_id.age_phase == 'adult'">
+                                                <span>بالغ</span>
+                                            </t>
+                                            <t t-if="o.mustfid_id.age_phase == 'underage'">
+                                                <span>قاصر</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-bottom:5px;">
+                            <table style="width:100%;">
+                                <t t-set="gp_line"
+                                   t-value="o.mustfid_id.gb_Beneficiaries_ids.sorted(lambda l: l.date)[-1]"/>
+                                <tbody>
+                                    <tr>
+                                        <td style="width:12%;">
+                                            <span>درجة القرابة</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:15%;">
+                                            <span t-esc="o.mustfid_id.relationship_degree_id.name"/>
+                                        </td>
+                                        <td style="width:15%;">
+                                            <span>اسم جهة الصرف</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:20%;">
+                                            <span t-esc="gp_line.bank_id.name"/>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:20%;">
+                                            <span t-esc="gp_line.branch_id.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-bottom:5px;">
+                            <t t-set="gp_line"
+                               t-value="o.mustfid_id.gb_Beneficiaries_ids.sorted(lambda l: l.date)[-1]"/>
+                            <table style="width:100%; dir:rtl;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:5%;">
+                                            <span>Gp</span>
+                                        </td>
+                                        <td style="margin:3px; border:1px solid #858c97;width:15%;">
+                                            <span t-esc="gp_line.name"/>
+                                        </td>
+                                        <td style="width:10%;">
+                                            <span>رقم الحساب</span>
+                                        </td>
+                                        <td style="margin:3px; border:1px solid #858c97;width:25%;">
+                                            <span t-esc="gp_line.account_no"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table style="width:80%;">
+                                <tr style="height:5px;"></tr>
+                                <tr>
+
+                                    <td style="margin:3px;width:7%;">
+                                        <span>رقم التسوية</span>
+                                    </td>
+                                    <td style="margin:3px; border:1px solid #858c97;width:20%;">
+                                        <span t-esc="gp_line.settlement_number"/>
+                                    </td>
+                                    <td style="margin:3px;width:10%;">
+                                        <span>تاريخ التسوية</span>
+                                    </td>
+                                    <td colspan="2" style="margin:3px; border:1px solid #858c97;width:15%;">
+                                        <span t-esc="gp_line.settlement_date"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="width:100%;">
+                                <tr style="height:5px;"></tr>
+
+                                <tr>
+                                    <td style="width:8%;">
+                                        <span>رقم 55 :</span>
+                                    </td>
+                                    <td style="border:1px solid #858c97;width:15%;">
+                                        <span t-esc="gp_line.no_55"/>
+                                    </td>
+                                    <td>
+                                        <span>تاريخ 55 :</span>
+                                    </td>
+                                    <td style="border:1px solid #858c97;width:15%;">
+                                        <span t-esc="gp_line.date"/>
+                                    </td>
+                                    <td>
+                                        <span>رقم 224 :</span>
+                                    </td>
+                                    <td style="border:1px solid #858c97;width:15%;">
+                                        <span t-esc="gp_line.no_224"/>
+                                    </td>
+                                    <td>
+                                        <span>تاريخ 224 :</span>
+                                    </td>
+                                    <td style="margin:3px; border:1px solid #858c97;width:15%;">
+                                        <span t-esc="gp_line.date_224"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="width:100%;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:12%;">
+                                            <span>نسبة المعاشات</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:12%;">
+                                            <span t-esc="o.mustfid_id.payment_percentage"/>%
+                                        </td>
+                                        <td style="width:27%;">
+                                            <span>نسبة الصرف طبقا لضوابط الصرف</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;width:12%;">
+                                            <span t-esc="o.mustfid_id.compensation_percentage"/>%
+                                        </td>
+                                        <td style="width:12%;">
+                                            <span>المبلغ المستحق</span>
+                                        </td>
+                                        <td style="padding:3px; border:1px solid #858c97;">
+                                            <span t-esc="o.mustfid_id.payment_amount"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="width:100%; background-color:black;height:3px;margin-top:2px;"/>
+                    <div style="page-break-inside: avoid;">
+                        <div style="direction:rtl; text-align:right; color:#858c97;">
+                            <p>• يرجي التكرم بإتخاذ كافة اجراءات المراجعة لرد قيمة التعويض للمستحق
+                                <span t-esc="o.mustfid_id.name"/>
+                                عن المتوفي
+                                <span t-esc="o.mustfid_id.dead_id.name"/>
+                                طبقالرقم التسوية
+                                <span t-esc="gp_line.settlement_number"/>
+                                بتاريخ
+                                <span t-esc="gp_line.settlement_date"/>
+                            </p>
+                            <br/>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:5%;">(</td>
+                                            <td style="width:90%;"></td>
+                                            <td style="width:5%;">)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3>مدير اﻻدارة العامة للشئون المالية</h3>
+                            </div>
+                            <div class="col-6"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6"></div>
+                            <div class="col-6">
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:5%;">(</td>
+                                            <td style="width:90%;"></td>
+                                            <td style="width:5%;">)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3>رئيس الادارة المركزية
+                                    للشئون المالية والادارية
+                                </h3>
+                                <br/>
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:5%;">(</td>
+                                            <td style="width:90%;"></td>
+                                            <td style="width:5%;">)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h3>المدير التنفيذى للصندوق</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+
+    </template>
+
+    <template id="beneficiary_disbursement_permission_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="n2d_mehan.beneficiary_disbursement_permission_template_report"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

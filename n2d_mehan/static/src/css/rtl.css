@@ -1,0 +1,140 @@
+/***************************
+* Cusom Fonts
+* 1. Droid Arabic Kufi, by Google
+* 2. Droid Arabic Naskh, also by Google
+* 3. Beutiful Amiri, Opensource.
+****************************/
+/* Magic happens here */
+
+
+
+@font-face {
+  font-family: "DINNextLTW23-Light";
+  src: url("../fonts/DINNextLTW23-Light/fonts/DINNEXTARABICLIGHT.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/DINNextLTW23-Light/fonts/DINNEXTARABICLIGHT.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/DINNextLTW23-Light/fonts/DINNEXTARABICLIGHT.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/DINNextLTW23-Light/fonts/DINNEXTARABICLIGHT.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/DINNextLTW23-Light/fonts/DINNEXTARABICLIGHT.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/DINNextLTW23-Light/fonts/DINNEXTARABICLIGHT.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/DINNextLTW23-Light/fonts/DINNEXTARABICLIGHT.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DINNextLTW23-Regular";
+  src: url("../fonts/DINNextLTW23-Regular/fonts/DINNEXTARABICREGULAR.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/DINNextLTW23-Regular/fonts/DINNEXTARABICREGULAR.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/DINNextLTW23-Regular/fonts/DINNEXTARABICREGULAR.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/DINNextLTW23-Regular/fonts/DINNEXTARABICREGULAR.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/DINNextLTW23-Regular/fonts/DINNEXTARABICREGULAR.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/DINNextLTW23-Regular/fonts/DINNEXTARABICREGULAR.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/DINNextLTW23-Regular/fonts/DINNEXTARABICREGULAR.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SakkalMajalla";
+  src: url("../fonts/SakkalMajalla/fonts/test20.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/SakkalMajalla/fonts/test20.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/SakkalMajalla/fonts/test20.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/SakkalMajalla/fonts/test20.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/SakkalMajalla/fonts/test20.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/SakkalMajalla/fonts/test20.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/SakkalMajalla/fonts/test20.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/DroidKufi-Regular.eot');
+  src: url('../fonts/DroidKufi-Regular.woff2') format('woff2'),
+       url('../fonts/DroidKufi-Regular.woff') format('woff'),
+       url('../fonts/DroidKufi-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/DroidKufi-Bold.eot');
+  src: url('../fonts/DroidKufi-Bold.woff2') format('woff2'),
+       url('../fonts/DroidKufi-Bold.woff') format('woff'),
+       url('../fonts/DroidKufi-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Droid Arabic Naskh';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/DroidNaskh-Regular.eot');
+  src: url('../fonts/DroidNaskh-Regular.woff2') format('woff2'),
+       url('../fonts/DroidNaskh-Regular.woff') format('woff'),
+       url('../fonts/DroidNaskh-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Naskh';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/DroidNaskh-Bold.eot');
+  src: url('../fonts/DroidNaskh-Bold.woff2') format('woff2'),
+       url('../fonts/DroidNaskh-Bold.woff') format('woff'),
+       url('../fonts/DroidNaskh-Bold.ttf') format('truetype');
+}
+
+/* 
+ * Amiri (Arabic) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Amiri';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/Amiri-Slanted.eot');
+  src: url('../fonts/Amiri-Slanted.woff2') format('woff2'),
+       url('../fonts/Amiri-Slanted.woff') format('woff'),
+       url('../fonts/Amiri-Slanted.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Amiri-Regular.eot');
+  src: url('../fonts/Amiri-Regular.woff2') format('woff2'),
+       url('../fonts/Amiri-Regular.woff') format('woff'),
+       url('../fonts/Amiri-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Amiri';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/Amiri-BoldSlanted.eot');
+  src: url('../fonts/Amiri-BoldSlanted.woff2') format('woff2'),
+       url('../fonts/Amiri-BoldSlanted.woff') format('woff'),
+       url('../fonts/Amiri-BoldSlanted.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Amiri-Bold.eot');
+  src: url('../fonts/Amiri-Bold.woff2') format('woff2'),
+       url('../fonts/Amiri-Bold.woff') format('woff'),
+       url('../fonts/Amiri-Bold.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Hacen Tunisia';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/self_services/static/src/fonts/Hacen-Tunisia.eot);
+  src: url(/self_services/static/src/fonts/Hacen-Tunisia.woff2) format('woff2'),
+       url(/self_services/static/src/fonts/Hacen-Tunisia.woff) format('woff'),
+       url(/self_services/static/src/fonts/Hacen-Tunisia.ttf) format('truetype');
+}
+
+

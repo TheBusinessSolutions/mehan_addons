@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <record id="mehan_management_category" model="ir.module.category">
+            <field name="name">Mehan Access Management</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <record id="mehan_group_view" model="res.groups">
+            <field name="name">Mehan Responsible</field>
+            <field name="category_id" ref="mehan_management_category"/>
+        </record>
+
+    </data>
+</odoo>

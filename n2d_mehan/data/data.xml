@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+         <record id="sequence_mehan_order_payment" model="ir.sequence">
+            <field name="name">Order Payment</field>
+            <field name="code">op.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">Order/20%(y)s/</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field eval="True" name="use_date_range"/>
+        </record>
+
+         <record id="sequence_mehan_serial" model="ir.sequence">
+            <field name="name">Serial No</field>
+            <field name="code">serial.mehan.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">20%(y)s/</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field eval="True" name="use_date_range"/>
+        </record>
+
+    </data>
+</odoo>
