@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 15.0-20220819\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-22 06:38+0000\n"
-"PO-Revision-Date: 2023-05-22 06:38+0000\n"
+"PO-Revision-Date: 2026-06-10 12:22+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: ar_001\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.9\n"
 
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__is_expense
@@ -854,7 +856,7 @@ msgstr "المرحلة العمرية"
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_death_beneficiaries_lines
 msgid "death.beneficiaries.lines"
-msgstr ""
+msgstr "مستفيدين عن المتوفي"
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_deceased_info
@@ -869,7 +871,7 @@ msgstr "بنك المهن"
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_bank_branch
 msgid "mehan.bank.branch"
-msgstr ""
+msgstr "فرع بنك المهن"
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_committee
@@ -889,7 +891,7 @@ msgstr "وظائف المهن"
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_order_payment
 msgid "mehan.order.payment"
-msgstr ""
+msgstr "الصرف"
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_pension
@@ -899,7 +901,7 @@ msgstr "تقاعد المهن"
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_year_finance
 msgid "mehan.year.finance"
-msgstr ""
+msgstr "السنه الماليه"
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_registration_stage
