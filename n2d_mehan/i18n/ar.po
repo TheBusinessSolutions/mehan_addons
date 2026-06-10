@@ -4,13 +4,13 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0-20220819\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-22 06:38+0000\n"
-"PO-Revision-Date: 2026-06-10 12:22+0300\n"
+"POT-Creation-Date: 2026-06-10 09:37+0000\n"
+"PO-Revision-Date: 2026-06-10 12:55+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: ar_001\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,77 +18,467 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__is_expense
-msgid "50 Tmam Sarf"
-msgstr "تم صرف 50"
+#: model:ir.actions.report,print_report_name:n2d_mehan.action_report_mehan_order_payment
+msgid "'Payment Note -%s' %(object.deceased_id.name)"
+msgstr "'ملاحظات الدفع -%s' %(object.deceased_id.name)"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_form_view
+msgid "<span>%</span>"
+msgstr "<span>%</span>"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+msgid "<span>GP</span>"
+msgstr "<span>GP</span>"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>Gp</span>"
+msgstr "<span>GP</span>"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>اسم المتوفى</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>اسم المستحق</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+msgid "<span>اسم المصاب</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>اسم جهة الصرف</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+msgid "<span>الاجمالى</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>الجهة الرئيسية</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>الجهة الفرعية</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>الرقم القومى للمتوفى</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>الرقم القومى للمستحق</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+msgid "<span>الرقم القومى للمصاب</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+msgid "<span>السن عند الاصابة</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>السن عند الوفاة</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>العدد الذى تم الصرف له</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>المبلغ المستحق</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>المرحلة العمرية</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>الوظيفة</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>بالغ</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>تاريخ 224 :</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>تاريخ 55 :</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>تاريخ التسوية</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>تاريـخ الـ 224 ع ح:</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>تاريـخ الـ 55 ع ح :</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>تاريـخ الوفاة</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>درجة القرابة</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>رقم 224 :</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>رقم 55 :</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>رقم التسوية</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>رقم الحساب</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>رقم الـ 224 ع ح:</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>رقم الـ 55 ع ح :</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>رقم</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>شهادة ادارية</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>شهادة وفاء اصابية</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>عدد المستفيدين</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>قاصر</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>قرار لجنة الاجهاد</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>مؤيد الصرف</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>متوفى</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>مسلسل</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+msgid "<span>مصاب</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>مكان العمل</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>نسبة الصرف طبقا لضوابط الصرف</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "<span>نسبة المعاشات</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<span>نوع الصرف</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+msgid ""
+"<span>يرجى التكرم باتخاذ كافة اجراءات المراجعة وصرف قيمة التعويض المستحق طبقا لضوابط الصرف\n"
+"                                الاتية -:\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                            <span>1 - المادة رقم (8) من القانون رقم 184 لسنة 2020</span>\n"
+"                            <br/>\n"
+"                            <span>2 - المادة رقم (18)من لائحة النظام الاساسى للصندوق</span>\n"
+"                            <br/>\n"
+"                            <span>3 - كتابنا رقم 199 بتاريـخ 30-03-2022 و المرفق به الفتوى الصادرة عن ادارة الفتوى\n"
+"                                لوزارة\n"
+"                                الصحة و السكان\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                            <span>\n"
+"                                4 - كتاب السيد رئيس الهيئة القومية للتأمين 333 بتاريـخ 11-4-2022 فى هذا الشأن\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                            <span>5 - بيانات المستفيدين الواردة من الهيئة القومية للتأمين الاجتماعى</span>\n"
+"                            <br/>\n"
+"                            <span>6 - قرار وزير المالية رقم(128) لسنة 2023 بشأن خصم الضرائب المستحقة .</span>\n"
+"                            <br/>\n"
+"                            <span>7 - خصما على اعتمادات الباب الخامس .</span>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<strong>المدير التنفيذى</strong>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<strong>رئاسة مجلس الوزراء</strong>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "<strong>صندوق التعويض عن مخاطر المهن الطبية</strong>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__account_no
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Account Number"
+msgstr "رقم الحساب"
 
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__accounting_no
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__accounting_no
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__accounting_no
 msgid "Accounting No."
 msgstr "رقم الحساب"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_needaction
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_needaction
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_needaction
 msgid "Action Needed"
 msgstr "إجراء مطلوب"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_ids
 msgid "Activities"
 msgstr "أنشطة"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_exception_decoration
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_exception_decoration
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr "زخرفة استثناء النشاط"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_state
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_state
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_state
 msgid "Activity State"
 msgstr "حالة النشاط"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_type_icon
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_type_icon
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "أيقونة نوع النشاط"
 
 #. module: n2d_mehan
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.age_phase_form_view
-msgid "Age Phase"
-msgstr "مرحلة العمر"
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.view_mehan_total_report_wizard_form
+msgid "Additional Filters (Optional)"
+msgstr "تصفيات اضافيه"
 
 #. module: n2d_mehan
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.age_phase_form_view
-msgid "Age Phase Form"
-msgstr "نموذج مرحلة العمر"
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__deceased_info__fundamental_supporter__administrative
+msgid "Administrative certificate"
+msgstr ""
 
 #. module: n2d_mehan
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.age_phase_tree_view
-msgid "Age Phase Tree"
-msgstr "شجرة مرحلة العمر"
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__death_beneficiaries_lines__age_phase__adult
+msgid "Adult"
+msgstr "بالغ"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__age
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__age
-msgid "Age in years"
-msgstr "العمر بالسنوات"
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Age"
+msgstr "العمر"
 
 #. module: n2d_mehan
-#: model:ir.actions.act_window,name:n2d_mehan.mehan_age_phase_action_window
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase__name
-#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__age_phase_id
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__age_phase_id
-#: model:ir.ui.menu,name:n2d_mehan.mehan_age_phase_menu
-msgid "Age phase"
-msgstr "مرحلة العمر"
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__age_days
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__age_days
+msgid "Age Days"
+msgstr "العمر - بالايام"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__age_months
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__age_months
+msgid "Age Months"
+msgstr "العمر - الشهر"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__age_phase
+msgid "Age Phase"
+msgstr "المرحله العمريه"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__age_years
+msgid "Age Years"
+msgstr "العمر - سنوات"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_attachment_count
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_attachment_count
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_attachment_count
 msgid "Attachment Count"
@@ -97,9 +487,11 @@ msgstr "عدد المرفقات"
 #. module: n2d_mehan
 #: model:ir.actions.act_window,name:n2d_mehan.mehan_bank_action_window
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__bank_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__bank_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__bank_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__bank_id
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__bank_id
 #: model:ir.ui.menu,name:n2d_mehan.mehan_bank_menu
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
 msgid "Bank"
 msgstr "بنك"
 
@@ -121,9 +513,18 @@ msgid "Bank Branch Tree"
 msgstr "شجرة فروع البنك"
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.injuries_classification_form_view
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_bank_form_view
 msgid "Bank Form"
 msgstr "نموذج بنكي"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__bank_letter
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__is_bank_letter
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "Bank Letter"
+msgstr "خطاب البنك"
 
 #. module: n2d_mehan
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_bank_form_view
@@ -141,19 +542,45 @@ msgid "Bank name"
 msgstr "اسم البنك"
 
 #. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.death_beneficiaries_lines_action_window
+#: model:ir.ui.menu,name:n2d_mehan.death_beneficiaries_lines_menu
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_tree_view
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Beneficiaries"
 msgstr "المستفيدين"
 
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__beneficiaries_no
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__beneficiaries_no
 msgid "Beneficiaries Number"
 msgstr "عدد المستفيدين"
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_beneficiary_disbursement_permission_form_view
+msgid "Beneficiary"
+msgstr "المستحقين / المستفيدين"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__birth_certificate
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__is_birth_certificate
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "Birth Certificate"
+msgstr "شهاده الميلاد"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__mehan_total_report_wizard__report_type__both
+msgid "Both"
+msgstr "كلاهما"
+
+#. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__branch_id
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__branch_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__branch_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__branch_id
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
 msgid "Branch"
 msgstr "الفرع"
 
@@ -161,6 +588,17 @@ msgstr "الفرع"
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__name
 msgid "Branch name"
 msgstr "اسم الفرع"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.view_mehan_total_report_wizard_form
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__injury_category
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__injury_category
+msgid "Category"
+msgstr "المجموعات"
 
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__cert_management_image
@@ -178,9 +616,16 @@ msgid "Certified"
 msgstr "معتمد"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: n2d_mehan
 #: model:ir.actions.act_window,name:n2d_mehan.mehan_committee_action_window
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__committee_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__committee_id
 #: model:ir.ui.menu,name:n2d_mehan.mehan_committee_menu
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Committee"
 msgstr "لجنة"
 
@@ -201,6 +646,39 @@ msgid "Committee Tree"
 msgstr "شجرة اللجان"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__company_id
+msgid "Company"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__name
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__compensation_amount
+#: model:ir.ui.menu,name:n2d_mehan.compensation_amount_menu
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.compensation_amount_form_view
+msgid "Compensation Amount"
+msgstr "مبلغ التعويض"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.compensation_amount_form_view
+msgid "Compensation Amount Form"
+msgstr "نموذج مبلغ التعويض"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.compensation_amount_tree_view
+msgid "Compensation Amount Tree"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__compensation_percentage
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__compensation_percentage
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__order_compensation_percentage
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_form_view
+msgid "Compensation Percentage"
+msgstr "نسبه التعويض"
+
+#. module: n2d_mehan
 #: model:ir.ui.menu,name:n2d_mehan.mehan_configurations_menu
 msgid "Configuration"
 msgstr "الإعداد"
@@ -211,40 +689,74 @@ msgid "Confirm"
 msgstr "تاكيد"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_committee__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_job__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__create_uid
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_registration_stage__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_relationship_degree__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand__create_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__create_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag__create_uid
 msgid "Created by"
 msgstr "تم إنشاؤه بواسطة"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_committee__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_job__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__create_date
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_registration_stage__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_relationship_degree__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand__create_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__create_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag__create_date
 msgid "Created on"
 msgstr "تم الإنشاء في"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__date
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__date
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.compensation_amount_form_view
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Date 224"
+msgstr "تاريخ نموذج 224"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Date 55"
+msgstr "تاريخ نموذج 55"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__date_from
+msgid "Date From"
+msgstr "من تاريخ"
 
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__birth_date
@@ -258,26 +770,54 @@ msgid "Date Of Death"
 msgstr "تاريخ الوفاة"
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.view_mehan_total_report_wizard_form
+msgid "Date Range"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__date_to
+msgid "Date To"
+msgstr "الي تاريخ"
+
+#. module: n2d_mehan
+#: model:ir.model.constraint,message:n2d_mehan.constraint_compensation_amount_date_uniqe
+msgid "Date already exists.!"
+msgstr "التاريخ مسجل بالفعل"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__date_224
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__date_224
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__date_224
 msgid "Date.224"
 msgstr "التاريخ 224"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__date_55
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__date_55
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__date_55
 msgid "Date.55"
 msgstr "تاريخ ال55"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__dead_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__dead_id
 #: model:ir.model.fields.selection,name:n2d_mehan.selection__deceased_info__member_type__dead
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__mehan_expense__member_type__dead
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.disbursement_permission_tree_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_beneficiary_disbursement_permission_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Dead"
 msgstr "متوفى"
 
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__death_Beneficiaries_ids
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__death_Beneficiaries_ids
 msgid "Death Beneficiaries"
 msgstr "المستفيدين من الوفاة"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Death Date"
+msgstr "تاريخ الوفاه"
 
 #. module: n2d_mehan
 #: model:ir.actions.act_window,name:n2d_mehan.deceased_info_action_window
@@ -296,28 +836,47 @@ msgid "Deceased Info Tree"
 msgstr "شجرة معلومات المتوفى او المصاب"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__dead_id
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
 msgid "Deceased Name"
 msgstr "اسم المتوفى او المصاب "
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__description
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__description
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.compensation_amount_form_view
+msgid "Description"
+msgstr "الوصف"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_committee__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_job__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__display_name
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_registration_stage__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_relationship_degree__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand__display_name
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__display_name
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag__display_name
 msgid "Display Name"
 msgstr "اسم العرض"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__death_beneficiaries_lines__state__done
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Done"
+msgstr "تم الانتهاء"
 
 #. module: n2d_mehan
 #: model:ir.model.fields.selection,name:n2d_mehan.selection__deceased_info__state__draft
@@ -325,9 +884,30 @@ msgid "Draft"
 msgstr "مسودة"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__errand_id
+msgid "Errand"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.tax_errand_form_view
+msgid "Errand Name"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__exchange_note
+msgid "Exchange Note"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__expected_payment_amount
+msgid "Expected Payment Amount"
+msgstr "المبلغ المحسوب"
+
+#. module: n2d_mehan
 #: model:ir.actions.act_window,name:n2d_mehan.mehan_expense_action_window
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__expense_type_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__name
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__expense_type_id
 #: model:ir.ui.menu,name:n2d_mehan.mehan_expense_menu
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_expense_form_view
 msgid "Expense Type"
@@ -344,60 +924,156 @@ msgid "Expense Type Tree"
 msgstr "شجرة أنواع المصروفات"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__year_finance_id
+msgid "Financial Year"
+msgstr "السنه الماليه"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_follower_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_follower_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_follower_ids
 msgid "Followers"
 msgstr "المتابعون"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_partner_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_partner_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "(المتابعون (الشركاء"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__activity_type_icon
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__activity_type_icon
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "From:"
+msgstr "من :"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__death_beneficiaries_lines__tax_position__fulfilled
+msgid "Fulfilled"
+msgstr "تم الصرف"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__fund_subscription_payment
+msgid "Fund Subscription Payment"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__fundamental_supporter
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__fundamental_supporter_2
+msgid "Fundamental Supporter"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__fundamental_supporter_attach
+msgid "Fundamental Supporter Attach"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__fundamental_supporter_location
+msgid "Fundamental Supporter Location"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "GP"
+msgstr "GP"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__no_gp
+msgid "GP "
+msgstr "GP"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__date_gp
+msgid "GP Date"
+msgstr "تاريخ GP"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__gp_file
+msgid "GP File"
+msgstr "ملف GP"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__gb_id
+msgid "Gb"
+msgstr "GP"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__gb_Beneficiaries_ids
+msgid "Gb Beneficiaries"
+msgstr "GP المستفيدين"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.view_mehan_total_report_wizard_form
+msgid "Generate PDF Report"
+msgstr "انشاء ملف PDF"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Gp Date"
+msgstr "تاريخ GP"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__has_message
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__has_message
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__has_message
 msgid "Has Message"
 msgstr "يحتوي على رسالة"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__iban_no
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__iban_no
+msgid "IBAN No."
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_committee__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_job__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__id
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_registration_stage__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_relationship_degree__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand__id
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__id
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag__id
 msgid "ID"
 msgstr "رمز المعرف"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_exception_icon
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_exception_icon
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_exception_icon
 msgid "Icon"
 msgstr "الايقونة"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__activity_exception_icon
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__activity_exception_icon
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr "أيقونة للإشارة إلى نشاط استثناء"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__message_needaction
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__message_unread
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__message_needaction
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__message_unread
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__message_needaction
@@ -406,8 +1082,12 @@ msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__message_has_error
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__message_has_sms_error
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__message_has_error
+#: model:ir.model.fields,help:n2d_mehan.field_deceased_info__message_has_sms_error
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__message_has_error
+#: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -418,10 +1098,44 @@ msgstr "معلومات"
 
 #. module: n2d_mehan
 #: model:ir.model.fields.selection,name:n2d_mehan.selection__deceased_info__member_type__injured
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__mehan_expense__member_type__injured
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Injured"
 msgstr "مصاب"
 
 #. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.injuries_classification_action_window
+#: model:ir.ui.menu,name:n2d_mehan.injuries_classification_menu
+msgid "Injuries Classification"
+msgstr "توصيف الاصابات"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.injuries_classification_tree_view
+msgid "Injuries Classification Tree"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__injury_class_id
+msgid "Injury Class"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__injury_place
+msgid "Injury Place"
+msgstr "مكان الاصابه"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__deceased_info__fundamental_supporter_2__injury
+msgid "Injury death certificate"
+msgstr "شهاده وفاه المصاب"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__is_administrative
+msgid "Is Administrative"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_is_follower
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_is_follower
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_is_follower
 msgid "Is Follower"
@@ -459,64 +1173,88 @@ msgid "Jobs Tree"
 msgstr "شجرة الوظائف"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_committee____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_job____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment____last_update
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_registration_stage____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_relationship_degree____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand____last_update
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines____last_update
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag____last_update
 msgid "Last Modified on"
 msgstr "آخر تعديل في"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_committee__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_job__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__write_uid
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_registration_stage__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_relationship_degree__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand__write_uid
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__write_uid
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag__write_uid
 msgid "Last Updated by"
 msgstr "آخر تحديث بواسطة"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_age_phase__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_compensation_amount__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank_branch__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_committee__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_job__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__write_date
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_registration_stage__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_relationship_degree__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand__write_date
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__write_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag__write_date
 msgid "Last Updated on"
 msgstr "آخر تحديث في"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_main_attachment_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_main_attachment_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "المرفق الرئيسي"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__work_place_id
+msgid "Main Work Place"
+msgstr "جهه العمل الرئيسيه"
 
 #. module: n2d_mehan
 #: model:ir.ui.menu,name:n2d_mehan.Mehan_menu_root
@@ -524,28 +1262,48 @@ msgid "Mehan"
 msgstr "المهن"
 
 #. module: n2d_mehan
+#: model:ir.module.category,name:n2d_mehan.mehan_management_category
+msgid "Mehan Access Management"
+msgstr ""
+
+#. module: n2d_mehan
 #: model:ir.actions.act_window,name:n2d_mehan.mehan_job_action_window
 msgid "Mehan Job"
 msgstr "وظيفة المهن"
 
 #. module: n2d_mehan
+#: model:res.groups,name:n2d_mehan.mehan_group_view
+msgid "Mehan Responsible"
+msgstr "مسؤل المهن"
+
+#. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__member_type
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_expense__member_type
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__member_type
 msgid "Member Type"
 msgstr "نوع العضو"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_has_error
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_has_error
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_has_error
 msgid "Message Delivery error"
 msgstr "خطأ في تسليم الرسالة"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_ids
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_ids
 msgid "Messages"
 msgstr "الرسائل"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__mustfid_id
+msgid "Mustfid"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__my_activity_date_deadline
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__my_activity_date_deadline
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__my_activity_date_deadline
 msgid "My Activity Deadline"
@@ -554,13 +1312,38 @@ msgstr "الموعد النهائي لنشاطي"
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__name
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__name
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__name
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__deceased_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_tax_errand__name
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__name
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_search_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_year_finance_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Name"
 msgstr "الاسم"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__national_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__national_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__national_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__national_id
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_search_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_beneficiary_disbursement_permission_search_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_search_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "National ID"
 msgstr "الرقم القومى"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__national_id_attachment
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__national_id_attachment
+msgid "National Id Attachment"
+msgstr "مرفق الرقم القومي"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__death_beneficiaries_lines__state__new
+msgid "New"
+msgstr "جديد"
 
 #. module: n2d_mehan
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
@@ -568,67 +1351,94 @@ msgid "New Member"
 msgstr "عضو جديد"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_date_deadline
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_date_deadline
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "الموعد النهائي للنشاط التالي"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_summary
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_summary
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_summary
 msgid "Next Activity Summary"
 msgstr "نوع النشاط التالي"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_type_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_type_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_type_id
 msgid "Next Activity Type"
 msgstr "نوع النشاط التالي"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__no_224
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__no_224
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__no_224
 msgid "No.224"
 msgstr "رقم 224"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__no_50
-msgid "No.50"
-msgstr "رقم 50"
-
-#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__no_55
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__no_55
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__no_55
 msgid "No.55"
 msgstr "رقم 55"
 
 #. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__death_beneficiaries_lines__tax_position__notfulfilled
+msgid "Not fulfilled"
+msgstr "لم يتم الصرف"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Num 224"
+msgstr "نموذج 224"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Num 55"
+msgstr "نموذج 55"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_needaction_counter
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_needaction_counter
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_needaction_counter
 msgid "Number of Actions"
 msgstr "عدد الإجراءات"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_has_error_counter
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_has_error_counter
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_has_error_counter
 msgid "Number of errors"
 msgstr "عدد الأخطاء"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__message_needaction_counter
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__message_needaction_counter
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__message_has_error_counter
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__message_has_error_counter
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__message_unread_counter
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__message_unread_counter
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__message_unread_counter
 msgid "Number of unread messages"
 msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__order_id
+msgid "Order"
+msgstr "أمر"
 
 #. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__name
@@ -647,37 +1457,116 @@ msgid "Order Payment Form"
 msgstr "نموذج دفع الطلب"
 
 #. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.mehan_beneficiary_disbursement_permission_action_window
+#: model:ir.ui.menu,name:n2d_mehan.mehan_beneficiary_disbursement_permission
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.disbursement_permission_tree_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_beneficiary_disbursement_permission_form_view
+msgid "Order Payment Permission"
+msgstr ""
+
+#. module: n2d_mehan
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_tree_view
 msgid "Order Payment Tree"
 msgstr "شجرة دفع الطلب"
 
 #. module: n2d_mehan
-#: model:ir.actions.act_window,name:n2d_mehan.mehan_pension_action_window
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__pension_payment_id
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_pension__name
-#: model:ir.ui.menu,name:n2d_mehan.mehan_pension_menu
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_pension_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+msgid ""
+"Page\n"
+"                        <span class=\"page\"/>\n"
+"                        of\n"
+"                        <span class=\"topage\"/>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid ""
+"Page\n"
+"                    <span class=\"page\"/>\n"
+"                    of\n"
+"                    <span class=\"topage\"/>"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__payment_amount
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__payment_amount
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__payment_amount
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Payment Amount"
+msgstr "مبلغ"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__payment_Beneficiaries_ids
+msgid "Payment Beneficiaries"
+msgstr "دفعات المستفيدين"
+
+#. module: n2d_mehan
+#: model:ir.actions.report,name:n2d_mehan.action_report_mehan_order_payment
+msgid "Payment Note"
+msgstr "ملاحظه"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__payment_percentage
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_form_view
+msgid "Payment Percentage"
+msgstr "نسبه الدفعات"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "Payment Percentage %"
+msgstr "%"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__pension_payment
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__pension_payment
 msgid "Pension Payment"
-msgstr "دفعة التقاعد"
+msgstr ""
 
 #. module: n2d_mehan
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_pension_form_view
-msgid "Pension Payment Form"
-msgstr "نموذج دفعات التقاعد"
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__percentage
+msgid "Percentage %"
+msgstr "%"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__pension_payment_no
-msgid "Pension Payment Page No."
-msgstr "رقم صفحة دفعات التقاعد"
+#: model:ir.model.fields,field_description:n2d_mehan.field_beneficiary_disbursement_permission__name
+msgid "Permission Number"
+msgstr ""
 
 #. module: n2d_mehan
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_pension_tree_view
-msgid "Pension Payment Tree"
-msgstr "شجرة دفعات التقاعد"
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__phone
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__phone
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "Phone"
+msgstr "التليفون"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_lines__place_id
+msgid "Place"
+msgstr "المكان"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Print"
+msgstr "طباعه"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__is_prosecution_letter
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__prosecution_letter
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "Prosecution Letter"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__registration_date
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__registration_date
+msgid "Registration Date"
+msgstr ""
 
 #. module: n2d_mehan
 #: model:ir.actions.act_window,name:n2d_mehan.mehan_registration_stage_action_window
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__date_select_id
 #: model:ir.ui.menu,name:n2d_mehan.mehan_registration_stage_menu
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_registration_stage_form_view
 msgid "Registration Stage"
@@ -722,15 +1611,43 @@ msgid "Relationship degree Tree"
 msgstr "شجرة درجة العلاقة"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__release_date
-msgid "Release Date"
-msgstr "تاريخ الإصدار"
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__report_type
+msgid "Report to Show"
+msgstr "اظهر التقرير"
 
 #. module: n2d_mehan
+#: model:ir.ui.menu,name:n2d_mehan.menu_mehan_reporting_root
+msgid "Reporting"
+msgstr "التقارير"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__required_acc_number
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_bank__required_acc_number
+msgid "Required Acc Number"
+msgstr "رقم الحساب مطلوب"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_bank_form_view
+msgid "Required Account Number"
+msgstr "رقم الحساب مطلوب"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__activity_user_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__activity_user_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__activity_user_id
 msgid "Responsible User"
 msgstr "المستخدم المسؤول"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__death_beneficiaries_lines__state__return
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Return"
+msgstr "مرتد"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__is_return
+msgid "Return order"
+msgstr "رقم المرتد"
 
 #. module: n2d_mehan
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
@@ -753,18 +1670,51 @@ msgid "Review 55 Done"
 msgstr "تم مراجعة55"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_has_sms_error
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_has_sms_error
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_injuries_classification__name
+msgid "Section"
+msgstr ""
+
+#. module: n2d_mehan
 #: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__serial
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__public_serial
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__serial
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Serial"
 msgstr "رقم مسلسل"
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "Set to draft"
+msgstr "تعيين كمسوده"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__settlement_date
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Settlement Date"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_gb_beneficiaries_lines__settlement_number
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Settlement Number"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__state
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__state
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Status"
 msgstr "الحالة"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__activity_state
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__activity_state
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__activity_state
 msgid ""
@@ -775,39 +1725,185 @@ msgid ""
 msgstr ""
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__repeat_expense
-msgid "Tkrar Sarf"
-msgstr "تكرار صرف"
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__deceased_info__fundamental_supporter_2__stress
+msgid "Stress death certificate"
+msgstr ""
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__tmam_sarf
-msgid "Tmam Sarf"
-msgstr "تمام صرف"
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__sub_work_place_id
+msgid "Sub Work Place"
+msgstr "مكان العميل الفرعي"
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_form_view
+msgid "Sub Work Places"
+msgstr "مكان العمل الفرعي"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place__tag_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place_tag__name
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_tag_form_view
+msgid "Tag"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__tax_amount
+msgid "Tax Amount"
+msgstr "قيمه الضرائب"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__tax_certificate
+msgid "Tax Certificate"
+msgstr "شهاده الضرائب"
+
+#. module: n2d_mehan
+#: model:ir.ui.menu,name:n2d_mehan.tax_errand_menu
+msgid "Tax Errand"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.tax_errand_form_view
+msgid "Tax Errand Form"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.tax_errand_tree_view
+msgid "Tax Errand Tree"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__tax_letter
+msgid "Tax Letter"
+msgstr "خطاب الضرائب"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__tax_position
+msgid "Tax Position"
+msgstr "الموقف الضريبي"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "To:"
+msgstr "الي:"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Total Beneficiaries:"
+msgstr "اجمالي عدد المستفيدين"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__mehan_total_report_wizard__report_type__dead
+msgid "Total Death"
+msgstr "اجمالي المتوفيين"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Total Death Report"
+msgstr "تقرير اجمالي المتوفيين"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Total Death:"
+msgstr "اجمالي عدد المتوفيين"
+
+#. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__mehan_total_report_wizard__report_type__injured
+msgid "Total Injured"
+msgstr "اجمالي عدد المصابين"
+
+#. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.action_mehan_total_report_wizard
+#: model:ir.actions.report,name:n2d_mehan.action_mehan_total_report
+#: model:ir.ui.menu,name:n2d_mehan.menu_mehan_total_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.view_mehan_total_report_wizard_form
+msgid "Total Injured & Death Report"
+msgstr "اجمالي عدد المصابين & المتوفيين"
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_mehan_total_report_wizard
+msgid "Total Injured & Death Report Wizard"
+msgstr "اختيارات اجمالي عدد المتمصابين & المتوفيين"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Total Injured &amp; Death Report"
+msgstr "تقرير اجمالي المصابين & المتوفيين"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Total Injured:"
+msgstr "اجمالي المصابين"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Total Payment Amount:"
+msgstr "اجمالي مبلغ الدفع"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Total Records:"
+msgstr "الاجمالي"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "Type"
+msgstr "النوع"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__activity_exception_decoration
 #: model:ir.model.fields,help:n2d_mehan.field_deceased_info__activity_exception_decoration
 #: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "نوع النشاط الاستثنائي في السجل."
 
 #. module: n2d_mehan
+#: model:ir.model.fields.selection,name:n2d_mehan.selection__death_beneficiaries_lines__age_phase__underage
+msgid "Underage"
+msgstr "قاصر"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_unread
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_unread
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_unread
 msgid "Unread Messages"
 msgstr "الرسائل غير المقروءة"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__message_unread_counter
 #: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__message_unread_counter
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "عداد الرسائل غير المقروءة"
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+msgid "Upload GP File"
+msgstr "ارفاق اشعار GP"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.view_mehan_total_report_wizard_form
+msgid "View in List"
+msgstr "عرض لسته"
+
+#. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_death_beneficiaries_lines__website_message_ids
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__website_message_ids
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model.fields,help:n2d_mehan.field_death_beneficiaries_lines__website_message_ids
+#: model:ir.model.fields,help:n2d_mehan.field_deceased_info__website_message_ids
+#: model:ir.model.fields,help:n2d_mehan.field_mehan_order_payment__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: n2d_mehan
 #: model:ir.actions.act_window,name:n2d_mehan.work_place_action_window
-#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__work_place_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__work_place_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_work_place__name
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_year_finance_form_view
-#: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
 msgid "Work Place"
 msgstr "مكان العمل"
 
@@ -817,11 +1913,50 @@ msgid "Work Place Form"
 msgstr "نموذج مكان العمل"
 
 #. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.work_place_lines_action_window
+#: model:ir.ui.menu,name:n2d_mehan.work_place_lines_menu
+msgid "Work Place Lines"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_lines_form_view
+msgid "Work Place Lines Form"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_lines_tree_view
+msgid "Work Place Lines Tree"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.work_place_tag_action_window
+#: model:ir.model.fields,field_description:n2d_mehan.field_deceased_info__tag_id
+#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_total_report_wizard__tag_id
+msgid "Work Place Tag"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_tag_form_view
+msgid "Work Place Tag Form"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_tag_tree_view
+msgid "Work Place Tag Tree"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.ui.menu,name:n2d_mehan.work_place_tag_menu
+msgid "Work Place Tags"
+msgstr ""
+
+#. module: n2d_mehan
 #: model_terms:ir.ui.view,arch_db:n2d_mehan.work_place_tree_view
 msgid "Work Place Tree"
 msgstr "شجرة مكان العمل"
 
 #. module: n2d_mehan
+#: model:ir.model.fields,field_description:n2d_mehan.field_work_place__work_places_ids
 #: model:ir.ui.menu,name:n2d_mehan.work_place_menu
 msgid "Work Places"
 msgstr "اماكن العمل"
@@ -843,25 +1978,70 @@ msgid "Year Finance Tree"
 msgstr "شجرة السنة المالية"
 
 #. module: n2d_mehan
-#: model:ir.model.fields,field_description:n2d_mehan.field_mehan_order_payment__year_finance_id
 #: model:ir.model.fields,field_description:n2d_mehan.field_mehan_year_finance__name
 msgid "Year finance"
 msgstr "السنة المالية"
 
 #. module: n2d_mehan
-#: model:ir.model,name:n2d_mehan.model_age_phase
-msgid "age.phase"
-msgstr "المرحلة العمرية"
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.disbursement_permission_tree_view
+msgid "beneficiary"
+msgstr "المستفيدين / المستحقين"
+
+#. module: n2d_mehan
+#: model:ir.actions.report,name:n2d_mehan.death_beneficiaries_lines_report
+msgid "beneficiary report"
+msgstr "تقرير المستفيدين"
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_beneficiary_disbursement_permission
+msgid "beneficiary.disbursement.permission"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.compensation_amount_action_window
+msgid "compensation amount"
+msgstr "مبلغ التعويض"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "compensation value"
+msgstr "قيمه التعويض"
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_compensation_amount
+msgid "compensation.amount"
+msgstr "مبلغ.التعويض"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "days"
+msgstr "ايام"
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_death_beneficiaries_lines
 msgid "death.beneficiaries.lines"
-msgstr "مستفيدين عن المتوفي"
+msgstr ""
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_deceased_info
 msgid "deceased.info"
 msgstr "معلومات المتوفى او المصاب"
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_gb_beneficiaries_lines
+msgid "gb.beneficiaries.lines"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "injured Name"
+msgstr "اسم المصاب"
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_injuries_classification
+msgid "injuries.classification"
+msgstr "أنواع الاصابات"
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_bank
@@ -891,17 +2071,19 @@ msgstr "وظائف المهن"
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_order_payment
 msgid "mehan.order.payment"
-msgstr "الصرف"
-
-#. module: n2d_mehan
-#: model:ir.model,name:n2d_mehan.model_mehan_pension
-msgid "mehan.pension"
-msgstr "تقاعد المهن"
+msgstr ""
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_mehan_year_finance
 msgid "mehan.year.finance"
 msgstr "السنه الماليه"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_form_view
+msgid "months"
+msgstr "أشهر"
 
 #. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_registration_stage
@@ -914,6 +2096,138 @@ msgid "relationship.degree"
 msgstr "درجة العلاقة"
 
 #. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+msgid "single beneficiary"
+msgstr "مستفيد وحيد"
+
+#. module: n2d_mehan
+#: model:ir.actions.act_window,name:n2d_mehan.tax_errand_action_window
+msgid "tax errand"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_tax_errand
+msgid "tax.errand"
+msgstr ""
+
+#. module: n2d_mehan
 #: model:ir.model,name:n2d_mehan.model_work_place
 msgid "work.place"
 msgstr "مكان العمل"
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_work_place_lines
+msgid "work.place.lines"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.model,name:n2d_mehan.model_work_place_tag
+msgid "work.place.tag"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiaries_line_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.deceased_info_form_view
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.mehan_order_payment_form_view
+msgid "years"
+msgstr "سنوات"
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "إجمالي المبالغ المنصرفة"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "إجمالي بأعداد الإصابات أعضاء المهن الطبية ممن تم الصرف لهم"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "إجمالي عدد الإصابات"
+msgstr ""
+
+#. module: n2d_mehan
+#: model:ir.actions.report,name:n2d_mehan.action_beneficiary_disbursement_permission
+msgid "إذن صرف المستفيد"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "اسم الجهة"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "الإجمالي"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "المدير التنفيذى للصندوق"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "بتاريخ"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid ""
+"رئيس الادارة المركزية\n"
+"                                        للشئون المالية والادارية"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+msgid ""
+"رئيس الادارة المركزية\n"
+"                                    للشئون المالية والادارية"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "طبقالرقم التسوية"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "عدد الإصابات"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "عن المتوفي"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_total
+msgid "للعام المالي:"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "مدير اﻻدارة العامة للشئون المالية"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_1
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.external_layout_seti_2
+msgid "مذكرة صرف"
+msgstr ""
+
+#. module: n2d_mehan
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.beneficiary_disbursement_permission_template_report
+#: model_terms:ir.ui.view,arch_db:n2d_mehan.report_mehan_order_payment_document_2
+msgid "• يرجي التكرم بإتخاذ كافة اجراءات المراجعة لرد قيمة التعويض للمستحق"
+msgstr ""
